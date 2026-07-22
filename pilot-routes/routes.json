@@ -1,0 +1,8 @@
+[
+  {"id":"central-park-full-loop","name":"Central Park Full Loop","distance_km":9.66,"elevation_m":82,"type":"loop"},
+  {"id":"central-park-mid-loop","name":"Central Park Mid Loop","distance_km":6.47,"elevation_m":54,"type":"loop"},
+  {"id":"hudson-greenway-8k","name":"Hudson Greenway 8K","distance_km":8.29,"elevation_m":18,"type":"point-to-point"},
+  {"id":"prospect-park-loop","name":"Prospect Park Loop","distance_km":5.38,"elevation_m":38,"type":"loop"},
+  {"id":"roosevelt-island-loop","name":"Roosevelt Island Loop","distance_km":7.24,"elevation_m":22,"type":"loop"},
+  {"id":"randalls-island-loop","name":"Randall's Island Loop","distance_km":8.39,"elevation_m":36,"type":"loop"}
+]
