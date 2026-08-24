@@ -1,0 +1,82 @@
+.invite-page { min-height: 100vh; background: var(--onyx); }
+.invite-main { min-height: calc(100vh - 66px); background: radial-gradient(ellipse 65% 48% at 20% 10%, rgba(255, 75, 31, 0.11), transparent 72%); }
+.invite-shell { width: min(1180px, 100%); margin: 0 auto; padding: clamp(44px, 8vh, 88px) 20px 72px; }
+.invite-message { min-height: 56vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.invite-message img { width: 48px; height: 48px; image-rendering: pixelated; }
+.invite-message p { margin: 16px 0 0; }
+.invite-message-error { align-items: flex-start; max-width: 720px; text-align: left; }
+.invite-message-error h1 { max-width: 680px; font-size: clamp(40px, 7vw, 72px); }
+.invite-message-error .btn { margin-top: 20px; }
+.invite-heading { max-width: 780px; margin-bottom: 42px; }
+.invite-heading h1 { font-size: clamp(48px, 8vw, 88px); }
+.invite-lede { margin: 14px 0 0; font-size: clamp(18px, 2.5vw, 22px); }
+.invite-layout { display: grid; grid-template-columns: minmax(0, 0.78fr) minmax(440px, 1.22fr); gap: 24px; align-items: start; }
+.invite-race, .pace-tool { border: 1px solid var(--line); border-radius: var(--r); background: var(--coal); padding: clamp(22px, 4vw, 34px); }
+.invite-race { position: sticky; top: 90px; }
+.invite-race-topline { display: flex; justify-content: space-between; gap: 18px; color: var(--flare); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.invite-race-topline span:last-child { color: var(--muted); text-align: right; }
+.invite-race h2, .pace-tool h2 { margin: 22px 0 0; font-size: clamp(28px, 4vw, 42px); line-height: 1.05; text-transform: none; }
+.invite-race-start { margin: 10px 0 0; color: var(--muted); font-size: 17px; }
+.invite-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 30px 0 0; padding: 20px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.invite-facts div { padding: 0 14px; border-right: 1px solid var(--line); }
+.invite-facts div:first-child { padding-left: 0; }
+.invite-facts div:last-child { padding-right: 0; border-right: 0; }
+.invite-facts dt { color: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; }
+.invite-facts dd { margin: 5px 0 0; color: var(--smoke); font-size: 15px; font-weight: 700; }
+.invite-explainer { display: grid; grid-template-columns: 10px 1fr; gap: 12px; margin-top: 24px; }
+.invite-explainer-mark { width: 10px; height: 10px; margin-top: 7px; background: var(--ember); }
+.invite-explainer p { margin: 0; font-size: 15px; line-height: 1.55; }
+.pace-step { margin: 0; color: var(--flare); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.pace-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 30px; }
+.pace-fields label > span:first-child { display: block; margin-bottom: 8px; color: var(--muted); font-size: 13px; font-weight: 700; }
+.pace-fields input { width: 100%; min-height: 52px; border: 1px solid var(--line); border-radius: var(--r-s); background: var(--onyx); color: var(--smoke); font: 500 18px/1 var(--font); padding: 0 14px; }
+.pace-fields input:focus { border-color: var(--flare); outline: 1px solid var(--flare); }
+.pace-input-wrap { position: relative; display: block; }
+.pace-input-wrap input { padding-right: 54px; }
+.pace-input-wrap > span { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 14px; font-weight: 700; }
+.pace-help, .pace-error { margin: 12px 0 0; font-size: 14px; line-height: 1.45; }
+.pace-error { color: #ff8b78; }
+.pace-submit { width: 100%; margin-top: 18px; border: 0; cursor: pointer; font-family: var(--font); }
+.fair-start-result { margin-top: 30px; padding-top: 28px; border-top: 1px solid var(--line-hot); }
+.fair-start-label { margin: 0; color: var(--flare); font-size: 13px; font-weight: 700; text-transform: uppercase; }
+.fair-start-value { margin: 6px 0 0; color: var(--smoke); font-size: clamp(54px, 9vw, 82px); font-weight: 700; line-height: 0.95; }
+.fair-start-detail { margin: 12px 0 0; max-width: 540px; font-size: 17px; }
+.stagger-grid { position: relative; height: 154px; margin: 34px 0 12px; }
+.stagger-track { position: absolute; left: 18px; right: 92px; top: 32px; height: 3px; background: var(--line); }
+.stagger-node { position: absolute; top: 21px; width: 124px; }
+.stagger-node span { display: block; width: 24px; height: 24px; border: 3px solid var(--muted); border-radius: 50%; background: var(--coal); }
+.stagger-node strong, .stagger-node small { display: block; margin-top: 8px; font-size: 13px; }
+.stagger-node small { margin-top: 2px; color: var(--muted); font-size: 12px; }
+.stagger-node-hot { left: 6px; color: var(--ember); }
+.stagger-node-hot span { border-color: var(--ember); background: var(--ember); }
+.stagger-node-last { left: 52%; transform: translateX(-50%); text-align: center; }
+.stagger-node-last span { margin: 0 auto; }
+.stagger-finish { position: absolute; right: 0; top: 0; width: 76px; text-align: right; }
+.stagger-finish span { display: block; width: 3px; height: 68px; margin-left: auto; background: var(--ember); }
+.stagger-finish strong { display: block; margin-top: 7px; color: var(--smoke); font-size: 12px; text-transform: uppercase; }
+.invite-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px; }
+.invite-fine { margin: 14px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.invite-footer { display: flex; justify-content: space-between; gap: 24px; padding: 22px max(20px, calc((100vw - 1120px) / 2)); border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+.invite-footer nav { display: flex; gap: 18px; }
+.invite-footer a { text-decoration: none; }
+.invite-footer a:hover { color: var(--smoke); }
+[hidden] { display: none !important; }
+
+@media (max-width: 840px) {
+  .invite-layout { grid-template-columns: 1fr; }
+  .invite-race { position: static; }
+}
+
+@media (max-width: 620px) {
+  .invite-shell { padding: 34px 16px 54px; }
+  .invite-heading { margin-bottom: 26px; }
+  .invite-layout { gap: 14px; }
+  .invite-race, .pace-tool { padding: 22px 18px; }
+  .pace-fields, .invite-actions { grid-template-columns: 1fr; }
+  .invite-facts { gap: 0; }
+  .invite-facts div { padding: 0 8px; }
+  .invite-facts dd { font-size: 13px; }
+  .stagger-node-last { left: 48%; }
+  .invite-footer { flex-direction: column; padding: 22px 16px; }
+  .invite-nav-links { justify-content: flex-start; }
+}

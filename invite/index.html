@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>Scorch Race Challenge</title>
+  <meta name="description" content="Enter your 5K pace to see your fair start in a Scorch race challenge.">
+  <meta property="og:title" content="You have been challenged to a Scorch race">
+  <meta property="og:description" content="Enter your 5K pace. See your fair start. Race one mapped route to one finish.">
+  <meta property="og:image" content="https://scorchapp.xyz/assets/icon.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/assets/icon.png">
+  <link rel="apple-touch-icon" href="/assets/icon.png">
+  <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/space-grotesk-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20260719b">
+  <link rel="stylesheet" href="/invite/invite.css?v=20260731a">
+</head>
+<body class="invite-page">
+  <header class="header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="/"><img src="/assets/mark.png" alt="" width="28" height="28">Scorch</a>
+      <div class="links invite-nav-links">
+        <a href="/demo/">How It Works</a>
+        <a href="/support/">Support</a>
+      </div>
+      <a class="nav-cta" href="mailto:support@scorchapp.xyz?subject=Scorch%20Pilot%20Access">Pilot Access</a>
+    </nav>
+  </header>
+
+  <main class="invite-main">
+    <section class="invite-shell" aria-labelledby="invite-title">
+      <div id="invite-loading" class="invite-message" role="status">
+        <img src="/assets/mark.png" alt="" width="48" height="48">
+        <p>Loading your challenge...</p>
+      </div>
+
+      <div id="invite-error" class="invite-message invite-message-error" role="alert" hidden>
+        <p class="kicker">Invite unavailable</p>
+        <h1 id="invite-error-title">This challenge cannot be opened.</h1>
+        <p id="invite-error-detail">Ask the race host for a fresh invite link.</p>
+        <a class="btn btn-ghost" href="/">Meet Scorch</a>
+      </div>
+
+      <article id="invite-content" hidden>
+        <div class="invite-heading">
+          <p id="invite-kicker" class="kicker">A runner challenged you</p>
+          <h1 id="invite-title">Race anyone.</h1>
+          <p class="invite-lede">Enter your recent 5K pace to see when you start. No account needed.</p>
+        </div>
+
+        <div class="invite-layout">
+          <section class="invite-race" aria-labelledby="race-name">
+            <div class="invite-race-topline">
+              <span>Race challenge</span>
+              <span id="race-status">Registration open</span>
+            </div>
+            <h2 id="race-name">Scorch Race</h2>
+            <p id="race-start" class="invite-race-start"></p>
+
+            <dl class="invite-facts">
+              <div>
+                <dt>Distance</dt>
+                <dd id="race-distance">--</dd>
+              </div>
+              <div>
+                <dt>Start</dt>
+                <dd id="race-rule">Fair start</dd>
+              </div>
+              <div>
+                <dt>Route</dt>
+                <dd id="race-route">Mapped</dd>
+              </div>
+            </dl>
+
+            <div class="invite-explainer">
+              <span class="invite-explainer-mark" aria-hidden="true"></span>
+              <p>Slower paces leave first. Faster paces chase. Everyone runs the same route toward one finish.</p>
+            </div>
+          </section>
+
+          <section class="pace-tool" aria-labelledby="pace-title">
+            <p class="pace-step">Your fair start</p>
+            <h2 id="pace-title">See the chase before you join.</h2>
+            <form id="pace-form" novalidate>
+              <div class="pace-fields">
+                <label>
+                  <span>Your first name</span>
+                  <input id="runner-name" name="name" type="text" maxlength="30" autocomplete="given-name" placeholder="You">
+                </label>
+                <label>
+                  <span>Recent 5K pace</span>
+                  <span class="pace-input-wrap">
+                    <input id="runner-pace" name="pace" type="text" value="5:30" inputmode="numeric" autocomplete="off" aria-describedby="pace-help pace-error">
+                    <span>/km</span>
+                  </span>
+                </label>
+              </div>
+              <p id="pace-help" class="pace-help">Use an honest recent pace. Your start locks when you join in Scorch.</p>
+              <p id="pace-error" class="pace-error" role="alert" hidden></p>
+              <button class="btn btn-primary pace-submit" type="submit">Show my fair start</button>
+            </form>
+
+            <div id="fair-start-result" class="fair-start-result" aria-live="polite" hidden>
+              <p id="fair-start-label" class="fair-start-label">Your head start</p>
+              <p id="fair-start-value" class="fair-start-value">0:00</p>
+              <p id="fair-start-detail" class="fair-start-detail"></p>
+
+              <div class="stagger-grid" aria-hidden="true">
+                <div class="stagger-track"></div>
+                <div id="stagger-first" class="stagger-node stagger-node-hot">
+                  <span></span>
+                  <strong id="stagger-first-name">You</strong>
+                  <small id="stagger-first-time">0:00</small>
+                </div>
+                <div id="stagger-last" class="stagger-node stagger-node-last">
+                  <span></span>
+                  <strong id="stagger-last-name">Final starter</strong>
+                  <small id="stagger-last-time">+0:00</small>
+                </div>
+                <div class="stagger-finish"><span></span><strong>One finish</strong></div>
+              </div>
+
+              <div class="invite-actions">
+                <a id="open-scorch" class="btn btn-primary" href="#">Open Scorch to join</a>
+                <a class="btn btn-ghost" href="mailto:support@scorchapp.xyz?subject=Scorch%20Pilot%20Access">Get pilot access</a>
+              </div>
+              <p class="invite-fine">This is a preview, not a registration. Scorch confirms your route, pace, and personal start before the race.</p>
+            </div>
+          </section>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="invite-footer">
+    <span>Scorch &middot; Race anyone</span>
+    <nav aria-label="Legal">
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/support/">Support</a>
+    </nav>
+  </footer>
+
+  <script type="module" src="/invite/invite.mjs?v=20260731a"></script>
+</body>
+</html>
