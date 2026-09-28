@@ -1,255 +1,393 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Scorch — Race Anyone</title>
-  <meta name="description" content="Race anyone. Your pace sets your start. Scorch brings runners together on mapped routes — no club required.">
-  <meta name="theme-color" content="#080808">
-  <link rel="canonical" href="https://scorchapp.xyz/">
-  <meta property="og:title" content="Scorch — Race Anyone">
-  <meta property="og:description" content="Race anyone. Your pace sets your start. Fair-start races on mapped routes, no club required.">
-  <meta property="og:image" content="https://scorchapp.xyz/assets/icon.png">
-  <meta property="og:url" content="https://scorchapp.xyz/">
-  <meta property="og:type" content="website">
-  <link rel="icon" href="/assets/icon.png">
-  <link rel="apple-touch-icon" href="/assets/icon.png">
-  <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/urbanist-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/space-grotesk-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20260719b">
-</head>
-<body>
-  <header class="header">
-    <nav class="nav" aria-label="Main">
-      <a class="brand" href="/"><img src="/assets/mark.png" alt="" width="28" height="28">Scorch</a>
-      <div class="links">
-        <a href="/demo/">How It Works</a>
-        <a href="/pilot-routes/">Pilot Routes</a>
-        <a href="/support/">Support</a>
-      </div>
-      <a class="nav-cta" href="mailto:support@scorchapp.xyz?subject=Scorch%20TestFlight%20Pilot&amp;body=Hi%20Scorch%20team%2C%0A%0AI%27d%20like%20TestFlight%20access%20for%20the%20Scorch%20running%20pilot.%0A%0AName%3A%0ACity%3A">TestFlight</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <div class="kicker">Free run-only pilot &middot; iPhone</div>
-          <h1>Race <span class="hot">anyone.</span></h1>
-          <p class="tagline">Your pace sets your start.</p>
-          <p class="lede">Join runners on the same mapped route, follow the chase live, and understand the result at the finish. No club required.</p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="mailto:support@scorchapp.xyz?subject=Scorch%20TestFlight%20Pilot&amp;body=Hi%20Scorch%20team%2C%0A%0AI%27d%20like%20TestFlight%20access%20for%20the%20Scorch%20running%20pilot.%0A%0AName%3A%0ACity%3A">Request TestFlight Access</a>
-            <a class="btn btn-ghost" href="/demo/">See How Scorch Works</a>
-          </div>
-          <div class="hero-meta">
-            <span>Free pilot</span>
-            <span>Run-only</span>
-            <span>No club required</span>
-          </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Scorch | Run solo. Race others.</title>
+    <meta
+      name="description"
+      content="Run solo, chase a goal or your previous effort, and organize free running races with fair or same starts. Request Scorch beta access for iPhone or Android."
+    />
+    <meta name="theme-color" content="#090A0D" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="canonical" href="https://scorchapp.xyz/" />
+    <meta property="og:title" content="Scorch | Run solo. Race others." />
+    <meta
+      property="og:description"
+      content="Run solo, chase a goal or your previous effort, and organize free running races with fair or same starts. Request Scorch beta access for iPhone or Android."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://scorchapp.xyz/" />
+    <meta property="og:image" content="https://scorchapp.xyz/assets/icon.png" />
+    <link rel="icon" href="/assets/icon.png" />
+    <link rel="apple-touch-icon" href="/assets/icon.png" />
+    <link
+      rel="preload"
+      href="/assets/fonts/urbanist-latin-900-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/styles.css?v=20260928" />
+    <script src="/site.mjs?v=20260928" type="module"></script>
+    <script src="/race-demo.mjs?v=20260928" type="module"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="header">
+      <nav class="nav wrap" aria-label="Main">
+        <a class="brand" href="/" aria-label="Scorch home"
+          ><img src="/assets/mark.png" width="40" height="40" alt="" />SCORCH</a
+        >
+        <div class="links" id="site-links">
+          <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a
+          ><a href="/support/">Support</a>
         </div>
-        <div class="hero-flame">
-          <img src="/assets/flame.svg" alt="Scorch pixel flame logo" width="380" height="380">
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="fairstart-title">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="kicker">The fair start</div>
-          <h2 id="fairstart-title">Different paces.<br>One finish.</h2>
-          <p class="lede">Scorch uses the race distance and each runner's recent pace to set start times. Slower paces start first. Faster paces chase. Everyone races the same mapped route toward the same finish.</p>
-        </div>
-        <div class="fairstart">
-          <svg viewBox="0 0 760 300" role="img" aria-label="Diagram of a fair start: three runners with different paces start at staggered times and converge on one finish line">
-            <line x1="668" y1="24" x2="668" y2="276" stroke="var(--flare)" stroke-width="3"/>
-            <rect x="676" y="24" width="8" height="8" fill="var(--flare)"/>
-            <rect x="684" y="32" width="8" height="8" fill="var(--onyx)"/>
-            <rect x="676" y="32" width="8" height="8" fill="var(--onyx)"/>
-            <rect x="684" y="24" width="8" height="8" fill="var(--flare)"/>
-            <text x="660" y="292" text-anchor="end" fill="var(--flare)" font-family="inherit" font-size="14" font-weight="700" letter-spacing="2">ONE FINISH</text>
-
-            <g>
-              <text x="40" y="52" fill="var(--smoke)" font-size="15" font-weight="700">6:15 /km</text>
-              <text x="40" y="72" fill="var(--muted)" font-size="13">Starts first &middot; 0:00</text>
-              <line x1="40" y1="96" x2="656" y2="96" stroke="var(--ember)" stroke-width="2" stroke-dasharray="2 7" opacity="0.55"/>
-              <rect x="40" y="88" width="16" height="16" fill="var(--ember)"/>
-            </g>
-
-            <g>
-              <text x="190" y="140" fill="var(--smoke)" font-size="15" font-weight="700">5:20 /km</text>
-              <text x="190" y="160" fill="var(--muted)" font-size="13">Starts +1:15</text>
-              <line x1="190" y1="184" x2="656" y2="184" stroke="var(--ember)" stroke-width="2" stroke-dasharray="2 7" opacity="0.55"/>
-              <rect x="190" y="176" width="16" height="16" fill="var(--ember)"/>
-            </g>
-
-            <g>
-              <text x="340" y="228" fill="var(--smoke)" font-size="15" font-weight="700">4:30 /km</text>
-              <text x="340" y="248" fill="var(--muted)" font-size="13">Starts +2:30 &middot; the chase</text>
-              <line x1="340" y1="272" x2="656" y2="272" stroke="var(--flare)" stroke-width="2" stroke-dasharray="2 7" opacity="0.75"/>
-              <rect x="340" y="264" width="16" height="16" fill="var(--flare)"/>
-            </g>
+        <a class="nav-cta" href="/#beta"
+          >Join the beta
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/icons.svg#arrow-up-right" /></svg
+        ></a>
+        <button
+          class="icon-button menu-toggle"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="site-links"
+          title="Open navigation"
+        >
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/icons.svg#menu" />
           </svg>
-          <ol class="fairstart-list">
-            <li class="fs-a">
-              <div class="fs-head"><span class="fs-pace">6:15 /km</span><span class="fs-when">Starts first &middot; 0:00</span></div>
-              <div class="fs-track"><span class="fs-run"></span></div>
-            </li>
-            <li class="fs-b">
-              <div class="fs-head"><span class="fs-pace">5:20 /km</span><span class="fs-when">Starts +1:15</span></div>
-              <div class="fs-track"><span class="fs-run"></span></div>
-            </li>
-            <li class="fs-c">
-              <div class="fs-head"><span class="fs-pace">4:30 /km</span><span class="fs-when">Starts +2:30 &middot; the chase</span></div>
-              <div class="fs-track"><span class="fs-run"></span></div>
-            </li>
-          </ol>
-          <p class="fs-finish">One finish</p>
+        </button>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero wrap">
+        <div class="hero-top">
+          <span class="eyebrow">Free running beta / iPhone + Android</span
+          ><a class="text-link" href="/demo/"
+            >Find your first run
+            <svg class="icon" aria-hidden="true">
+              <use href="/assets/icons.svg#arrow-right" /></svg
+          ></a>
         </div>
-        <p class="caption">Example start offsets. Start times come from race distance and each runner's recent pace.</p>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="modes-title">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="kicker">Phase 1</div>
-          <h2 id="modes-title">Three ways to run.</h2>
-        </div>
-        <div class="modes">
-          <div class="mode">
-            <div class="mode-tag">Scheduled Race</div>
-            <h3>Race live</h3>
-            <p>Race other runners live on the same mapped route. Fair starts bring different paces toward one finish.</p>
-          </div>
-          <div class="mode">
-            <div class="mode-tag">Anytime Run</div>
-            <h3>Run private</h3>
-            <p>Run a mapped route privately when it suits you, then come back and chase your route best.</p>
-          </div>
-          <div class="mode">
-            <div class="mode-tag">Weekly Challenge<span class="badge-planned">Planned</span></div>
-            <h3>Coming next</h3>
-            <p>One route, one Sunday deadline, one shared leaderboard. A clearly labeled next step &mdash; not available yet.</p>
+        <h1>SCORCH<span class="brand-period">.</span></h1>
+        <div class="hero-bottom">
+          <p class="hero-line">Race others.<br />Chase your best.</p>
+          <div class="hero-purpose">
+            <p>
+              Run solo or bring your people.<br />Start together, or let your
+              pace set the chase.
+            </p>
+            <a class="button primary" href="#beta"
+              >Join the beta
+              <svg class="icon" aria-hidden="true">
+                <use href="/assets/icons.svg#arrow-up-right" /></svg
+            ></a>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="live-title">
-      <div class="wrap">
-        <div class="story">
-          <div class="story-copy">
-            <div class="kicker">Live race</div>
-            <h2 id="live-title">Follow the chase live.</h2>
-            <ul class="story-points">
-              <li>The mapped route and your progress stay in view while you run.</li>
-              <li>The live gap tells you exactly how far the leader is &mdash; and when you're closing.</li>
-              <li>Useful signal warnings when GPS gets rough, instead of silent errors.</li>
-            </ul>
-            <div class="cta-row">
-              <a class="btn btn-ghost" href="/demo/">See the full demo</a>
+      </section>
+      <section
+        class="race-demo wrap"
+        aria-labelledby="demo-title"
+        data-race-demo
+      >
+        <div class="demo-toolbar">
+          <div>
+            <span class="eyebrow">One course. Two ways to race.</span>
+            <h2 id="demo-title">Different paces. A shared finish.</h2>
+          </div>
+          <div class="segmented" role="group" aria-label="Race start style">
+            <button data-mode="fair" aria-pressed="true">Fair start</button
+            ><button data-mode="same" aria-pressed="false">Same start</button>
+          </div>
+        </div>
+        <p class="demo-explanation" id="demo-explanation">
+          The steadier runner starts first. The faster runner waits, then
+          chases.
+        </p>
+        <div
+          class="course"
+          role="img"
+          aria-label="Example five-kilometre race. In fair start, the 5:00 per kilometre runner starts five minutes before the 4:00 per kilometre runner."
+        >
+          <div class="course-axis">
+            <span>Start <b>0 km</b></span
+            ><span>Same route <b>5 km</b></span
+            ><span
+              ><svg class="icon" aria-hidden="true">
+                <use href="/assets/icons.svg#flag" />
+              </svg>
+              Finish</span
+            >
+          </div>
+          <div class="runner-lane steady">
+            <div class="runner-label">
+              <span><i></i>Steady <small>5:00/km</small></span
+              ><span data-start="steady">8:00 AM</span>
             </div>
-          </div>
-          <div class="story-visual">
-            <div class="phone">
-              <div class="phone-notch"></div>
-              <div class="screen">
-                <div class="screen-kicker">Live race &middot; Open Route 5K</div>
-                <h4>Race the gap</h4>
-                <div class="map">
-                  <svg viewBox="0 0 280 190" role="img" aria-label="Mapped route with two runners: the leader ahead and you chasing">
-                    <g fill="rgba(244,239,233,0.07)">
-                      <rect x="24" y="22" width="4" height="4"/><rect x="84" y="34" width="4" height="4"/><rect x="150" y="20" width="4" height="4"/><rect x="216" y="40" width="4" height="4"/><rect x="252" y="90" width="4" height="4"/><rect x="30" y="98" width="4" height="4"/><rect x="96" y="150" width="4" height="4"/><rect x="180" y="160" width="4" height="4"/><rect x="240" y="150" width="4" height="4"/><rect x="60" y="66" width="4" height="4"/>
-                    </g>
-                    <path d="M36 152 L36 84 L92 84 L92 40 L188 40 L188 92 L244 92 L244 148 L148 148 L148 120"
-                      fill="none" stroke="var(--ember)" stroke-width="4" stroke-linejoin="miter" opacity="0.9"/>
-                    <rect x="30" y="146" width="12" height="12" fill="var(--flare)"/>
-                    <rect x="142" y="114" width="12" height="12" fill="var(--smoke)"/>
-                    <rect x="182" y="86" width="12" height="12" fill="var(--flare)"/>
-                    <text x="152" y="110" fill="var(--smoke)" font-size="11" font-weight="700">YOU</text>
-                    <text x="198" y="96" fill="var(--flare)" font-size="11" font-weight="700">LEADER</text>
-                  </svg>
-                </div>
-                <div class="stat-row hot"><span>Gap to leader</span><strong>+0:12</strong></div>
-                <div class="stat-row"><span>Route progress</span><strong>3.2 / 5.0 km</strong></div>
-                <div class="stat-row"><span class="chip chip-hot"><span class="live-dot"></span>Live</span><span class="chip chip-ok">GPS strong</span><span class="chip chip-dim">4:58 /km</span></div>
-                <div class="tabbar"><span class="on">Home</span><span>Explore</span><span>Create</span><span>Profile</span></div>
+            <div class="track">
+              <div class="track-fill" data-fill="steady"></div>
+              <div class="runner" data-runner="steady">
+                <svg class="icon" aria-hidden="true">
+                  <use href="/assets/icons.svg#footprints" />
+                </svg>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="finish-title">
-      <div class="wrap">
-        <div class="story flip">
-          <div class="story-visual">
-            <div class="results" role="img" aria-label="Example race results: first and second place ready, third place under review">
-              <div class="result-row"><strong>1st &middot; Ayla K.</strong><span>21:58 &middot; Result ready</span></div>
-              <div class="result-row"><strong>2nd &middot; You</strong><span>22:41 &middot; Result ready</span></div>
-              <div class="result-row"><strong>3rd &middot; Dario M.</strong><span>Result under review</span></div>
-              <div class="result-row"><span>Finish confidence</span><strong>High</strong></div>
+            <div class="runner-meta">
+              <span data-state="steady">Ready at the start</span
+              ><span data-distance="steady">0.00 km</span>
             </div>
           </div>
-          <div class="story-copy">
-            <div class="kicker">The finish</div>
-            <h2 id="finish-title">Understand the result.</h2>
-            <ul class="story-points">
-              <li>Scorch saves the finish when route progress and the GPS signal agree.</li>
-              <li>Reviewed results separate final rank from raw finish order.</li>
-              <li>When a result is under review, the reason is explained in plain language.</li>
-              <li>Save the race to Apple Health, or as a FIT or GPX file to upload to Strava or Garmin Connect.</li>
-            </ul>
+          <div class="runner-lane fast">
+            <div class="runner-label">
+              <span><i></i>Faster <small>4:00/km</small></span
+              ><span data-start="fast">8:05 AM</span>
+            </div>
+            <div class="track">
+              <div class="track-fill" data-fill="fast"></div>
+              <div class="runner" data-runner="fast">
+                <svg class="icon" aria-hidden="true">
+                  <use href="/assets/icons.svg#footprints" />
+                </svg>
+              </div>
+            </div>
+            <div class="runner-meta">
+              <span data-state="fast">Waiting for their start</span
+              ><span data-distance="fast">0.00 km</span>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="cta-band" aria-labelledby="cta-title">
-      <div class="kicker">Run the pilot</div>
-      <h2 id="cta-title">Ready to race anyone?</h2>
-      <p>Request TestFlight access and tell us your city. Pilot places are limited while we build each local field.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="mailto:support@scorchapp.xyz?subject=Scorch%20TestFlight%20Pilot&amp;body=Hi%20Scorch%20team%2C%0A%0AI%27d%20like%20TestFlight%20access%20for%20the%20Scorch%20running%20pilot.%0A%0AName%3A%0ACity%3A">Request TestFlight Access</a>
-      </div>
-      <p class="fine">Free &middot; Run-only &middot; iPhone &middot; Unofficial community races</p>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <img src="/assets/mark.png" alt="" width="34" height="34">
-        <div>
-          <strong>Scorch</strong>
-          <span>Race anyone. Your pace sets your start.</span>
+        <div class="demo-bottom">
+          <div class="transport">
+            <button
+              class="icon-button"
+              data-play
+              aria-label="Play race example"
+              title="Play race example"
+            >
+              <svg class="icon" aria-hidden="true">
+                <use href="/assets/icons.svg#play" />
+              </svg></button
+            ><button
+              class="icon-button"
+              data-replay
+              aria-label="Replay race example"
+              title="Replay race example"
+            >
+              <svg class="icon" aria-hidden="true">
+                <use href="/assets/icons.svg#rotate-ccw" />
+              </svg></button
+            ><span class="demo-clock" data-clock>8:00 AM</span>
+          </div>
+          <p data-outcome aria-live="polite">
+            A 5-minute head start. No shortcut.
+          </p>
+          <span class="example-note">Illustration, not live race data</span>
         </div>
+        <noscript
+          ><p>
+            Fair start: Steady starts at 8:00 AM and Faster at 8:05 AM. Same
+            start: both start at 8:00 AM. Actual results depend on the run.
+          </p></noscript
+        >
+      </section>
+      <section class="band pathways">
+        <div class="wrap">
+          <div class="section-heading">
+            <span class="eyebrow">Make your first move</span>
+            <h2>Your run. Your kind of competition.</h2>
+          </div>
+          <div class="path-grid">
+            <a class="path-item" href="/demo/#solo"
+              ><span class="path-icon ember"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="/assets/icons.svg#footprints" /></svg
+              ></span>
+              <h3>
+                Run solo
+                <svg class="icon" aria-hidden="true">
+                  <use href="/assets/icons.svg#arrow-up-right" />
+                </svg>
+              </h3>
+              <p>
+                Just run. Set a time goal. Or race a previous effort on the same
+                route.
+              </p>
+              <span class="fine">No pace needed to Just run.</span></a
+            >
+            <a class="path-item" href="/demo/#race"
+              ><span class="path-icon cyan"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="/assets/icons.svg#users-round" /></svg
+              ></span>
+              <h3>
+                Race others
+                <svg class="icon" aria-hidden="true">
+                  <use href="/assets/icons.svg#arrow-up-right" />
+                </svg>
+              </h3>
+              <p>
+                Find a race or open a friend's invitation. Same route. One
+                finish.
+              </p>
+              <span class="fine">Fair start or Same start.</span></a
+            >
+            <a class="path-item" href="/demo/#host"
+              ><span class="path-icon amber"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="/assets/icons.svg#flag" /></svg
+              ></span>
+              <h3>
+                Organize a race
+                <svg class="icon" aria-hidden="true">
+                  <use href="/assets/icons.svg#arrow-up-right" />
+                </svg>
+              </h3>
+              <p>
+                Pick a route, set a time, invite your runners. Race too, or just
+                host.
+              </p>
+              <span class="fine">One friend is a starting field.</span></a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="band product-proof" id="in-the-app">
+        <div class="wrap">
+          <div class="section-heading">
+            <span class="eyebrow">From the start to the story</span>
+            <h2>
+              A chase you can follow.<br />A finish worth coming back for.
+            </h2>
+            <p>
+              Know your start. See course progress. When your result is final,
+              share it or propose a rematch.
+            </p>
+          </div>
+          <div class="proof-grid">
+            <figure>
+              <div class="component-capture" style="--capture-ratio: 880 / 1053">
+                <img
+                  src="/assets/product/start-line.png"
+                  width="880"
+                  height="1053"
+                  loading="lazy"
+                  alt="Scorch Start readiness with personal start time, location permissions and runner start times."
+                />
+              </div>
+              <figcaption>
+                <b>Know when you go.</b>Your own start time and recording
+                readiness in one place.
+              </figcaption>
+            </figure>
+            <figure>
+              <div class="component-capture" style="--capture-ratio: 880 / 739">
+                <img
+                  src="/assets/product/field-progress.png"
+                  width="880"
+                  height="739"
+                  loading="lazy"
+                  alt="Scorch Course progress distinguishes on-course runners, last known positions and missing locations."
+                />
+              </div>
+              <figcaption>
+                <b>Follow the field.</b>Estimated course positions, with stale
+                or missing data called out.
+              </figcaption>
+            </figure>
+            <figure>
+              <div class="component-capture" style="--capture-ratio: 880 / 1330">
+                <img
+                  src="/assets/product/finish.png"
+                  width="880"
+                  height="1330"
+                  loading="lazy"
+                  alt="Scorch Final result with second place, race time, gap, rematch action and sharing."
+                />
+              </div>
+              <figcaption>
+                <b>Leave with a next run.</b>A final result, a shareable moment,
+                a reason for a rematch.
+              </figcaption>
+            </figure>
+          </div>
+          <p class="fine">
+            Current app components with illustrative data. These are not live
+            races or full-device screenshots. Race results may remain under
+            review before becoming final.
+          </p>
+        </div>
+      </section>
+      <section class="band">
+        <div class="wrap compact-band">
+          <div>
+            <span class="eyebrow">Your effort goes with you</span>
+            <h2>Save the run. Keep the story.</h2>
+            <p>
+              Save workout sends an eligible finish to Apple Health on iPhone in
+              enabled builds. Export a finished race as FIT or GPX for manual
+              upload to Strava or Garmin Connect.
+            </p>
+            <p class="fine">
+              Health Connect is under Android testing and is not enabled in the
+              production profile. No automatic third-party sync.
+            </p>
+          </div>
+          <a class="text-link" href="/support/#saving"
+            >Saving &amp; compatibility
+            <svg class="icon" aria-hidden="true">
+              <use href="/assets/icons.svg#arrow-right" /></svg
+          ></a>
+        </div>
+      </section>
+      <section class="band beta" id="beta">
+        <div class="wrap">
+          <span class="eyebrow">The next starting line is yours</span>
+          <h2>Come run with us.</h2>
+          <p>
+            Scorch is in free beta on iPhone and Android. Request access for
+            your device; we will send the testing instructions.
+          </p>
+          <div class="actions">
+            <a
+              class="button primary"
+              href="mailto:support@scorchapp.xyz?subject=Scorch%20iPhone%20beta%20access"
+              >Request iPhone access
+              <svg class="icon" aria-hidden="true">
+                <use href="/assets/icons.svg#arrow-up-right" /></svg></a
+            ><a
+              class="button secondary"
+              href="mailto:support@scorchapp.xyz?subject=Scorch%20Android%20beta%20access"
+              >Request Android access
+              <svg class="icon" aria-hidden="true">
+                <use href="/assets/icons.svg#arrow-up-right" /></svg
+            ></a>
+          </div>
+          <p class="fine">
+            iPhone testing uses TestFlight. Android testing uses Google Play
+            internal testing. Access is by invitation, not a public store
+            launch.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="wrap footer-main">
+        <a class="brand" href="/"
+          ><img src="/assets/mark.png" width="36" height="36" alt="" />SCORCH</a
+        >
+        <p>Race others. Chase your best.</p>
+        <nav aria-label="Footer">
+          <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a
+          ><a href="/support/">Support</a><a href="/privacy/">Privacy</a
+          ><a href="/terms/">Terms</a>
+        </nav>
       </div>
-      <div class="foot-col">
-        <h4>Explore</h4>
-        <a href="/demo/">How It Works</a>
-        <a href="/pilot-routes/">Pilot Routes</a>
-        <a href="/support/">Support</a>
+      <div class="wrap footer-note">
+        <span>&copy; 2026 Scorch</span
+        ><span>Free running beta. Unofficial community challenges.</span>
       </div>
-      <div class="foot-col">
-        <h4>Contact &amp; Legal</h4>
-        <a href="mailto:support@scorchapp.xyz">support@scorchapp.xyz</a>
-        <a href="mailto:legal@scorchapp.xyz">legal@scorchapp.xyz</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="/terms/">Terms</a>
-      </div>
-    </div>
-    <div class="foot-note">
-      <div>
-        <span>&copy; 2026 Scorch</span>
-        <span>Scorch races are unofficial community challenges.</span>
-      </div>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
