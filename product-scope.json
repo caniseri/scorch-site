@@ -1,0 +1,61 @@
+{
+  "reviewed": "2026-09-28",
+  "distribution": "Invitation-only beta; request platform access. Do not infer installed-build availability from production flags.",
+  "capabilities": [
+    {
+      "name": "Just run",
+      "state": "implemented",
+      "scope": "Time and distance without a preset route or pace; stored on the phone."
+    },
+    {
+      "name": "Solo targets",
+      "state": "implemented",
+      "scope": "Mapped-route finish-time goal or eligible previous effort on the same course and direction."
+    },
+    {
+      "name": "Fair start",
+      "state": "implemented",
+      "scope": "Pace-adjusted personal start; recent 5K pace required."
+    },
+    {
+      "name": "Same start",
+      "state": "implemented",
+      "scope": "No pace needed when unrestricted; pace-limited entries still require pace."
+    },
+    {
+      "name": "Hosting",
+      "state": "implemented",
+      "scope": "Host only or host and race. Unstarted races have a 48-hour late-start grace period; rescheduling remains possible later."
+    },
+    {
+      "name": "Calendar",
+      "state": "implemented",
+      "scope": "Google Calendar draft or ICS export; not automatic calendar updates or Garmin Calendar integration."
+    },
+    {
+      "name": "Apple Health export",
+      "state": "production-config-enabled",
+      "scope": "Optional eligible finished races and Just runs; availability depends on installed beta."
+    },
+    {
+      "name": "Health Connect export",
+      "state": "development-only",
+      "scope": "Disabled in production configuration pending Android release work."
+    },
+    {
+      "name": "FIT and GPX export",
+      "state": "production-config-enabled",
+      "scope": "Finished race files for manual upload; no automatic Garmin or Strava publishing."
+    },
+    {
+      "name": "Milestones",
+      "state": "implemented",
+      "scope": "Private progress milestones; not a public badge leaderboard."
+    },
+    {
+      "name": "Paid races, payouts, Weekly and rides",
+      "state": "not-promoted",
+      "scope": "Not part of the current free running beta promise."
+    }
+  ]
+}

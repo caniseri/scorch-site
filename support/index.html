@@ -1,89 +1,256 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Scorch Support</title>
-  <meta name="description" content="Support for Scorch athletes and race creators.">
-  <meta name="theme-color" content="#080808">
-  <link rel="canonical" href="https://scorchapp.xyz/support/">
-  <link rel="icon" href="/assets/icon.png">
-  <link rel="apple-touch-icon" href="/assets/icon.png">
-  <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/urbanist-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/space-grotesk-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20260719b">
-</head>
-<body>
-  <header class="header">
-    <nav class="nav" aria-label="Main">
-      <a class="brand" href="/"><img src="/assets/mark.png" alt="" width="28" height="28">Scorch</a>
-      <div class="links">
-        <a href="/demo/">How It Works</a>
-        <a href="/pilot-routes/">Pilot Routes</a>
-        <a href="/support/" aria-current="page">Support</a>
-      </div>
-      <a class="nav-cta" href="mailto:support@scorchapp.xyz?subject=Scorch%20TestFlight%20Pilot&amp;body=Hi%20Scorch%20team%2C%0A%0AI%27d%20like%20TestFlight%20access%20for%20the%20Scorch%20running%20pilot.%0A%0AName%3A%0ACity%3A">TestFlight</a>
-    </nav>
-  </header>
-
-  <main>
-    <div class="wrap">
-      <header class="page-head">
-        <div class="kicker">Support</div>
-        <h1>Help us make <span class="hot">race day solid.</span></h1>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Scorch Support | Beta, recording and saving</title>
+    <meta
+      name="description"
+      content="Help with the Scorch iPhone and Android beta, race starts, recording, workout exports and account support."
+    />
+    <meta name="theme-color" content="#090A0D" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="canonical" href="https://scorchapp.xyz/support/" />
+    <meta
+      property="og:title"
+      content="Scorch Support | Beta, recording and saving"
+    />
+    <meta
+      property="og:description"
+      content="Help with the Scorch iPhone and Android beta, race starts, recording, workout exports and account support."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://scorchapp.xyz/support/" />
+    <meta property="og:image" content="https://scorchapp.xyz/assets/icon.png" />
+    <link rel="icon" href="/assets/icon.png" />
+    <link rel="apple-touch-icon" href="/assets/icon.png" />
+    <link
+      rel="preload"
+      href="/assets/fonts/urbanist-latin-900-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/styles.css?v=20260928" />
+    <script src="/site.mjs?v=20260928" type="module"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="header">
+      <nav class="nav wrap" aria-label="Main">
+        <a class="brand" href="/" aria-label="Scorch home"
+          ><img src="/assets/mark.png" width="40" height="40" alt="" />SCORCH</a
+        >
+        <div class="links" id="site-links">
+          <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a
+          ><a href="/support/">Support</a>
+        </div>
+        <a class="nav-cta" href="/#beta"
+          >Join the beta
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/icons.svg#arrow-up-right" /></svg
+        ></a>
+        <button
+          class="icon-button menu-toggle"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="site-links"
+          title="Open navigation"
+        >
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/icons.svg#menu" />
+          </svg>
+        </button>
+      </nav>
+    </header>
+    <main id="main">
+      <header class="page-head wrap">
+        <span class="eyebrow">Support</span>
+        <h1>Keep your next run simple.</h1>
+        <p>
+          For help, include your device model, iOS or Android version, Scorch
+          build number, and the screen where it happened.
+        </p>
+        <a class="button primary" href="mailto:support@scorchapp.xyz"
+          >Contact support
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/icons.svg#arrow-up-right" /></svg
+        ></a>
+        <p class="fine">
+          Do not email passwords, authentication codes or location traces.
+        </p>
       </header>
-
-      <div class="notice">
-        <h3>Contact</h3>
-        <p>Email <a href="mailto:support@scorchapp.xyz">support@scorchapp.xyz</a> for account issues, GPS problems, Mapbox rendering, route setup, finish detection, notifications, crashes, or feedback.</p>
-      </div>
-
-      <section class="legal-section prose">
-        <h2>What to include</h2>
-        <div class="legal-grid">
-          <article><h3>Race context</h3><p>Race name, route, start time, and what you expected to happen.</p></article>
-          <article><h3>Device context</h3><p>iPhone model, iOS version, app build, location permission state, and whether the screen was locked.</p></article>
-          <article><h3>Diagnostics</h3><p>If available, attach a field log/export from Scorch after the issue occurs.</p></article>
+      <section class="band">
+        <div class="wrap faq">
+          <h2>Before you run</h2>
+          <details open>
+            <summary>How do I get the beta?</summary>
+            <p>
+              Request iPhone or Android access from the
+              <a href="/#beta">beta section</a>. iPhone uses TestFlight; Android
+              uses a Google Play internal-testing invitation. Builds and access
+              can differ by testing group.
+            </p>
+          </details>
+          <details>
+            <summary>Do I need to know my pace?</summary>
+            <p>
+              No pace is needed for Just run or an unrestricted Same start race.
+              Fair start and pace-limited races require a recent 5K pace. You
+              can open an invitation and inspect the race before entering one.
+            </p>
+          </details>
+          <details>
+            <summary>Can I run without a preset route?</summary>
+            <p>
+              Yes. Just run records time and distance without a mapped course.
+              You can also draw a private route. A time-goal or previous-effort
+              chase uses a mapped route; not every historical run is eligible.
+            </p>
+          </details>
+          <details>
+            <summary>Can I organize without racing?</summary>
+            <p>
+              Yes. Choose host only when organizing a free scheduled race. You
+              still manage the start and any remaining result review.
+            </p>
+          </details>
+          <details>
+            <summary>What if the scheduled time passes?</summary>
+            <p>
+              If the race has never started, the host can still start it within
+              the 48-hour grace period, or reschedule or cancel. After 48 hours,
+              reschedule before starting. Do not assume your original calendar
+              copy has changed.
+            </p>
+          </details>
+          <details>
+            <summary>What should I check before locking my screen?</summary>
+            <p>
+              Complete the app's location and recording-readiness checks.
+              Background recording depends on device permissions and
+              operating-system settings. Keep the app installed and your phone
+              charged. If recording stops or a result looks incomplete, contact
+              support.
+            </p>
+          </details>
         </div>
       </section>
-
-      <section class="legal-section prose">
-        <h2>Data deletion and legal requests</h2>
-        <p>For privacy, legal, or deletion requests, email <a href="mailto:legal@scorchapp.xyz">legal@scorchapp.xyz</a>.</p>
-      </section>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <img src="/assets/mark.png" alt="" width="34" height="34">
-        <div>
-          <strong>Scorch</strong>
-          <span>Race anyone. Your pace sets your start.</span>
+      <section class="band" id="saving">
+        <div class="wrap">
+          <span class="eyebrow">Saving &amp; compatibility</span>
+          <h2>Your data, on your terms.</h2>
+          <div class="compatibility">
+            <article>
+              <h3>
+                <svg class="icon" aria-hidden="true">
+                  <use href="/assets/icons.svg#smartphone" />
+                </svg>
+                Apple Health
+              </h3>
+              <p>
+                Optional saving of finished races and Just runs on iPhone in
+                enabled builds. Permission is requested when needed.
+              </p>
+              <span class="status">Enabled in production configuration</span>
+            </article>
+            <article>
+              <h3>
+                <svg class="icon" aria-hidden="true">
+                  <use href="/assets/icons.svg#shield-check" />
+                </svg>
+                Health Connect
+              </h3>
+              <p>
+                Optional Android workout saving is under testing. It is not
+                enabled in the current production profile.
+              </p>
+              <span class="status">Development testing only</span>
+            </article>
+            <article>
+              <h3>
+                <svg class="icon" aria-hidden="true">
+                  <use href="/assets/icons.svg#download" />
+                </svg>
+                FIT &amp; GPX files
+              </h3>
+              <p>
+                Export an eligible finished race and manually upload the file to
+                Strava or Garmin Connect. This is not automatic synchronization.
+              </p>
+              <span class="status">Enabled in production configuration</span>
+            </article>
+            <article>
+              <h3>
+                <svg class="icon" aria-hidden="true">
+                  <use href="/assets/icons.svg#calendar-plus" />
+                </svg>
+                Your calendar
+              </h3>
+              <p>
+                Add a race with a Google Calendar draft or a standard calendar
+                file for compatible calendars, including Apple Calendar. Add an
+                updated copy after a schedule change.
+              </p>
+              <span class="status"
+                >No live sync or Garmin Calendar integration</span
+              >
+            </article>
+          </div>
+          <p class="fine">
+            Configuration is not a guarantee that your installed beta already
+            includes a feature. Check your build or ask support. Read our
+            <a href="/privacy/">privacy policy</a> for workout and location
+            handling.
+          </p>
         </div>
+      </section>
+      <section class="band">
+        <div class="wrap faq">
+          <h2>Results &amp; accounts</h2>
+          <details>
+            <summary>Why is my result under review?</summary>
+            <p>
+              A recorded finish may still need route, recording or host review.
+              Scorch distinguishes recorded and final results. Live positions
+              and gaps are estimates, not final standings.
+            </p>
+          </details>
+          <details>
+            <summary>How do I request deletion or privacy help?</summary>
+            <p>
+              Email
+              <a href="mailto:legal@scorchapp.xyz">legal@scorchapp.xyz</a> for
+              access, correction or deletion requests. Workouts you saved to
+              another service stay there until you remove them there.
+            </p>
+          </details>
+          <details>
+            <summary>Are there paid races or prizes?</summary>
+            <p>
+              No. The current running beta is free. Paid races, payouts and
+              prizes are disabled.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="wrap footer-main">
+        <a class="brand" href="/"
+          ><img src="/assets/mark.png" width="36" height="36" alt="" />SCORCH</a
+        >
+        <p>Race others. Chase your best.</p>
+        <nav aria-label="Footer">
+          <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a
+          ><a href="/support/">Support</a><a href="/privacy/">Privacy</a
+          ><a href="/terms/">Terms</a>
+        </nav>
       </div>
-      <div class="foot-col">
-        <h4>Explore</h4>
-        <a href="/demo/">How It Works</a>
-        <a href="/pilot-routes/">Pilot Routes</a>
-        <a href="/support/">Support</a>
+      <div class="wrap footer-note">
+        <span>&copy; 2026 Scorch</span
+        ><span>Free running beta. Unofficial community challenges.</span>
       </div>
-      <div class="foot-col">
-        <h4>Contact &amp; Legal</h4>
-        <a href="mailto:support@scorchapp.xyz">support@scorchapp.xyz</a>
-        <a href="mailto:legal@scorchapp.xyz">legal@scorchapp.xyz</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="/terms/">Terms</a>
-      </div>
-    </div>
-    <div class="foot-note">
-      <div>
-        <span>&copy; 2026 Scorch</span>
-        <span>Scorch races are unofficial community challenges.</span>
-      </div>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
