@@ -32,7 +32,7 @@
       <header class="page-head">
         <div class="kicker">Privacy Policy</div>
         <h1>Scorch Privacy Policy</h1>
-        <p class="lede">Last updated: July 4, 2026. This policy explains how Scorch collects, uses, and protects information when you use the app and website.</p>
+        <p class="lede">Last updated: September 28, 2026. This policy explains how Scorch collects, uses, and protects information when you use the app and website.</p>
       </header>
 
       <div class="notice">
@@ -45,23 +45,36 @@
         <div class="legal-grid">
           <article><h3>Account</h3><p>Email, optional display or race name, preferences, and authentication identifiers.</p></article>
           <article><h3>Race data</h3><p>Race entries, routes, telemetry, precise GPS during active races, finish confidence, in-app results, and recaps.</p></article>
-          <article><h3>Fitness signals</h3><p>Run pace, imported activities, optional heart-rate/cadence signals, and integrity review events. Apple Health matching is not enabled in the default launch build.</p></article>
+          <article><h3>Fitness signals</h3><p>Run pace, imported activities, optional heart-rate/cadence signals, and integrity review events. Apple Health evidence matching is not enabled in the default launch build. Saving workouts to Apple Health or Health Connect is described below.</p></article>
         </div>
       </section>
 
       <section class="legal-section prose">
         <h2>Location</h2>
-        <p>Scorch uses location for nearby race discovery, live route progress, finish detection, and integrity review. During an active race, Scorch may continue collecting location while the app is in the background or the screen is locked if you grant permission.</p>
+        <p>Scorch uses location for nearby race discovery, live route progress, finish detection, integrity review, and measuring the distance of a Just run. During an active race or Just run, Scorch may continue collecting location while the app is in the background or the screen is locked if you grant permission. Just runs stay on your phone: Scorch doesn't upload their location, time or distance.</p>
       </section>
 
       <section class="legal-section prose">
         <h2>How we use data</h2>
-        <p>We use data to operate races, discover nearby public races, calculate staggered starts, upload telemetry, detect finishes, verify integrity, notify users, provide support, and improve reliability.</p>
+        <p>We use data to operate races, discover nearby public races, calculate staggered starts, upload telemetry, detect finishes, verify integrity, notify users, save workouts and create workout files when you ask, provide support, and improve reliability.</p>
       </section>
 
-      <section class="legal-section prose">
+      <section class="legal-section prose" id="apple-health">
         <h2>Apple Health</h2>
-        <p>Apple Health evidence matching is disabled in the default closed TestFlight release candidate. If Scorch later creates a separate permissioned Apple Health build, it will request Apple Health access only after the athlete chooses to grant permission.</p>
+        <p>If you choose to, Scorch saves your finished races and Just runs to Apple Health as workouts. Each workout includes its time, distance, name and a one-line summary. A race's workout also includes the route and any heart rate Scorch recorded during the race. When Apple Health has your weight, the workout includes an estimate of calories burned. Scorch reads only your weight from Apple Health, on your iPhone, to make that estimate, and checks for workouts it saved itself so that it doesn't save a run twice.</p>
+        <p>Scorch doesn't send Apple Health data to its servers, doesn't sell or share it, and doesn't use it for advertising or marketing. You can turn off Scorch's access in the Health app or in Settings at any time. Workouts Scorch saved stay in Apple Health until you delete them there.</p>
+        <p>Apple Health evidence matching for race integrity is not enabled. If Scorch adds it later, it will ask for your permission first.</p>
+      </section>
+
+      <section class="legal-section prose" id="health-connect">
+        <h2>Health Connect</h2>
+        <p>On Android, if you choose to, Scorch saves your finished races and Just runs to Health Connect as exercises. Each exercise includes its time, distance, name and a one-line summary. A race's exercise also includes the route and any heart rate Scorch recorded during the race. When you enter your weight in Scorch, the exercise includes an estimate of calories burned. Scorch only writes to Health Connect and never reads data from it. The weight you enter is kept on your phone and isn't sent to Scorch.</p>
+        <p>Scorch doesn't send Health Connect data to its servers, doesn't sell or share it, and doesn't use it for advertising or marketing. You can remove Scorch's access in Health Connect at any time. Exercises Scorch saved stay in Health Connect until you delete them there.</p>
+      </section>
+
+      <section class="legal-section prose" id="workout-files">
+        <h2>Workout files</h2>
+        <p>When you ask for one, Scorch creates a FIT or GPX file of a finished race from its recording: time, GPS route, distance and any heart rate recorded. The file comes to your phone, and you choose where to save or share it, for example to upload it to Strava or Garmin Connect. Scorch doesn't send the file to those services, and their privacy policies apply to what you upload.</p>
       </section>
 
       <section class="legal-section prose">
