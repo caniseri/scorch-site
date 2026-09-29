@@ -2,7 +2,7 @@ import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 const appRoot = process.argv[2];
-if (!appRoot) throw new Error('Pass the local Scorch app checkout path. This check is read-only.');
+if (!appRoot) throw new Error('Pass the local Catchfire app checkout path. This check is read-only.');
 const eas = JSON.parse(await readFile(path.join(appRoot, 'eas.json'), 'utf8'));
 const env = eas.build.production.env;
 const expected = {

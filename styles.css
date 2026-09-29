@@ -313,7 +313,7 @@ h3 + p {
 }
 .hero h1 {
   font:
-    900 148px/0.96 Urbanist,
+    900 120px/0.96 Urbanist,
     Space,
     sans-serif;
   margin: 25px 0 30px;
@@ -601,8 +601,8 @@ h3 + p {
   background: var(--bg);
 }
 .component-capture img {
-  width: 200%;
-  max-width: none;
+  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 .proof-grid figcaption {
@@ -883,12 +883,12 @@ details p {
     width: min(1280px, calc(100% - 120px));
   }
   .hero h1 {
-    font-size: 164px;
+    font-size: 132px;
   }
 }
 @media (max-width: 1050px) {
   .hero h1 {
-    font-size: 120px;
+    font-size: 96px;
   }
   .hero-purpose {
     display: block;
@@ -984,7 +984,7 @@ details p {
     font-size: 11px;
   }
   .hero h1 {
-    font-size: 76px;
+    font-size: 56px;
     margin: 26px 0 24px;
   }
   .hero-line {
@@ -1173,7 +1173,7 @@ details p {
     width: calc(100% - 32px);
   }
   .hero h1 {
-    font-size: 64px;
+    font-size: 46px;
   }
   .brand {
     font-size: 22px;

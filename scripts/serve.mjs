@@ -41,5 +41,5 @@ http
     }
   })
   .listen(port, "127.0.0.1", () =>
-    console.log("Scorch site preview: http://127.0.0.1:" + port),
+    console.log("Catchfire site preview: http://127.0.0.1:" + port),
   );

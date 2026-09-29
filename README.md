@@ -1,14 +1,17 @@
-# Scorch Website
+# Catchfire Website
 
-Public deployment source for [scorchapp.xyz](https://scorchapp.xyz).
+Public deployment source for [catchfire.run](https://catchfire.run).
 
 This repository is intentionally limited to public marketing, support, legal,
 and route-preview materials. Application code, backend services, operational
-documentation, validation data, and credentials belong in the separate private
-Scorch repository.
+documentation, validation data, and credentials belong in the separate
+Catchfire repository.
 
 GitHub Pages publishes the root of `main`. The `CNAME` file binds the deployment
-to `scorchapp.xyz`.
+to `catchfire.run`. Do not merge a domain change until DNS, HTTPS and
+path/query-preserving redirects from `scorchapp.xyz` are ready. The existing
+support and legal email addresses remain in use until replacement mailboxes
+have been verified.
 
 ## Development
 

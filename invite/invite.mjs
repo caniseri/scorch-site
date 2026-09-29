@@ -187,7 +187,7 @@ function setText(id, value) {
 
 function formatRaceDate(value) {
   const date = new Date(value);
-  if (!Number.isFinite(date.getTime())) return "Start time in Scorch";
+  if (!Number.isFinite(date.getTime())) return "Start time in Catchfire";
   return new Intl.DateTimeFormat(undefined, {
     weekday: "short",
     month: "short",
@@ -204,7 +204,7 @@ function statusLabel(status) {
   if (normalized === "in_progress") return "Race in progress";
   if (normalized === "finalized" || normalized === "completed")
     return "Race complete";
-  return "View status in Scorch";
+  return "View status in Catchfire";
 }
 
 export function requiresPace(race) {
@@ -407,7 +407,7 @@ async function loadInvite() {
     const race = fixtureRace
       ? validateInviteRace(fixtureRace)
       : await fetchInvite(token, funnelId);
-    document.title = `${race.name.slice(0, 120)} | Scorch invitation`;
+    document.title = `${race.name.slice(0, 120)} | Catchfire invitation`;
     setText(
       "invite-kicker",
       sender ? `${sender} invited you` : "You're invited",
@@ -420,14 +420,14 @@ async function loadInvite() {
       "race-distance",
       Number.isFinite(distance) && distance > 0
         ? `${(distance / 1000).toFixed(1)} km`
-        : "Check in Scorch",
+        : "Check in Catchfire",
     );
     const same = race.handicap_mode === "scratch";
     const paceRequired = requiresPace(race);
     setText("race-rule", same ? "Same start" : "Fair start");
     setText(
       "race-route",
-      race.route_mapped === true ? "Mapped course" : "Check in Scorch",
+      race.route_mapped === true ? "Mapped course" : "Check in Catchfire",
     );
     setText(
       "invite-description",
@@ -445,7 +445,7 @@ async function loadInvite() {
       setText("pace-heading", "Check the pace range");
       setText(
         "pace-help",
-        "This Same start race has pace limits. Check your recent 5K pace here, or review the entry requirements in Scorch.",
+        "This Same start race has pace limits. Check your recent 5K pace here, or review the entry requirements in Catchfire.",
       );
       setText("pace-submit", "Check pace");
     }

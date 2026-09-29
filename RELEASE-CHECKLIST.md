@@ -2,7 +2,7 @@
 
 ## Source Of Truth
 
-caniseri/scorch-site owns the deployed root of scorchapp.xyz. The app repo's
+caniseri/scorch-site owns the website moving from scorchapp.xyz to catchfire.run. The app repo's
 site/ is a reference mirror, not a second publishing source. Use a feature
 branch and reviewed PR; merging main triggers GitHub Pages.
 
@@ -41,15 +41,14 @@ Use a real approved QA invitation separately for native app/auth handoff.
 
 ## Artwork Provenance
 
-The four images in assets/product/ are captures of current Scorch
+The four images in assets/product/ are captures of current Catchfire
 presentation components rendered by the local preview harness, with synthetic
 runner and result data. They are not live customer data, full native screens,
 or claims that a specific TestFlight / Play build is available.
 
-The capture tool exports the component in the top-left half of its bitmap;
-the shared component-capture styling frames that region without changing
-the component contents. Refresh all four captures together when that tool
-behavior changes.
+The four captures were refreshed together using the app preview's capture=1
+mode at 440 CSS pixels, without editing component content. Image dimensions
+and frame ratios match the actual bitmap; no 200% image scaling is needed.
 
 Icons are a vendored subset of Lucide, with its license in assets. Fonts are
 self-hosted. No third-party analytics or scripts were added.
@@ -63,5 +62,10 @@ need a pace; pace limits still do. Website previews do not reserve entry.
 No paid races, prizes, public Weekly leaderboard, automatic Garmin/Strava sync,
 automatic calendar updates, or production Health Connect are advertised.
 
-The privacy-policy body is preserved. Terms change only the product-scope
-sentence and revision date, not liability, waiver or safety clauses.
+The rebrand changes the product name and public website URLs, and adds a
+former-name continuity sentence to privacy and terms. It does not change
+data practices, liability, waiver, or safety clauses. Support and legal email
+addresses remain unchanged until new mailboxes are verified.
+
+Do not merge the CNAME cutover until catchfire.run DNS and GitHub Pages HTTPS
+are coordinated and the old domain has a path/query-preserving HTTPS redirect.
