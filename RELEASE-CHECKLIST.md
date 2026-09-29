@@ -64,8 +64,8 @@ automatic calendar updates, or production Health Connect are advertised.
 
 The rebrand changes the product name and public website URLs, and adds a
 former-name continuity sentence to privacy and terms. It does not change
-data practices, liability, waiver, or safety clauses. Support and legal email
-addresses remain unchanged until new mailboxes are verified.
+data practices, liability, waiver, or safety clauses. Public contacts now use
+support@catchfire.run and legal@catchfire.run, confirmed working by the owner.
 
 Do not merge the CNAME cutover until catchfire.run DNS and GitHub Pages HTTPS
 are coordinated and the old domain has a path/query-preserving HTTPS redirect.

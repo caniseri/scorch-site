@@ -66,8 +66,25 @@ test("old installed apps can still open invitations and production never serves 
   }
 });
 
-test("legal continuity keeps working contact addresses during the domain transition", () => {
+test("legal continuity uses the owner-confirmed Catchfire contact addresses", () => {
   assert.match(read("privacy/index.html"), /new name for Scorch/);
-  assert.match(read("privacy/index.html"), /mailto:legal@scorchapp\.xyz/);
-  assert.match(read("support/index.html"), /mailto:support@scorchapp\.xyz/);
+  assert.match(read("privacy/index.html"), /mailto:legal@catchfire\.run/);
+  assert.match(read("support/index.html"), /mailto:support@catchfire\.run/);
+  for (const path of [
+    "index.html",
+    "demo/index.html",
+    "pilot-routes/index.html",
+    "support/index.html",
+    "privacy/index.html",
+    "terms/index.html",
+  ]) {
+    const links = elements(parse(read(path)))
+      .filter((node) => node.tagName === "a")
+      .map((node) => attr(node, "href") || "")
+      .filter((href) => href.startsWith("mailto:"));
+    assert.ok(links.length > 0, path + " has a contact link");
+    for (const href of links) {
+      assert.match(href, /^mailto:(support|legal)@catchfire\.run(?:\?|$)/, path);
+    }
+  }
 });

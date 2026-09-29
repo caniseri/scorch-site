@@ -9,9 +9,8 @@ Catchfire repository.
 
 GitHub Pages publishes the root of `main`. The `CNAME` file binds the deployment
 to `catchfire.run`. Do not merge a domain change until DNS, HTTPS and
-path/query-preserving redirects from `scorchapp.xyz` are ready. The existing
-support and legal email addresses remain in use until replacement mailboxes
-have been verified.
+path/query-preserving redirects from `scorchapp.xyz` are ready. The owner has
+confirmed `support@catchfire.run` and `legal@catchfire.run` are working.
 
 ## Development
 
