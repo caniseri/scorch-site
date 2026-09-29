@@ -60,7 +60,7 @@ for (const [file, { nodes }] of documents) {
     const value = attr(node, "src") || attr(node, "href");
     if (node.tagName === "script" && value) assertLocalScript(value);
     if (!value || /^(https?:|mailto:|scorch:)/.test(value)) continue;
-    const url = new URL(value, "https://scorchapp.xyz/" + file);
+    const url = new URL(value, "https://catchfire.run/" + file);
     const target = url.pathname.endsWith("/")
       ? url.pathname.slice(1) + "index.html"
       : url.pathname.slice(1);

@@ -312,37 +312,20 @@ h3 + p {
   color: var(--cyan);
 }
 .hero h1 {
-  font:
-    900 148px/0.96 Urbanist,
-    Space,
-    sans-serif;
-  margin: 25px 0 30px;
-}
-.brand-period {
-  color: var(--ember);
-}
-.hero-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 32px;
-}
-.hero-line {
-  font-size: 36px;
-  line-height: 1.15;
+  font-size: 56px;
+  line-height: 1.08;
   font-weight: 700;
-  color: var(--text);
+  margin: 24px 0 18px;
 }
 .hero-purpose {
-  display: flex;
-  align-items: center;
-  gap: 28px;
+  max-width: 52ch;
 }
 .hero-purpose p {
   font-size: 16px;
   line-height: 1.6;
 }
 .hero-purpose .button {
+  margin-top: 24px;
   white-space: nowrap;
 }
 .race-demo {
@@ -601,8 +584,8 @@ h3 + p {
   background: var(--bg);
 }
 .component-capture img {
-  width: 200%;
-  max-width: none;
+  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 .proof-grid figcaption {
@@ -882,23 +865,8 @@ details p {
   .wrap {
     width: min(1280px, calc(100% - 120px));
   }
-  .hero h1 {
-    font-size: 164px;
-  }
 }
 @media (max-width: 1050px) {
-  .hero h1 {
-    font-size: 120px;
-  }
-  .hero-purpose {
-    display: block;
-  }
-  .hero-purpose .button {
-    margin-top: 18px;
-  }
-  .hero-line {
-    font-size: 34px;
-  }
   .compact-band {
     display: block;
   }
@@ -984,23 +952,11 @@ details p {
     font-size: 11px;
   }
   .hero h1 {
-    font-size: 76px;
-    margin: 26px 0 24px;
-  }
-  .hero-line {
-    font-size: 29px;
-  }
-  .hero-bottom {
-    display: block;
-  }
-  .hero-purpose {
-    margin-top: 22px;
+    font-size: 40px;
+    margin: 22px 0 16px;
   }
   .hero-purpose p {
     font-size: 15px;
-  }
-  .hero-purpose p br {
-    display: none;
   }
   .hero-purpose .button {
     margin-top: 20px;
@@ -1173,7 +1129,7 @@ details p {
     width: calc(100% - 32px);
   }
   .hero h1 {
-    font-size: 64px;
+    font-size: 36px;
   }
   .brand {
     font-size: 22px;
@@ -1184,9 +1140,6 @@ details p {
   }
   .nav {
     gap: 8px;
-  }
-  .hero-line {
-    font-size: 27px;
   }
   .runner-label > span:first-child {
     gap: 6px;
