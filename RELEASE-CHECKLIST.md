@@ -55,8 +55,21 @@ self-hosted. No third-party analytics or scripts were added.
 
 ## Scope Limits
 
-The diagram illustrates constant example paces, not race predictions, GPS
-positions or a guarantee of equal finishes. Unrestricted Same start does not
+The flame chase uses fictional runners and per-kilometre splits, not race
+predictions, GPS positions or a guarantee of equal finishes. It explains the
+leader; it does not advertise a shipped native flame-tracking feature. The
+homepage has a compact replay; How It Works adds chapters and finish results.
+The flame changes only on a lead change and stays with the first finisher.
+Individual run times do not determine fair-start placing.
+
+Check that both modes finish, replay resets, offscreen/hidden tabs pause,
+reduced motion disables autoplay, and chapter controls work by keyboard.
+The three names, colors and initials must stay constant across lead changes.
+No third-party scripts, artwork or fonts were added; the existing owned mark
+and site assets are reused. The provided flame-chase prototype informed the
+fictional splits and sequence, not the page layout or embedded asset payloads.
+
+Unrestricted Same start does not
 need a pace; pace limits still do. Website previews do not reserve entry.
 
 No paid races, prizes, public Weekly leaderboard, automatic Garmin/Strava sync,
