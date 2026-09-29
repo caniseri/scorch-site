@@ -9,6 +9,23 @@ const read = (path) =>
 const elements = (node) => [node, ...(node.childNodes || []).flatMap(elements)];
 const attr = (node, name) => node.attrs?.find((a) => a.name === name)?.value;
 
+test("home introduces the running offer without a second brand headline", () => {
+  const nodes = elements(parse(read("index.html")));
+  const headlines = nodes.filter((node) => node.tagName === "h1");
+  assert.equal(headlines.length, 1);
+  const text = elements(headlines[0])
+    .filter((node) => node.nodeName === "#text")
+    .map((node) => node.value)
+    .join(" ");
+  assert.match(text, /Run solo/);
+  assert.match(text, /Race together/);
+  assert.doesNotMatch(text, /Catchfire/i);
+  const homeLink = nodes.find(
+    (node) => node.tagName === "a" && attr(node, "aria-label") === "Catchfire home",
+  );
+  assert.ok(homeLink, "the header retains the brand");
+});
+
 test("every public page uses the Catchfire brand and canonical domain", () => {
   assert.equal(read("CNAME").trim(), "catchfire.run");
   for (const path of [
