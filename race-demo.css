@@ -1,0 +1,181 @@
+.chase-scene {
+  max-width: 920px;
+  margin-inline: auto;
+}
+.chase-status,
+.chase-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.chase-status {
+  margin-bottom: 20px;
+}
+.chase-clock {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.chase-clock > span,
+.chase-key,
+.chase-time-note {
+  font-size: 12px;
+  color: var(--soft);
+}
+.chase-clock b {
+  font-size: 22px;
+  font-variant-numeric: tabular-nums;
+  min-width: 64px;
+}
+.chase-key {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+.chase-key img,
+.chase-course image {
+  image-rendering: pixelated;
+}
+.chase-course {
+  width: 100%;
+  height: 228px;
+  display: block;
+  overflow: visible;
+}
+.chase-grid {
+  stroke: var(--edge);
+  stroke-width: 1;
+  opacity: 0.45;
+}
+.chase-finish {
+  stroke: var(--soft);
+  stroke-width: 3;
+}
+.chase-axis {
+  fill: var(--soft);
+  font-size: 12px;
+}
+.chase-name {
+  font-size: 14px;
+  font-weight: 700;
+}
+.chase-rail {
+  stroke: var(--edge);
+  stroke-width: 2;
+}
+.chase-trail {
+  stroke-width: 3;
+  opacity: 0.55;
+}
+.chase-initial {
+  font-size: 12px;
+  font-weight: 700;
+  fill: var(--bg);
+}
+.chase-wait {
+  font-size: 12px;
+  fill: var(--soft);
+  paint-order: stroke;
+  stroke: var(--bg);
+  stroke-width: 4px;
+}
+.chase-caption {
+  min-height: 76px;
+  margin: 8px 0 16px;
+  padding: 12px 0;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.5;
+  border-bottom: 1px solid var(--edge);
+}
+.chase-controls {
+  flex-wrap: wrap;
+}
+.chase-controls .text-link {
+  font-size: 13px;
+}
+.chase-chapters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.chase-chapters button {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--soft);
+  font-size: 13px;
+}
+.chase-chapters button[aria-pressed="true"] {
+  color: var(--text);
+  border-bottom-color: var(--text);
+}
+.chase-results {
+  margin-top: 28px;
+}
+.chase-results table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.chase-results caption {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.chase-results th,
+.chase-results td {
+  padding: 10px 4px;
+  text-align: left;
+  font-size: 14px;
+}
+.chase-results thead th {
+  color: var(--soft);
+  font-size: 12px;
+  font-weight: 400;
+}
+.chase-results tr {
+  border-bottom: 1px solid var(--edge);
+}
+.chase-results th:first-child,
+.chase-results td:first-child {
+  width: 16%;
+}
+.chase-results .fine {
+  margin-top: 12px;
+}
+.chase-scene .example-note {
+  display: block;
+  margin-top: 20px;
+  line-height: 1.6;
+}
+#flame-chase {
+  scroll-margin-top: 110px;
+}
+@media (max-width: 600px) {
+  .chase-caption {
+    min-height: 100px;
+    font-size: 15px;
+  }
+  .chase-status {
+    gap: 8px;
+  }
+  .chase-clock {
+    gap: 8px;
+  }
+  .chase-chapters {
+    gap: 2px;
+  }
+  .chase-chapters button {
+    padding-inline: 8px;
+  }
+  .chase-results th,
+  .chase-results td {
+    font-size: 13px;
+  }
+}

@@ -30,13 +30,20 @@
     />
     <link rel="stylesheet" href="/styles.css?v=20260928" />
     <script src="/site.mjs?v=20260928" type="module"></script>
+    <link rel="stylesheet" href="/race-demo.css?v=20260929" />
+    <script src="/race-demo.mjs?v=20260929" type="module"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="header">
       <nav class="nav wrap" aria-label="Main">
         <a class="brand" href="/" aria-label="Catchfire home"
-          ><img src="/assets/mark.png" width="40" height="40" alt="" />CATCHFIRE</a
+          ><img
+            src="/assets/mark.png"
+            width="40"
+            height="40"
+            alt=""
+          />CATCHFIRE</a
         >
         <div class="links" id="site-links">
           <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a
@@ -186,6 +193,35 @@
           </figure>
         </div>
       </section>
+      <section
+        class="race-demo wrap"
+        id="flame-chase"
+        data-race-demo="full"
+        aria-labelledby="chase-title"
+      >
+        <div class="demo-toolbar">
+          <div>
+            <span class="eyebrow">One course. Two ways to race.</span>
+            <h2 id="chase-title">Take the lead. Take it back.</h2>
+          </div>
+          <div class="segmented" role="group" aria-label="Race start style">
+            <button data-mode="fair" aria-pressed="true">Fair start</button>
+            <button data-mode="same" aria-pressed="false">Same start</button>
+          </div>
+        </div>
+        <p class="demo-explanation" data-explanation>
+          Your pace sets your start. Same route. First across wins.
+        </p>
+        <div class="chase-scene" data-chase-scene></div>
+        <noscript
+          ><p>
+            In this fictional fair-start race, Ava starts first, Ben starts 2
+            minutes 30 seconds later, and Cleo starts 5 minutes later. Ben takes
+            the lead, then Ava takes it back and wins by 3 seconds. Everyone
+            finishes. In Same start, all three start together and Cleo wins.
+          </p></noscript
+        >
+      </section>
       <section class="band" id="host">
         <div class="wrap">
           <span class="eyebrow amber">03 / Organize a race</span>
@@ -228,8 +264,8 @@
             <article>
               <h3>Understand the result</h3>
               <p>
-                Recorded is not always final. Catchfire shows review status before
-                a result is finalized.
+                Recorded is not always final. Catchfire shows review status
+                before a result is finalized.
               </p>
             </article>
             <article>
@@ -288,7 +324,12 @@
     <footer class="footer">
       <div class="wrap footer-main">
         <a class="brand" href="/"
-          ><img src="/assets/mark.png" width="36" height="36" alt="" />CATCHFIRE</a
+          ><img
+            src="/assets/mark.png"
+            width="36"
+            height="36"
+            alt=""
+          />CATCHFIRE</a
         >
         <p>Race others. Chase your best.</p>
         <nav aria-label="Footer">

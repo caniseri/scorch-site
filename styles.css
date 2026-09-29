@@ -888,9 +888,6 @@ details p {
   .path-grid {
     gap: 24px;
   }
-  .example-note {
-    display: none;
-  }
 }
 @media (max-width: 700px) {
   body {

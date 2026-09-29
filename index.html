@@ -30,14 +30,20 @@
     />
     <link rel="stylesheet" href="/styles.css?v=20260929" />
     <script src="/site.mjs?v=20260928" type="module"></script>
-    <script src="/race-demo.mjs?v=20260928" type="module"></script>
+    <link rel="stylesheet" href="/race-demo.css?v=20260929" />
+    <script src="/race-demo.mjs?v=20260929" type="module"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="header">
       <nav class="nav wrap" aria-label="Main">
         <a class="brand" href="/" aria-label="Catchfire home"
-          ><img src="/assets/mark.png" width="40" height="40" alt="" />CATCHFIRE</a
+          ><img
+            src="/assets/mark.png"
+            width="40"
+            height="40"
+            alt=""
+          />CATCHFIRE</a
         >
         <div class="links" id="site-links">
           <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a
@@ -74,8 +80,8 @@
         <h1>Run solo.<br />Race together.</h1>
         <div class="hero-purpose">
           <p>
-            Chase your best, or bring your people. Start together, or let
-            your pace set the chase.
+            Chase your best, or bring your people. Start together, or let your
+            pace set the chase.
           </p>
           <a class="button primary" href="#beta"
             >Join the beta
@@ -87,105 +93,28 @@
       <section
         class="race-demo wrap"
         aria-labelledby="demo-title"
-        data-race-demo
+        data-race-demo="compact"
       >
         <div class="demo-toolbar">
           <div>
             <span class="eyebrow">One course. Two ways to race.</span>
-            <h2 id="demo-title">Different paces. A shared finish.</h2>
+            <h2 id="demo-title">Take the lead. Take it back.</h2>
           </div>
           <div class="segmented" role="group" aria-label="Race start style">
             <button data-mode="fair" aria-pressed="true">Fair start</button
             ><button data-mode="same" aria-pressed="false">Same start</button>
           </div>
         </div>
-        <p class="demo-explanation" id="demo-explanation">
-          The steadier runner starts first. The faster runner waits, then
-          chases.
+        <p class="demo-explanation" data-explanation>
+          Your pace sets your start. Same route. First across wins.
         </p>
-        <div
-          class="course"
-          role="img"
-          aria-label="Example five-kilometre race. In fair start, the 5:00 per kilometre runner starts five minutes before the 4:00 per kilometre runner."
-        >
-          <div class="course-axis">
-            <span>Start <b>0 km</b></span
-            ><span>Same route <b>5 km</b></span
-            ><span
-              ><svg class="icon" aria-hidden="true">
-                <use href="/assets/icons.svg#flag" />
-              </svg>
-              Finish</span
-            >
-          </div>
-          <div class="runner-lane steady">
-            <div class="runner-label">
-              <span><i></i>Steady <small>5:00/km</small></span
-              ><span data-start="steady">8:00 AM</span>
-            </div>
-            <div class="track">
-              <div class="track-fill" data-fill="steady"></div>
-              <div class="runner" data-runner="steady">
-                <svg class="icon" aria-hidden="true">
-                  <use href="/assets/icons.svg#footprints" />
-                </svg>
-              </div>
-            </div>
-            <div class="runner-meta">
-              <span data-state="steady">Ready at the start</span
-              ><span data-distance="steady">0.00 km</span>
-            </div>
-          </div>
-          <div class="runner-lane fast">
-            <div class="runner-label">
-              <span><i></i>Faster <small>4:00/km</small></span
-              ><span data-start="fast">8:05 AM</span>
-            </div>
-            <div class="track">
-              <div class="track-fill" data-fill="fast"></div>
-              <div class="runner" data-runner="fast">
-                <svg class="icon" aria-hidden="true">
-                  <use href="/assets/icons.svg#footprints" />
-                </svg>
-              </div>
-            </div>
-            <div class="runner-meta">
-              <span data-state="fast">Waiting for their start</span
-              ><span data-distance="fast">0.00 km</span>
-            </div>
-          </div>
-        </div>
-        <div class="demo-bottom">
-          <div class="transport">
-            <button
-              class="icon-button"
-              data-play
-              aria-label="Play race example"
-              title="Play race example"
-            >
-              <svg class="icon" aria-hidden="true">
-                <use href="/assets/icons.svg#play" />
-              </svg></button
-            ><button
-              class="icon-button"
-              data-replay
-              aria-label="Replay race example"
-              title="Replay race example"
-            >
-              <svg class="icon" aria-hidden="true">
-                <use href="/assets/icons.svg#rotate-ccw" />
-              </svg></button
-            ><span class="demo-clock" data-clock>8:00 AM</span>
-          </div>
-          <p data-outcome aria-live="polite">
-            A 5-minute head start. No shortcut.
-          </p>
-          <span class="example-note">Illustration, not live race data</span>
-        </div>
+        <div class="chase-scene" data-chase-scene></div>
         <noscript
           ><p>
-            Fair start: Steady starts at 8:00 AM and Faster at 8:05 AM. Same
-            start: both start at 8:00 AM. Actual results depend on the run.
+            Fair start gives the steadier runner a head start. Same start starts
+            everyone together. The flame marks the leader, and moves only when
+            someone takes the lead. First across wins; everyone keeps racing to
+            their own finish. This is a fictional illustration.
           </p></noscript
         >
       </section>
@@ -294,7 +223,10 @@
               </figcaption>
             </figure>
             <figure>
-              <div class="component-capture" style="--capture-ratio: 440 / 1003">
+              <div
+                class="component-capture"
+                style="--capture-ratio: 440 / 1003"
+              >
                 <img
                   src="/assets/product/finish.png"
                   width="440"
@@ -372,7 +304,12 @@
     <footer class="footer">
       <div class="wrap footer-main">
         <a class="brand" href="/"
-          ><img src="/assets/mark.png" width="36" height="36" alt="" />CATCHFIRE</a
+          ><img
+            src="/assets/mark.png"
+            width="36"
+            height="36"
+            alt=""
+          />CATCHFIRE</a
         >
         <p>Race others. Chase your best.</p>
         <nav aria-label="Footer">
