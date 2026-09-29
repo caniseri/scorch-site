@@ -100,7 +100,8 @@ assert.match(invite.html, /name="referrer" content="no-referrer"/);
 assert.match(invite.html, /noindex,nofollow/);
 const privacy = documents.get("privacy/index.html").html;
 for (const phrase of [
-  "September 28, 2026",
+  "September 29, 2026",
+  "ElseBranch Inc.",
   "Health Connect",
   "Apple Health",
   "Workout files",
