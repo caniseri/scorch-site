@@ -46,7 +46,7 @@
   --red: #ff6b6b;
   --gutter: clamp(20px, 5vw, 96px);
   --gap: 24px;
-  --section: clamp(96px, 14vw, 200px);
+  --section: clamp(64px, 7.5vw, 112px);
   --header: 76px;
   --radius: 8px;
   --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
@@ -56,43 +56,6 @@
   --bg: #f1eee9;
   --panel: #e7e3dd;
   --deep: #e7e3dd;
-  --edge: #cbc6bf;
-  --text: #090a0d;
-  --soft: #37353b;
-  --muted: #5c5a61;
-  --focus: #090a0d;
-  background: var(--bg);
-  color: var(--text);
-}
-
-/* Ember field: at most one per page, for the one thing that is the product. */
-.surface-ember {
-  --bg: #ff4f1f;
-  --panel: #ff6a40;
-  --deep: #ff6a40;
-  --edge: #c7401a;
-  --text: #090a0d;
-  --soft: #1f0c06;
-  --muted: #33160b;
-  --focus: #090a0d;
-  background: var(--bg);
-  color: var(--text);
-}
-.surface-ember .primary {
-  background: var(--ink);
-  color: var(--bone);
-}
-.surface-ember .primary:hover {
-  background: #23242a;
-}
-.surface-night {
-  --bg: #15161a;
-  --edge: #2f3138;
-  background: var(--bg);
-  color: var(--text);
-}
-.surface-bone {
-  --bg: #f1eee9;
   --edge: #cbc6bf;
   --text: #090a0d;
   --soft: #37353b;
@@ -189,7 +152,7 @@ h1 {
   font-size: 56px;
 }
 h2 {
-  font-size: clamp(36px, 5.5vw, 76px);
+  font-size: clamp(32px, 4.4vw, 60px);
   line-height: 1;
   letter-spacing: -0.03em;
 }
@@ -302,13 +265,13 @@ p + p {
 }
 .section-head h2 + p,
 .section-head h2 + .lead {
-  margin-top: 28px;
+  margin-top: 20px;
 }
 .section-head .label {
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 .section-body {
-  margin-top: clamp(48px, 5vw, 64px);
+  margin-top: clamp(36px, 4vw, 52px);
 }
 
 /* Buttons and links */
@@ -488,7 +451,7 @@ p + p {
 
 /* Footer */
 .footer {
-  padding-block: clamp(80px, 9vw, 128px) 32px;
+  padding-block: clamp(56px, 6vw, 88px) 28px;
   border-top: 1px solid var(--edge);
 }
 .footer-top {
@@ -532,7 +495,7 @@ p + p {
   text-decoration-color: currentColor;
 }
 .footer-mark {
-  margin: clamp(64px, 8vw, 120px) 0 0;
+  margin: clamp(40px, 5vw, 72px) 0 0;
   max-width: none;
   font:
     900 min(calc((100vw - 2 * var(--gutter)) / 5.3), 235px) / 0.8 Urbanist,
@@ -607,7 +570,7 @@ p + p {
 
 /* Page head (secondary pages) */
 .page-head {
-  padding-block: clamp(64px, 10vw, 144px) clamp(72px, 10vw, 144px);
+  padding-block: clamp(48px, 7vw, 104px) clamp(48px, 6vw, 88px);
 }
 .page-head .label {
   margin-bottom: 28px;
@@ -821,53 +784,75 @@ details > p + p {
   }
 }
 
-/* Surfaced tiles: one surface for each way in */
-.tiles {
+/* Three ways in: quiet cards with the screen peeking in from below */
+.cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap);
 }
-.tile {
+.card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  padding: clamp(28px, 3vw, 40px);
+  background: var(--deep);
+  border: 1px solid var(--edge);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.2s;
 }
-.tile .label {
-  margin-bottom: 40px;
+.card:hover {
+  border-color: #4a4c55;
 }
-.tile h3 + p {
-  margin-top: 12px;
+.card:focus-within {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
 }
-.tile p {
-  max-width: 34ch;
+.card-text {
+  padding: 28px 28px 0;
 }
-.tile .fine {
-  margin-top: 12px;
-}
-.tile .plate {
-  margin-top: auto;
-  max-width: 320px;
-}
-.tile .fine + .plate {
-  margin-top: 40px;
-}
-.tile h3 a {
-  display: inline-flex;
+.card h3 {
+  display: flex;
   align-items: center;
   gap: 10px;
-  min-height: 44px;
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 6px;
-  transition: text-decoration-color 0.2s;
 }
-.tile h3 a:hover {
-  text-decoration-color: currentColor;
-}
-.tile h3 .icon {
+.card h3 .icon {
   width: 18px;
   height: 18px;
   color: var(--muted);
+  transition: color 0.2s;
+}
+.card:hover h3 .icon {
+  color: var(--ember);
+}
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.card-link:focus-visible {
+  outline: none;
+}
+.card p {
+  margin-top: 6px;
+  max-width: 34ch;
+}
+.card .fine {
+  margin-top: 10px;
+}
+.card-shot {
+  margin-top: 28px;
+  padding-inline: 28px;
+  height: 216px;
+  overflow: hidden;
+}
+.card-shot .plate {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 /* Beta status table */
@@ -877,7 +862,7 @@ details > p + p {
 }
 .status-table th,
 .status-table td {
-  padding: 20px 24px 20px 0;
+  padding: 14px 24px 14px 0;
   text-align: left;
   vertical-align: baseline;
   border-bottom: 1px solid var(--edge);
@@ -891,11 +876,13 @@ details > p + p {
   color: var(--muted);
 }
 .status-table tbody th {
-  width: 30%;
-  font-size: 18px;
+  width: 24%;
+  font-size: 16px;
   font-weight: 700;
 }
 .status-table td {
+  font-size: 15px;
+  line-height: 1.5;
   color: var(--soft);
 }
 .status-table td:last-child {
@@ -1132,17 +1119,25 @@ details > p + p {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: var(--gap);
-  margin-top: clamp(56px, 7vw, 96px);
   padding-bottom: 32px;
 }
 .filmstrip figcaption {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 16px;
+  margin-top: 18px;
 }
 .filmstrip figcaption b {
-  font-weight: 500;
+  display: block;
+  margin-top: 8px;
+  font-size: 17px;
+  font-weight: 700;
   color: var(--text);
+}
+.filmstrip-copy {
+  display: block;
+  margin-top: 6px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--soft);
+  text-wrap: pretty;
 }
 
 /* Flame chase section */
@@ -1157,95 +1152,6 @@ details > p + p {
 }
 .chase-section .chase-scene {
   text-align: left;
-}
-
-/* Sticky race-day sequence */
-.sequence .section-head {
-  grid-column: 1 / -1;
-}
-.sequence-steps {
-  grid-column: 1 / -1;
-  margin-top: clamp(48px, 5vw, 64px);
-  border-top: 1px solid var(--edge);
-}
-.sequence-step {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: var(--gap);
-  padding-block: 40px;
-  border-bottom: 1px solid var(--edge);
-}
-.sequence-step .label {
-  margin-bottom: 16px;
-}
-.sequence-step h3 {
-  font-size: clamp(24px, 2.4vw, 32px);
-}
-.sequence-step p {
-  margin-top: 12px;
-  max-width: 40ch;
-}
-.sequence-step figure {
-  max-width: 320px;
-  justify-self: end;
-  width: 100%;
-}
-.sequence-stage {
-  display: none;
-}
-.sequence-caption {
-  grid-column: 1 / -1;
-  margin-top: 32px;
-}
-@media (min-width: 1024px) {
-  .sequence.is-staged .sequence-steps {
-    grid-column: 1 / 7;
-  }
-  .sequence.is-staged .sequence-step {
-    display: block;
-    min-height: 62vh;
-    padding-block: 48px;
-    border-bottom: 0;
-    transition: color 0.2s;
-  }
-  .sequence.is-staged .sequence-step:last-child {
-    min-height: 56vh;
-    padding-bottom: 0;
-  }
-  .sequence.is-staged .sequence-step figure,
-  .sequence.is-staged .grid > .sequence-caption {
-    display: none;
-  }
-  .sequence.is-staged .sequence-step:not(.is-active) h3,
-  .sequence.is-staged .sequence-step:not(.is-active) p {
-    color: var(--muted);
-  }
-  .sequence.is-staged .sequence-stage {
-    display: block;
-    grid-column: 8 / -1;
-    grid-row: 2;
-    align-self: start;
-    position: sticky;
-    top: calc(var(--header) + max(24px, (100vh - var(--header) - 560px) / 2));
-    margin-top: clamp(48px, 5vw, 64px);
-    width: min(100%, 358px);
-    justify-self: center;
-  }
-  .sequence-stage .stage-frame {
-    display: grid;
-  }
-  .sequence-stage img {
-    grid-area: 1 / 1;
-    align-self: start;
-    opacity: 0;
-    transition: opacity 0.6s var(--ease);
-  }
-  .sequence-stage img.is-active {
-    opacity: 1;
-  }
-  .sequence-stage .caption {
-    margin: 0 0 16px;
-  }
 }
 
 /* Split layout: text plus one visual */
@@ -1358,7 +1264,7 @@ details > p + p {
 
 /* Join */
 .join h2 {
-  font-size: clamp(48px, 9vw, 128px);
+  font-size: clamp(40px, 6vw, 84px);
   line-height: 0.95;
   letter-spacing: -0.04em;
   max-width: 10ch;
@@ -1656,12 +1562,8 @@ html:has(.has-index) {
   }
 }
 @media (max-width: 1023px) {
-  .tiles {
+  .cards {
     grid-template-columns: 1fr;
-  }
-  .tile .plate,
-  .tile .fine + .plate {
-    margin-top: 40px;
   }
   .filmstrip {
     display: flex;
@@ -1797,13 +1699,6 @@ html:has(.has-index) {
   }
   .column .label {
     margin-bottom: 20px;
-  }
-  .sequence-step {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .sequence-step figure {
-    justify-self: start;
   }
   .footer-cols {
     grid-template-columns: 1fr 1fr;

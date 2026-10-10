@@ -61,8 +61,6 @@ for (const index of document.querySelectorAll("[data-index]")) {
   targets.forEach((target) => observer.observe(target));
 }
 
-if (document.querySelector("[data-sequence]"))
-  import("/sequence.mjs?v=20261010");
 if (document.querySelector("[data-chapter]"))
   import("/progress.mjs?v=20261010");
 if (document.querySelector("[data-stepper]")) import("/stepper.mjs?v=20261010");
