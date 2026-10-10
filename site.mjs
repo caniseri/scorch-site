@@ -1,4 +1,4 @@
-import "/reveal.mjs?v=20261009";
+import "/reveal.mjs?v=20261010";
 
 const header = document.querySelector("[data-header]");
 const menu = document.querySelector(".menu-toggle");
@@ -62,4 +62,7 @@ for (const index of document.querySelectorAll("[data-index]")) {
 }
 
 if (document.querySelector("[data-sequence]"))
-  import("/sequence.mjs?v=20261009");
+  import("/sequence.mjs?v=20261010");
+if (document.querySelector("[data-chapter]"))
+  import("/progress.mjs?v=20261010");
+if (document.querySelector("[data-stepper]")) import("/stepper.mjs?v=20261010");

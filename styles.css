@@ -65,6 +65,43 @@
   color: var(--text);
 }
 
+/* Ember field: at most one per page, for the one thing that is the product. */
+.surface-ember {
+  --bg: #ff4f1f;
+  --panel: #ff6a40;
+  --deep: #ff6a40;
+  --edge: #c7401a;
+  --text: #090a0d;
+  --soft: #1f0c06;
+  --muted: #33160b;
+  --focus: #090a0d;
+  background: var(--bg);
+  color: var(--text);
+}
+.surface-ember .primary {
+  background: var(--ink);
+  color: var(--bone);
+}
+.surface-ember .primary:hover {
+  background: #23242a;
+}
+.surface-night {
+  --bg: #15161a;
+  --edge: #2f3138;
+  background: var(--bg);
+  color: var(--text);
+}
+.surface-bone {
+  --bg: #f1eee9;
+  --edge: #cbc6bf;
+  --text: #090a0d;
+  --soft: #37353b;
+  --muted: #5c5a61;
+  --focus: #090a0d;
+  background: var(--bg);
+  color: var(--text);
+}
+
 /* Base */
 *,
 *::before,
@@ -716,9 +753,366 @@ details > p + p {
   margin-top: -12px;
 }
 
+/* Hero: the flame chase is the product, so it sits in the hero */
+.hero-top {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gap);
+  row-gap: 32px;
+  align-items: end;
+}
+.hero-title {
+  grid-column: 1 / 10;
+}
+.hero-side {
+  grid-column: 10 / -1;
+}
+.hero-side .actions {
+  display: grid;
+}
+.hero-side .lead {
+  font-size: clamp(18px, 1.6vw, 22px);
+}
+.hero-side .actions {
+  margin-top: 28px;
+}
+.hero-chase {
+  margin-top: clamp(40px, 5vw, 64px);
+}
+.chase-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+.chase-head .label {
+  margin-bottom: 12px;
+}
+.title-sm {
+  font-size: clamp(26px, 2.6vw, 36px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.chase-head .demo-explanation {
+  margin-top: 12px;
+}
+.chase-head .segmented {
+  margin-top: 0;
+}
+.hero .chase-scene {
+  max-width: none;
+  margin-top: 28px;
+}
+/* Reserve the chase's height while the script builds it, so nothing shifts. */
+@media (scripting: enabled) {
+  .hero .chase-scene {
+    min-height: 520px;
+  }
+}
+@media (scripting: enabled) and (max-width: 767px) {
+  .hero .chase-scene {
+    min-height: 568px;
+  }
+}
+@media (scripting: enabled) and (max-width: 600px) {
+  .hero .chase-scene {
+    min-height: 662px;
+  }
+}
+
+/* Surfaced tiles: one surface for each way in */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.tile {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(28px, 3vw, 40px);
+}
+.tile .label {
+  margin-bottom: 40px;
+}
+.tile h3 + p {
+  margin-top: 12px;
+}
+.tile p {
+  max-width: 34ch;
+}
+.tile .fine {
+  margin-top: 12px;
+}
+.tile .plate {
+  margin-top: auto;
+  max-width: 320px;
+}
+.tile .fine + .plate {
+  margin-top: 40px;
+}
+.tile h3 a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+  transition: text-decoration-color 0.2s;
+}
+.tile h3 a:hover {
+  text-decoration-color: currentColor;
+}
+.tile h3 .icon {
+  width: 18px;
+  height: 18px;
+  color: var(--muted);
+}
+
+/* Beta status table */
+.status-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.status-table th,
+.status-table td {
+  padding: 20px 24px 20px 0;
+  text-align: left;
+  vertical-align: baseline;
+  border-bottom: 1px solid var(--edge);
+}
+.status-table thead th {
+  padding-block: 0 16px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.status-table tbody th {
+  width: 30%;
+  font-size: 18px;
+  font-weight: 700;
+}
+.status-table td {
+  color: var(--soft);
+}
+.status-table td:last-child {
+  padding-right: 0;
+}
+.status-state {
+  width: 18%;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.status-table .is-in-the-beta .status-state {
+  color: var(--text);
+}
+.status-table .is-in-the-beta .status-state::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: var(--text);
+  vertical-align: 1px;
+}
+.status-table tr:not(.is-in-the-beta) .status-state::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 10px;
+  border: 1px solid var(--muted);
+  border-radius: 50%;
+  vertical-align: 1px;
+}
+
+/* State stepper */
+.stepper.is-stepping .stepper-stack {
+  display: grid;
+}
+.stepper.is-stepping .stepper-frame {
+  grid-area: 1 / 1;
+  align-self: start;
+  opacity: 0;
+  transition: opacity 0.6s var(--ease);
+}
+.stepper.is-stepping .stepper-frame.is-active {
+  opacity: 1;
+}
+.stepper.is-stepping .stepper-frame figcaption {
+  display: none;
+}
+.stepper-frame + .stepper-frame {
+  margin-top: 40px;
+}
+.stepper.is-stepping .stepper-frame + .stepper-frame {
+  margin-top: 0;
+}
+.stepper-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+.stepper-controls [data-position] {
+  flex: 1;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+.stepper-prev .icon {
+  transform: rotate(180deg);
+}
+.stepper .icon-button:disabled {
+  opacity: 0.35;
+}
+.stepper-note {
+  margin-top: 16px;
+}
+
+/* Page progress: the course ruler, fixed to the bottom of wide screens */
+.progress {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 25;
+  display: none;
+  align-items: center;
+  gap: 32px;
+  height: 52px;
+  padding-inline: var(--gutter);
+  background: #090a0d;
+  border-top: 1px solid #2b2d34;
+  color: #f1eee9;
+  transform: translateY(100%);
+  transition: transform 0.4s var(--ease);
+}
+.progress.is-on {
+  transform: none;
+}
+.has-progress .progress {
+  display: flex;
+}
+.has-progress {
+  padding-bottom: 52px;
+}
+.progress-now {
+  flex: 0 0 auto;
+  min-width: 220px;
+  margin: 0;
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f1eee9;
+}
+.progress-now .num {
+  color: #96949b;
+}
+.progress-track {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.progress-end {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #96949b;
+  font-variant-numeric: tabular-nums;
+}
+.progress-rail {
+  position: relative;
+  flex: 1;
+  height: 20px;
+  border-top: 1px solid #2b2d34;
+  color: #2b2d34;
+}
+.progress-rail svg {
+  display: block;
+  width: 100%;
+  height: 8px;
+  overflow: visible;
+}
+.progress-rail path {
+  stroke: currentColor;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+.progress-fill {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  height: 1px;
+  width: 0;
+  background: var(--ember);
+}
+.progress-fill::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: -6px;
+  width: 2px;
+  height: 13px;
+  background: var(--ember);
+}
+.progress ol {
+  position: absolute;
+  inset: 0;
+}
+.progress li {
+  position: absolute;
+  top: -22px;
+  width: 0;
+}
+.progress li a {
+  position: absolute;
+  left: -12px;
+  top: 0;
+  display: block;
+  width: 24px;
+  height: 44px;
+}
+.progress li a::before {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 16px;
+  width: 1px;
+  height: 14px;
+  background: #96949b;
+  transition: background-color 0.2s;
+}
+.progress li a:hover::before,
+.progress li a[aria-current="true"]::before {
+  background: #f1eee9;
+}
+.progress li a:focus-visible {
+  outline: 2px solid var(--ember);
+  outline-offset: -2px;
+}
+@media (min-width: 1024px) {
+  .has-progress .page-index {
+    display: none;
+  }
+}
+
 /* Hero */
 .hero {
-  padding-block: clamp(48px, 7vw, 112px) 0;
+  padding-block: clamp(40px, 5vw, 80px) 0;
 }
 .hero .label {
   margin-bottom: 32px;
@@ -1244,7 +1638,31 @@ html:has(.has-index) {
     grid-column: 1 / -1;
   }
 }
+@media (max-width: 1199px) {
+  .hero-title,
+  .hero-side {
+    grid-column: 1 / -1;
+  }
+  .hero-side {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .hero-side .actions {
+    display: flex;
+    margin-top: 0;
+  }
+}
 @media (max-width: 1023px) {
+  .tiles {
+    grid-template-columns: 1fr;
+  }
+  .tile .plate,
+  .tile .fine + .plate {
+    margin-top: 40px;
+  }
   .filmstrip {
     display: flex;
     gap: 16px;
@@ -1295,6 +1713,33 @@ html:has(.has-index) {
   }
 }
 @media (max-width: 860px) {
+  .status-table thead {
+    display: none;
+  }
+  .status-table,
+  .status-table tbody,
+  .status-table tr {
+    display: block;
+  }
+  .status-table tr {
+    padding-block: 20px;
+    border-bottom: 1px solid var(--edge);
+  }
+  .status-table th,
+  .status-table td,
+  .status-table tbody th,
+  .status-table .status-state {
+    display: block;
+    width: auto;
+    padding: 0;
+    border: 0;
+  }
+  .status-table .status-state {
+    margin-top: 8px;
+  }
+  .status-table td:last-child {
+    margin-top: 8px;
+  }
   .menu-toggle {
     display: inline-flex;
   }
@@ -1402,6 +1847,12 @@ html:has(.has-index) {
   }
   .route-table td.r-val:nth-child(3) {
     grid-column: 2;
+  }
+}
+@media (max-width: 600px) {
+  .chase-head > *,
+  .chase-head .segmented {
+    flex: 1 1 100%;
   }
 }
 @media (max-width: 480px) {
