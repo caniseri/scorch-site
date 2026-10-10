@@ -19,8 +19,8 @@ for (const section of document.querySelectorAll("[data-sequence]")) {
     return image;
   });
   const caption = section.querySelector(".sequence-caption");
-  stage.append(frame);
   if (caption) stage.append(caption.cloneNode(true));
+  stage.append(frame);
   section.querySelector(".grid").append(stage);
 
   function activate(index) {

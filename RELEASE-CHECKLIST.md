@@ -59,29 +59,35 @@ locale en-US, time zone America/New_York, clock fixed at
   Cropped to the content between the app header and the tab bar.
 - Components: /?scenario=NAME&capture=1 at 440 CSS px wide, with 24px / 20px
   padding added around main.capture so content does not touch the plate edge.
-  Scenarios: race-day, start-open, recording, final, upcoming, countdown,
+  Scenarios: race-day, recording, final, upcoming, countdown,
   start-line, field-progress, under-review, just-run-finished, all-runners,
   manage-rules-fair.
 
-Each capture is cropped at a clean boundary between elements, padded with its
-own background to a fixed frame, resized with Lanczos and saved as WebP at
-quality 82:
+Each capture is cropped to its content box (measured from the pixels), then
+given 20 CSS px of even padding top and bottom in its own background, so no
+frame shows a large empty area. Component captures already carry 20px side
+padding. The five opening film-strip plates share one frame (440 x 612 CSS px,
+or 402 x 559 for the Find screen), with content centred; fuller screens were
+chosen so that frame stays filled. Each is resized with Lanczos and saved as
+WebP at quality 82:
 
-| File | Source | Frame (CSS px) | Size |
-| --- | --- | --- | --- |
-| strip-find | screen=find | 402 x 720 | 540 x 967 |
-| strip-start, race-start | race-day | 440 x 788 | 540 x 967, 720 x 1289 |
-| strip-line | start-open | 440 x 788 | 540 x 967 |
-| strip-chase | recording (to 712px) | 440 x 788 | 540 x 967 |
-| strip-result, race-result | final (to 720px) | 440 x 788 | 540 x 967, 720 x 1289 |
-| step-start | upcoming | 440 x 657 | 720 x 1075 |
-| step-countdown | countdown | 440 x 657 | 720 x 1075 |
-| step-line | start-line | 440 x 657 | 720 x 1075 |
-| step-chase | field-progress | 440 x 657 | 720 x 1075 |
-| step-result | under-review (to 620px) | 440 x 657 | 720 x 1075 |
-| way-solo | just-run-finished (to 470px) | 440 x 525 | 720 x 859 |
-| way-race | all-runners | 440 x 525 | 720 x 859 |
-| way-host | manage-rules-fair | 440 x 525 | 720 x 859 |
+| File | Source | Content rows (CSS px) | Frame (CSS px) | Size |
+| --- | --- | --- | --- | --- |
+| strip-find | screen=find | 77-577 | 402 x 559 | 540 x 751 |
+| strip-start | race-day | 24-576 | 440 x 612 | 540 x 751 |
+| strip-line | start-line | 43-553 | 440 x 612 | 540 x 751 |
+| strip-chase | recording | 24-596 | 440 x 612 | 540 x 751 |
+| strip-result | final | 24-561 | 440 x 612 | 540 x 751 |
+| race-start | race-day | 24-576 | 440 x 592 | 720 x 969 |
+| race-result | final | 24-697 | 440 x 713 | 720 x 1167 |
+| step-start | upcoming | 24-291 | 440 x 307 | 720 x 502 |
+| step-countdown | countdown | 43-438 | 440 x 435 | 720 x 712 |
+| step-line | start-line | 43-553 | 440 x 550 | 720 x 900 |
+| step-chase | field-progress | 45-379 | 440 x 374 | 720 x 612 |
+| step-result | under-review | 24-608 | 440 x 624 | 720 x 1021 |
+| way-solo | just-run-finished | 11-454 | 440 x 483 | 720 x 790 |
+| way-race | all-runners | 67-333 | 440 x 306 | 720 x 501 |
+| way-host | manage-rules-fair | 44-307 | 440 x 303 | 720 x 496 |
 
 Every file is under 25 KB. Images are served at or above twice their displayed
 CSS size. The previous assets/product/ PNGs were removed once nothing used them.
