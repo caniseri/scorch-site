@@ -12,37 +12,22 @@
       content="Review your Catchfire race invitation, route and start style before opening it in the app."
     />
     <link rel="icon" href="/assets/icon.png" />
-    <link rel="stylesheet" href="/styles.css?v=20260928" />
+    <link rel="stylesheet" href="/styles.css?v=20261009" />
     <link rel="stylesheet" href="/invite/invite.css?v=20260928" />
-    <script type="module" src="/site.mjs?v=20260928"></script>
+    <script type="module" src="/site.mjs?v=20261009"></script>
     <script type="module" src="/invite/invite.mjs?v=20260928"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="header">
+    <header class="header" data-header>
       <nav class="nav wrap" aria-label="Main">
-        <a class="brand" href="/" aria-label="Catchfire home"
-          ><img src="/assets/mark.png" width="40" height="40" alt="" />CATCHFIRE</a
-        >
+        <a class="brand" href="/" aria-label="Catchfire home"><img src="/assets/mark.png" width="30" height="30" alt="" />CATCHFIRE</a>
         <div class="links" id="site-links">
-          <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a
-          ><a href="/support/">Support</a>
+          <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a><a href="/support/">Support</a><a class="links-cta" href="/#beta">Join the beta</a>
         </div>
-        <a class="nav-cta" href="/#beta"
-          >Join the beta
-          <svg class="icon" aria-hidden="true">
-            <use href="/assets/icons.svg#arrow-up-right" /></svg
-        ></a>
-        <button
-          class="icon-button menu-toggle"
-          aria-label="Open navigation"
-          aria-expanded="false"
-          aria-controls="site-links"
-          title="Open navigation"
-        >
-          <svg class="icon" aria-hidden="true">
-            <use href="/assets/icons.svg#menu" />
-          </svg>
+        <a class="button primary nav-cta" href="/#beta">Join the beta</a>
+        <button class="icon-button menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-links" title="Open navigation">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#menu" /></svg>
         </button>
       </nav>
     </header>
@@ -161,20 +146,28 @@
       </section>
     </main>
     <footer class="footer">
-      <div class="wrap footer-main">
-        <a class="brand" href="/"
-          ><img src="/assets/mark.png" width="36" height="36" alt="" />CATCHFIRE</a
-        >
-        <p>Race others. Chase your best.</p>
-        <nav aria-label="Footer">
-          <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a
-          ><a href="/support/">Support</a><a href="/privacy/">Privacy</a
-          ><a href="/terms/">Terms</a>
-        </nav>
-      </div>
-      <div class="wrap footer-note">
-        <span>&copy; 2026 Catchfire</span
-        ><span>Free running beta. Unofficial community challenges.</span>
+      <div class="wrap">
+        <div class="footer-top">
+          <p class="footer-line">Run solo. Race together.<br />A free running beta for iPhone and Android.</p>
+          <div class="footer-cols">
+            <nav aria-label="Product">
+              <p class="label">Product</p>
+              <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a><a href="/#beta">Join the beta</a>
+            </nav>
+            <nav aria-label="Support">
+              <p class="label">Support</p>
+              <a href="/support/">Help and answers</a><a href="/support/#saving">Saving and compatibility</a><a href="mailto:support@catchfire.run">support@catchfire.run</a>
+            </nav>
+            <nav aria-label="Legal">
+              <p class="label">Legal</p>
+              <a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="mailto:legal@catchfire.run">legal@catchfire.run</a>
+            </nav>
+          </div>
+        </div>
+        <p class="footer-mark" aria-hidden="true">CATCHFIRE</p>
+        <div class="footer-note">
+          <span>&copy; 2026 Katsuko, Inc. All rights reserved.</span><span>Free running beta. Unofficial community challenges.</span>
+        </div>
       </div>
     </footer>
   </body>
