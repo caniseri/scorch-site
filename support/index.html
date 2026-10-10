@@ -26,30 +26,53 @@
     <link rel="apple-touch-icon" href="/assets/icon.png" />
     <link
       rel="preload"
+      href="/assets/fonts/space-grotesk-latin-700-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/space-grotesk-latin-500-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/space-grotesk-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
       href="/assets/fonts/urbanist-latin-900-normal.woff2"
       as="font"
       type="font/woff2"
       crossorigin
     />
-    <link rel="stylesheet" href="/styles.css?v=20260928" />
-    <script src="/site.mjs?v=20260928" type="module"></script>
+    <link rel="stylesheet" href="/styles.css?v=20261009" />
+    <script src="/site.mjs?v=20261009" type="module"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="header">
+    <header class="header" data-header>
       <nav class="nav wrap" aria-label="Main">
         <a class="brand" href="/" aria-label="Catchfire home"
-          ><img src="/assets/mark.png" width="40" height="40" alt="" />CATCHFIRE</a
+          ><img
+            src="/assets/mark.png"
+            width="30"
+            height="30"
+            alt=""
+          />CATCHFIRE</a
         >
         <div class="links" id="site-links">
           <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a
-          ><a href="/support/">Support</a>
+          ><a href="/support/">Support</a
+          ><a class="links-cta" href="/#beta">Join the beta</a>
         </div>
-        <a class="nav-cta" href="/#beta"
-          >Join the beta
-          <svg class="icon" aria-hidden="true">
-            <use href="/assets/icons.svg#arrow-up-right" /></svg
-        ></a>
+        <a class="button primary nav-cta" href="/#beta">Join the beta</a>
         <button
           class="icon-button menu-toggle"
           aria-label="Open navigation"
@@ -65,191 +88,208 @@
     </header>
     <main id="main">
       <header class="page-head wrap">
-        <span class="eyebrow">Support</span>
-        <h1>Keep your next run simple.</h1>
-        <p>
+        <p class="label">Support</p>
+        <h1 class="display">Keep your next run simple.</h1>
+        <p class="lead">
           For help, include your device model, iOS or Android version, Catchfire
           build number, and the screen where it happened.
         </p>
-        <a class="button primary" href="mailto:support@catchfire.run"
-          >Contact support
-          <svg class="icon" aria-hidden="true">
-            <use href="/assets/icons.svg#arrow-up-right" /></svg
-        ></a>
-        <p class="fine">
+        <div class="actions">
+          <a class="button primary" href="mailto:support@catchfire.run"
+            >Contact support
+            <svg class="icon" aria-hidden="true">
+              <use href="/assets/icons.svg#arrow-up-right" /></svg
+          ></a>
+        </div>
+        <p class="fine caption">
           Do not email passwords, authentication codes or location traces.
         </p>
       </header>
-      <section class="band">
-        <div class="wrap faq">
-          <h2>Before you run</h2>
-          <details open>
-            <summary>How do I get the beta?</summary>
-            <p>
-              Request iPhone or Android access from the
-              <a href="/#beta">beta section</a>. iPhone uses TestFlight; Android
-              uses a Google Play internal-testing invitation. Builds and access
-              can differ by testing group.
+
+      <div class="section wrap grid support-layout">
+        <nav class="support-index" aria-label="Support topics" data-index>
+          <p class="label eyebrow">On this page</p>
+          <ol>
+            <li><a href="#before">Before you run</a></li>
+            <li><a href="#saving">Saving &amp; compatibility</a></li>
+            <li><a href="#results">Results &amp; accounts</a></li>
+          </ol>
+        </nav>
+        <div class="support-main">
+          <section
+            class="support-block"
+            id="before"
+            aria-labelledby="before-title"
+          >
+            <h2 id="before-title">Before you run</h2>
+            <div class="answers">
+              <details open>
+                <summary>How do I get the beta?</summary>
+                <p>
+                  Request iPhone or Android access from the
+                  <a href="/#beta">beta section</a>. iPhone uses TestFlight;
+                  Android uses a Google Play internal-testing invitation. Builds
+                  and access can differ by testing group.
+                </p>
+              </details>
+              <details>
+                <summary>Do I need to know my pace?</summary>
+                <p>
+                  No pace is needed for Just run or an unrestricted Same start
+                  race. Fair start and pace-limited races require a recent 5K
+                  pace. You can open an invitation and inspect the race before
+                  entering one.
+                </p>
+              </details>
+              <details>
+                <summary>Can I run without a preset route?</summary>
+                <p>
+                  Yes. Just run records time and distance without a mapped
+                  course. You can also draw a private route. A time-goal or
+                  previous-effort chase uses a mapped route; not every
+                  historical run is eligible.
+                </p>
+              </details>
+              <details>
+                <summary>Can I organize without racing?</summary>
+                <p>
+                  Yes. Choose host only when organizing a free scheduled race.
+                  You still manage the start and any remaining result review.
+                </p>
+              </details>
+              <details>
+                <summary>What if the scheduled time passes?</summary>
+                <p>
+                  If the race has never started, the host can still start it
+                  within the 48-hour grace period, or reschedule or cancel.
+                  After 48 hours, reschedule before starting. Do not assume your
+                  original calendar copy has changed.
+                </p>
+              </details>
+              <details>
+                <summary>What should I check before locking my screen?</summary>
+                <p>
+                  Complete the app's location and recording-readiness checks.
+                  Background recording depends on device permissions and
+                  operating-system settings. Keep the app installed and your
+                  phone charged. If recording stops or a result looks
+                  incomplete, contact support.
+                </p>
+              </details>
+            </div>
+          </section>
+          <section
+            class="support-block"
+            id="saving"
+            aria-labelledby="saving-title"
+          >
+            <p class="label">Saving &amp; compatibility</p>
+            <h2 id="saving-title">Your data, on your terms.</h2>
+            <div class="cells four">
+              <article class="cell">
+                <h3>Apple Health</h3>
+                <p>
+                  Optional saving of finished races and Just runs on iPhone in
+                  enabled builds. Permission is requested when needed.
+                </p>
+                <p class="label">Enabled in production configuration</p>
+              </article>
+              <article class="cell">
+                <h3>Health Connect</h3>
+                <p>
+                  Optional Android workout saving is under testing. It is not
+                  enabled in the current production profile.
+                </p>
+                <p class="label">Development testing only</p>
+              </article>
+              <article class="cell">
+                <h3>FIT &amp; GPX files</h3>
+                <p>
+                  Export an eligible finished race and manually upload the file
+                  to Strava or Garmin Connect. This is not automatic
+                  synchronization.
+                </p>
+                <p class="label">Enabled in production configuration</p>
+              </article>
+              <article class="cell">
+                <h3>Your calendar</h3>
+                <p>
+                  Add a race with a Google Calendar draft or a standard calendar
+                  file for compatible calendars, including Apple Calendar. Add
+                  an updated copy after a schedule change.
+                </p>
+                <p class="label">No live sync or Garmin Calendar integration</p>
+              </article>
+            </div>
+            <p class="fine">
+              Configuration is not a guarantee that your installed beta already
+              includes a feature. Check your build or ask support. Read our
+              <a href="/privacy/">privacy policy</a> for workout and location
+              handling.
             </p>
-          </details>
-          <details>
-            <summary>Do I need to know my pace?</summary>
-            <p>
-              No pace is needed for Just run or an unrestricted Same start race.
-              Fair start and pace-limited races require a recent 5K pace. You
-              can open an invitation and inspect the race before entering one.
-            </p>
-          </details>
-          <details>
-            <summary>Can I run without a preset route?</summary>
-            <p>
-              Yes. Just run records time and distance without a mapped course.
-              You can also draw a private route. A time-goal or previous-effort
-              chase uses a mapped route; not every historical run is eligible.
-            </p>
-          </details>
-          <details>
-            <summary>Can I organize without racing?</summary>
-            <p>
-              Yes. Choose host only when organizing a free scheduled race. You
-              still manage the start and any remaining result review.
-            </p>
-          </details>
-          <details>
-            <summary>What if the scheduled time passes?</summary>
-            <p>
-              If the race has never started, the host can still start it within
-              the 48-hour grace period, or reschedule or cancel. After 48 hours,
-              reschedule before starting. Do not assume your original calendar
-              copy has changed.
-            </p>
-          </details>
-          <details>
-            <summary>What should I check before locking my screen?</summary>
-            <p>
-              Complete the app's location and recording-readiness checks.
-              Background recording depends on device permissions and
-              operating-system settings. Keep the app installed and your phone
-              charged. If recording stops or a result looks incomplete, contact
-              support.
-            </p>
-          </details>
+          </section>
+          <section
+            class="support-block"
+            id="results"
+            aria-labelledby="results-title"
+          >
+            <h2 id="results-title">Results &amp; accounts</h2>
+            <div class="answers">
+              <details>
+                <summary>Why is my result under review?</summary>
+                <p>
+                  A recorded finish may still need route, recording or host
+                  review. Catchfire distinguishes recorded and final results.
+                  Live positions and gaps are estimates, not final standings.
+                </p>
+              </details>
+              <details>
+                <summary>How do I request deletion or privacy help?</summary>
+                <p>
+                  Email
+                  <a href="mailto:legal@catchfire.run">legal@catchfire.run</a>
+                  for access, correction or deletion requests. Workouts you
+                  saved to another service stay there until you remove them
+                  there.
+                </p>
+              </details>
+            </div>
+          </section>
         </div>
-      </section>
-      <section class="band" id="saving">
-        <div class="wrap">
-          <span class="eyebrow">Saving &amp; compatibility</span>
-          <h2>Your data, on your terms.</h2>
-          <div class="compatibility">
-            <article>
-              <h3>
-                <svg class="icon" aria-hidden="true">
-                  <use href="/assets/icons.svg#smartphone" />
-                </svg>
-                Apple Health
-              </h3>
-              <p>
-                Optional saving of finished races and Just runs on iPhone in
-                enabled builds. Permission is requested when needed.
-              </p>
-              <span class="status">Enabled in production configuration</span>
-            </article>
-            <article>
-              <h3>
-                <svg class="icon" aria-hidden="true">
-                  <use href="/assets/icons.svg#shield-check" />
-                </svg>
-                Health Connect
-              </h3>
-              <p>
-                Optional Android workout saving is under testing. It is not
-                enabled in the current production profile.
-              </p>
-              <span class="status">Development testing only</span>
-            </article>
-            <article>
-              <h3>
-                <svg class="icon" aria-hidden="true">
-                  <use href="/assets/icons.svg#download" />
-                </svg>
-                FIT &amp; GPX files
-              </h3>
-              <p>
-                Export an eligible finished race and manually upload the file to
-                Strava or Garmin Connect. This is not automatic synchronization.
-              </p>
-              <span class="status">Enabled in production configuration</span>
-            </article>
-            <article>
-              <h3>
-                <svg class="icon" aria-hidden="true">
-                  <use href="/assets/icons.svg#calendar-plus" />
-                </svg>
-                Your calendar
-              </h3>
-              <p>
-                Add a race with a Google Calendar draft or a standard calendar
-                file for compatible calendars, including Apple Calendar. Add an
-                updated copy after a schedule change.
-              </p>
-              <span class="status"
-                >No live sync or Garmin Calendar integration</span
-              >
-            </article>
-          </div>
-          <p class="fine">
-            Configuration is not a guarantee that your installed beta already
-            includes a feature. Check your build or ask support. Read our
-            <a href="/privacy/">privacy policy</a> for workout and location
-            handling.
-          </p>
-        </div>
-      </section>
-      <section class="band">
-        <div class="wrap faq">
-          <h2>Results &amp; accounts</h2>
-          <details>
-            <summary>Why is my result under review?</summary>
-            <p>
-              A recorded finish may still need route, recording or host review.
-              Catchfire distinguishes recorded and final results. Live positions
-              and gaps are estimates, not final standings.
-            </p>
-          </details>
-          <details>
-            <summary>How do I request deletion or privacy help?</summary>
-            <p>
-              Email
-              <a href="mailto:legal@catchfire.run">legal@catchfire.run</a> for
-              access, correction or deletion requests. Workouts you saved to
-              another service stay there until you remove them there.
-            </p>
-          </details>
-          <details>
-            <summary>Are there paid races or prizes?</summary>
-            <p>
-              No. The current running beta is free. Paid races, payouts and
-              prizes are disabled.
-            </p>
-          </details>
-        </div>
-      </section>
+      </div>
     </main>
     <footer class="footer">
-      <div class="wrap footer-main">
-        <a class="brand" href="/"
-          ><img src="/assets/mark.png" width="36" height="36" alt="" />CATCHFIRE</a
-        >
-        <p>Race others. Chase your best.</p>
-        <nav aria-label="Footer">
-          <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a
-          ><a href="/support/">Support</a><a href="/privacy/">Privacy</a
-          ><a href="/terms/">Terms</a>
-        </nav>
-      </div>
-      <div class="wrap footer-note">
-        <span>&copy; 2026 Catchfire</span
-        ><span>Free running beta. Unofficial community challenges.</span>
+      <div class="wrap">
+        <div class="footer-top">
+          <p class="footer-line">
+            Run solo. Race together.<br />A free running beta for iPhone and
+            Android.
+          </p>
+          <div class="footer-cols">
+            <nav aria-label="Product">
+              <p class="label">Product</p>
+              <a href="/demo/">How it works</a
+              ><a href="/pilot-routes/">Routes</a
+              ><a href="/#beta">Join the beta</a>
+            </nav>
+            <nav aria-label="Support">
+              <p class="label">Support</p>
+              <a href="/support/">Help and answers</a
+              ><a href="/support/#saving">Saving and compatibility</a
+              ><a href="mailto:support@catchfire.run">support@catchfire.run</a>
+            </nav>
+            <nav aria-label="Legal">
+              <p class="label">Legal</p>
+              <a href="/privacy/">Privacy</a><a href="/terms/">Terms</a
+              ><a href="mailto:legal@catchfire.run">legal@catchfire.run</a>
+            </nav>
+          </div>
+        </div>
+        <p class="footer-mark" aria-hidden="true">CATCHFIRE</p>
+        <div class="footer-note">
+          <span>&copy; 2026 ElseBranch Inc. All rights reserved.</span
+          ><span>Free running beta. Unofficial community challenges.</span>
+        </div>
       </div>
     </footer>
   </body>

@@ -9,6 +9,7 @@ const mime = {
   ".mjs": "text/javascript",
   ".svg": "image/svg+xml",
   ".png": "image/png",
+  ".webp": "image/webp",
   ".woff2": "font/woff2",
   ".json": "application/json",
 };

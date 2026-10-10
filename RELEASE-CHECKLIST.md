@@ -41,14 +41,64 @@ Use a real approved QA invitation separately for native app/auth handoff.
 
 ## Artwork Provenance
 
-The four images in assets/product/ are captures of current Catchfire
-presentation components rendered by the local preview harness, with synthetic
-runner and result data. They are not live customer data, full native screens,
-or claims that a specific TestFlight / Play build is available.
+The screen plates in assets/screens/ are illustrative component previews with
+synthetic data, not live races, real runners or device screenshots. They do
+not claim that a specific TestFlight or Play build is available.
 
-The four captures were refreshed together using the app preview's capture=1
-mode at 440 CSS pixels, without editing component content. Image dimensions
-and frame ratios match the actual bitmap; no 200% image scaling is needed.
+Source: caniseri/scorch at commit 75e0cda2fd96cd42cd5ab1d09df4bb7136c486d8
+(branch codex/option-6-visual-refresh), rendered by the dev-only preview
+harness in tools/preview (Vite, http://127.0.0.1:5173). Component content was
+not edited.
+
+Capture settings: headless Chromium, deviceScaleFactor 3, dark colour scheme,
+locale en-US, time zone America/New_York, clock fixed at
+2026-10-10T07:41:00-04:00 so relative start times read as one morning.
+
+- Full screen: /option6.html?screen=find at a 402 x 874 viewport, element
+  .option6-device with .option6-status and the review toolbar hidden.
+  Cropped to the content between the app header and the tab bar.
+- Components: /?scenario=NAME&capture=1 at 440 CSS px wide, with 24px / 20px
+  padding added around main.capture so content does not touch the plate edge.
+  Scenarios: race-day, recording, final, upcoming, countdown,
+  start-line, field-progress, under-review, just-run-finished, all-runners,
+  manage-rules-fair.
+
+Each capture is cropped to its content box (measured from the pixels), then
+given 20 CSS px of even padding top and bottom in its own background, so no
+frame shows a large empty area. Component captures already carry 20px side
+padding. The five opening film-strip plates share one frame (440 x 612 CSS px,
+or 402 x 559 for the Find screen), with content centred; fuller screens were
+chosen so that frame stays filled. Each is resized with Lanczos and saved as
+WebP at quality 82:
+
+| File | Source | Content rows (CSS px) | Frame (CSS px) | Size |
+| --- | --- | --- | --- | --- |
+| strip-find | screen=find | 77-577 | 402 x 559 | 540 x 751 |
+| strip-start | race-day | 24-576 | 440 x 612 | 540 x 751 |
+| strip-line | start-line | 43-553 | 440 x 612 | 540 x 751 |
+| strip-chase | recording | 24-596 | 440 x 612 | 540 x 751 |
+| strip-result | final | 24-561 | 440 x 612 | 540 x 751 |
+| race-start | race-day | 24-576 | 440 x 592 | 720 x 969 |
+| race-result | final | 24-697 | 440 x 713 | 720 x 1167 |
+| step-start | upcoming | 24-291 | 440 x 307 | 720 x 502 |
+| step-countdown | countdown | 43-438 | 440 x 435 | 720 x 712 |
+| step-line | start-line | 43-553 | 440 x 550 | 720 x 900 |
+| step-chase | field-progress | 45-379 | 440 x 374 | 720 x 612 |
+| step-result | under-review | 24-608 | 440 x 624 | 720 x 1021 |
+| way-solo | just-run-finished | 11-454 | 440 x 483 | 720 x 790 |
+| way-race | all-runners | 67-333 | 440 x 306 | 720 x 501 |
+| way-host | manage-rules-fair | 44-307 | 440 x 303 | 720 x 496 |
+
+Every file is under 25 KB. Images are served at or above twice their displayed
+CSS size. The previous assets/product/ PNGs were removed once nothing used them.
+
+Known harness defects, avoided rather than shown: the full Race detail screen
+hides "2 min after the first runner" and "Check recording before you run"
+under its fixed action panel; the just-run-finished fixture clips "You showed
+up. This effort is now in your solo history" under its fixed buttons; the
+solo fixture shows race-only stats (Gap to winner, Head start, Finishers) on a
+solo result; the full Profile screen uses "verified" wording; the find-*
+component scenarios render a placeholder header.
 
 Icons are a vendored subset of Lucide, with its license in assets. Fonts are
 self-hosted. No third-party analytics or scripts were added.

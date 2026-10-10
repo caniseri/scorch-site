@@ -23,37 +23,55 @@
     <link rel="apple-touch-icon" href="/assets/icon.png" />
     <link
       rel="preload"
+      href="/assets/fonts/space-grotesk-latin-700-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/space-grotesk-latin-500-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/space-grotesk-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
       href="/assets/fonts/urbanist-latin-900-normal.woff2"
       as="font"
       type="font/woff2"
       crossorigin
     />
-    <link rel="stylesheet" href="/styles.css?v=20260928" />
-    <script src="/site.mjs?v=20260928" type="module"></script>
-    <link rel="stylesheet" href="/race-demo.css?v=20260929" />
-    <script src="/race-demo.mjs?v=20260929" type="module"></script>
+    <link rel="stylesheet" href="/styles.css?v=20261009" />
+    <script src="/site.mjs?v=20261009" type="module"></script>
+    <link rel="stylesheet" href="/race-demo.css?v=20261009" />
+    <script src="/race-demo.mjs?v=20261009" type="module"></script>
   </head>
-  <body>
+  <body class="has-index">
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="header">
+    <header class="header" data-header>
       <nav class="nav wrap" aria-label="Main">
         <a class="brand" href="/" aria-label="Catchfire home"
           ><img
             src="/assets/mark.png"
-            width="40"
-            height="40"
+            width="30"
+            height="30"
             alt=""
           />CATCHFIRE</a
         >
         <div class="links" id="site-links">
           <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a
-          ><a href="/support/">Support</a>
+          ><a href="/support/">Support</a
+          ><a class="links-cta" href="/#beta">Join the beta</a>
         </div>
-        <a class="nav-cta" href="/#beta"
-          >Join the beta
-          <svg class="icon" aria-hidden="true">
-            <use href="/assets/icons.svg#arrow-up-right" /></svg
-        ></a>
+        <a class="button primary nav-cta" href="/#beta">Join the beta</a>
         <button
           class="icon-button menu-toggle"
           aria-label="Open navigation"
@@ -69,107 +87,134 @@
     </header>
     <main id="main">
       <header class="page-head wrap">
-        <span class="eyebrow">How it works</span>
-        <h1>Your first run.<br />Your way.</h1>
-        <p>
+        <p class="label">How it works</p>
+        <h1 class="display">Your first run.<br />Your way.</h1>
+        <p class="lead">
           Choose the run you came for. The details arrive when you need them.
         </p>
-        <nav class="page-jumps" aria-label="Choose your journey">
-          <a href="#solo"
-            ><svg class="icon" aria-hidden="true">
-              <use href="/assets/icons.svg#footprints" />
-            </svg>
-            Run solo</a
-          ><a href="#race"
-            ><svg class="icon" aria-hidden="true">
-              <use href="/assets/icons.svg#users-round" />
-            </svg>
-            Race others</a
-          ><a href="#host"
-            ><svg class="icon" aria-hidden="true">
-              <use href="/assets/icons.svg#flag" />
-            </svg>
-            Organize</a
-          >
-        </nav>
       </header>
-      <section class="band" id="solo">
-        <div class="wrap journey">
-          <div class="journey-intro">
-            <span class="eyebrow ember">01 / Run solo</span>
-            <h2>No pace? No problem.</h2>
-            <p>
-              Choose <b>Just run</b> to record time and distance, without
-              drawing a route or knowing your pace.
+      <nav class="page-index" aria-label="On this page" data-index>
+        <ol class="wrap">
+          <li>
+            <a href="#solo"><span>01</span>Run solo</a>
+          </li>
+          <li>
+            <a href="#race"><span>02</span>Race others</a>
+          </li>
+          <li>
+            <a href="#flame-chase"><span>03</span>The flame chase</a>
+          </li>
+          <li>
+            <a href="#host"><span>04</span>Organize</a>
+          </li>
+          <li>
+            <a href="#after"><span>05</span>After the line</a>
+          </li>
+        </ol>
+      </nav>
+
+      <section class="section" id="solo" aria-labelledby="solo-title">
+        <div class="wrap grid split">
+          <div class="split-text" data-reveal>
+            <p class="label eyebrow">01 · Run solo</p>
+            <h2 id="solo-title">No pace? No problem.</h2>
+            <p class="lead section-body">
+              Choose Just run to record time and distance, without drawing a
+              route or knowing your pace.
             </p>
             <ol class="steps">
               <li>
-                <b>Choose your run</b
-                ><span
-                  >Just run, choose a route, or draw your own private
-                  route.</span
-                >
+                <div>
+                  <b>Choose your run</b
+                  ><span
+                    >Just run, choose a route, or draw your own private
+                    route.</span
+                  >
+                </div>
               </li>
               <li>
-                <b>Add a target, only if you want one</b
-                ><span
-                  >On a mapped route, set a finish-time goal or chase an
-                  eligible previous effort on that same course and
-                  direction.</span
-                >
+                <div>
+                  <b>Add a target, only if you want one</b
+                  ><span
+                    >On a mapped route, set a finish-time goal or chase an
+                    eligible previous effort on that same course and
+                    direction.</span
+                  >
+                </div>
               </li>
               <li>
-                <b>Allow location, then start</b
-                ><span
-                  >Just runs stay on your phone. Mapped race attempts follow the
-                  race recording and result flow.</span
-                >
+                <div>
+                  <b>Allow location, then start</b
+                  ><span
+                    >Just runs stay on your phone. Mapped race attempts follow
+                    the race recording and result flow.</span
+                  >
+                </div>
               </li>
             </ol>
           </div>
-          <figure class="journey-visual">
-            <div class="component-capture" style="--capture-ratio: 440 / 441">
-              <img
-                src="/assets/product/first-move.png"
-                width="440"
-                height="441"
-                alt="Current first-move component: Run solo, Race others, Challenge a friend and Organize a race."
-              />
-            </div>
-            <figcaption>
-              Current app component. Illustrative preview.
+          <figure class="split-visual" data-reveal>
+            <img
+              class="plate"
+              src="/assets/screens/way-solo.webp"
+              width="720"
+              height="790"
+              loading="lazy"
+              decoding="async"
+              alt="Run saved screen for a fictional Just run: 5.40 km in 28:20, saved locally on the device."
+            />
+            <figcaption class="label caption">
+              Illustrative screens · Fictional runners
             </figcaption>
           </figure>
         </div>
       </section>
-      <section class="band" id="race">
-        <div class="wrap journey">
-          <div class="journey-intro">
-            <span class="eyebrow cyan">02 / Race others</span>
-            <h2>Know the route.<br />Know your start.</h2>
-            <ol class="steps">
+
+      <div class="wrap divider">
+        <div class="ruler" aria-hidden="true">
+          <svg viewBox="0 0 500 8" preserveAspectRatio="none">
+            <path
+              d="M0 0V8M20 0V4M40 0V4M60 0V4M80 0V4M100 0V8M120 0V4M140 0V4M160 0V4M180 0V4M200 0V8M220 0V4M240 0V4M260 0V4M280 0V4M300 0V8M320 0V4M340 0V4M360 0V4M380 0V4M400 0V8M420 0V4M440 0V4M460 0V4M480 0V4M500 0V8"
+            /></svg
+          ><span style="left: 0%">0K</span><span style="left: 20%">1K</span
+          ><span style="left: 40%">2K</span><span style="left: 60%">3K</span
+          ><span style="left: 80%">4K</span><span style="left: 100%">5K</span>
+        </div>
+      </div>
+      <section class="section" id="race" aria-labelledby="race-title">
+        <div class="wrap grid split">
+          <div class="split-text" data-reveal>
+            <p class="label eyebrow">02 · Race others</p>
+            <h2 id="race-title">Know the route. Know your start.</h2>
+            <ol class="steps section-body">
               <li>
-                <b>Find a race or open an invitation</b
-                ><span
-                  >Check the route, time and start style before joining. An
-                  invitation is not a reserved place.</span
-                >
+                <div>
+                  <b>Find a race or open an invitation</b
+                  ><span
+                    >Check the route, time and start style before joining. An
+                    invitation is not a reserved place.</span
+                  >
+                </div>
               </li>
               <li>
-                <b>Join your field</b
-                ><span
-                  >Fair starts use your recent 5K pace. An unrestricted Same
-                  start race does not need a pace; pace-limited races still
-                  do.</span
-                >
+                <div>
+                  <b>Join your field</b
+                  ><span
+                    >Fair starts use your recent 5K pace. An unrestricted Same
+                    start race does not need a pace; pace-limited races still
+                    do.</span
+                  >
+                </div>
               </li>
               <li>
-                <b>Get ready and race</b
-                ><span
-                  >At the route start, check location and recording readiness.
-                  Follow your personal start time, then race the shared
-                  course.</span
-                >
+                <div>
+                  <b>Get ready and race</b
+                  ><span
+                    >At the route start, check location and recording readiness.
+                    Follow your personal start time, then race the shared
+                    course.</span
+                  >
+                </div>
               </li>
             </ol>
             <p class="fine">
@@ -177,124 +222,156 @@
               invitation.
             </p>
           </div>
-          <figure class="journey-visual">
-            <div class="component-capture" style="--capture-ratio: 440 / 526">
-              <img
-                src="/assets/product/start-line.png"
-                width="440"
-                height="526"
-                loading="lazy"
-                alt="Start readiness shows each runner's scheduled start and recording permissions."
-              />
-            </div>
-            <figcaption>
-              Illustrative fair-start readiness, not an active race.
+          <figure class="split-visual" data-reveal>
+            <img
+              class="plate"
+              src="/assets/screens/race-start.webp"
+              width="720"
+              height="969"
+              loading="lazy"
+              decoding="async"
+              alt="Race day card for a fictional 5 km race: 20 minutes until your start at 8:01 AM, readiness checks and the start order."
+            />
+            <figcaption class="label caption">
+              Illustrative screens · Fictional runners
             </figcaption>
           </figure>
         </div>
       </section>
+
       <section
-        class="race-demo wrap"
+        class="section chase-section race-demo"
         id="flame-chase"
         data-race-demo="full"
         aria-labelledby="chase-title"
       >
-        <div class="demo-toolbar">
-          <div>
-            <span class="eyebrow">One course. Two ways to race.</span>
-            <h2 id="chase-title">Take the lead. Take it back.</h2>
-          </div>
-          <div class="segmented" role="group" aria-label="Race start style">
-            <button data-mode="fair" aria-pressed="true">Fair start</button>
-            <button data-mode="same" aria-pressed="false">Same start</button>
-          </div>
-        </div>
-        <p class="demo-explanation" data-explanation>
-          Your pace sets your start. Same route. First across wins.
-        </p>
-        <div class="chase-scene" data-chase-scene></div>
-        <noscript
-          ><p>
-            In this fictional fair-start race, Ava starts first, Ben starts 2
-            minutes 30 seconds later, and Cleo starts 5 minutes later. Ben takes
-            the lead, then Ava takes it back and wins by 3 seconds. Everyone
-            finishes. In Same start, all three start together and Cleo wins.
-          </p></noscript
-        >
-      </section>
-      <section class="band" id="host">
         <div class="wrap">
-          <span class="eyebrow amber">03 / Organize a race</span>
-          <h2>Bring the people.<br />You don't have to race.</h2>
-          <ol class="steps horizontal">
-            <li>
-              <b>Set the course</b
-              ><span
-                >Choose or draw a route. Set the time and pick Fair start or
-                Same start.</span
-              >
-            </li>
-            <li>
-              <b>Choose your role</b
-              ><span
-                >Host only, or host and race. Share the invitation and manage
-                your runners.</span
-              >
-            </li>
-            <li>
-              <b>See it through</b
-              ><span
-                >Manage the start window and review outstanding results.
-                Reschedule or cancel if plans change.</span
-              >
-            </li>
-          </ol>
-          <p class="fine">
+          <div class="section-head demo-toolbar" data-reveal>
+            <p class="label eyebrow">03 · One course. Two ways to race.</p>
+            <h2 id="chase-title">Take the lead. Take it back.</h2>
+            <p class="demo-explanation" data-explanation>
+              Your pace sets your start. Same route. First across wins.
+            </p>
+            <div class="segmented" role="group" aria-label="Race start style">
+              <button data-mode="fair" aria-pressed="true">Fair start</button
+              ><button data-mode="same" aria-pressed="false">Same start</button>
+            </div>
+          </div>
+          <div class="chase-scene" data-chase-scene></div>
+          <noscript
+            ><p class="chase-fallback">
+              In this fictional fair-start race, Ava starts first, Ben starts 2
+              minutes 30 seconds later, and Cleo starts 5 minutes later. Ben
+              takes the lead, then Ava takes it back and wins by 3 seconds.
+              Everyone finishes. In Same start, all three start together and
+              Cleo wins.
+            </p></noscript
+          >
+        </div>
+      </section>
+
+      <section class="section bone" id="host" aria-labelledby="host-title">
+        <div class="wrap">
+          <div class="section-head" data-reveal>
+            <p class="label eyebrow">04 · Organize a race</p>
+            <h2 id="host-title">Bring the people. You don't have to race.</h2>
+          </div>
+          <div class="cells section-body" data-reveal-group>
+            <article class="cell" data-reveal>
+              <p class="label num">01</p>
+              <h3>Set the course</h3>
+              <p>
+                Choose or draw a route. Set the time and pick Fair start or Same
+                start.
+              </p>
+            </article>
+            <article class="cell" data-reveal>
+              <p class="label num">02</p>
+              <h3>Choose your role</h3>
+              <p>
+                Host only, or host and race. Share the invitation and manage
+                your runners.
+              </p>
+            </article>
+            <article class="cell" data-reveal>
+              <p class="label num">03</p>
+              <h3>See it through</h3>
+              <p>
+                Manage the start window and review outstanding results.
+                Reschedule or cancel if plans change.
+              </p>
+            </article>
+          </div>
+          <p class="fine section-body">
             For a race that has not begun, hosts have a 48-hour late-start grace
             period. After that, reschedule before starting. Rescheduling remains
             available beyond the grace period.
           </p>
         </div>
       </section>
-      <section class="band">
-        <div class="wrap">
-          <span class="eyebrow">After the line</span>
-          <h2>The finish is a beginning.</h2>
-          <div class="path-grid">
-            <article>
-              <h3>Understand the result</h3>
-              <p>
-                Recorded is not always final. Catchfire shows review status
-                before a result is finalized.
-              </p>
-            </article>
-            <article>
-              <h3>Keep your progress</h3>
-              <p>
-                See your history, eligible route bests and private milestones in
-                Profile.
-              </p>
-            </article>
-            <article>
-              <h3>Give it another go</h3>
-              <p>
-                Share a final result, propose a rematch or take another run at
-                the route.
-              </p>
-            </article>
+
+      <section class="section" id="after" aria-labelledby="after-title">
+        <div class="wrap grid split">
+          <div class="split-text" data-reveal>
+            <p class="label eyebrow">05 · After the line</p>
+            <h2 id="after-title">The finish is a beginning.</h2>
+            <ol class="steps section-body">
+              <li>
+                <div>
+                  <b>Understand the result</b
+                  ><span
+                    >Recorded is not always final. Catchfire shows review status
+                    before a result is finalized.</span
+                  >
+                </div>
+              </li>
+              <li>
+                <div>
+                  <b>Keep your progress</b
+                  ><span
+                    >See your history, eligible route bests and private
+                    milestones in Profile.</span
+                  >
+                </div>
+              </li>
+              <li>
+                <div>
+                  <b>Give it another go</b
+                  ><span
+                    >Share a final result, propose a rematch or take another run
+                    at the route.</span
+                  >
+                </div>
+              </li>
+            </ol>
+            <p class="fine">
+              Save workout sends an eligible finish to Apple Health on iPhone in
+              enabled builds. Finished races can also be exported as FIT or GPX.
+              <a href="/support/#saving">See availability.</a>
+            </p>
           </div>
-          <p class="fine">
-            Save workout sends an eligible finish to Apple Health on iPhone in
-            enabled builds. Finished races can also be exported as FIT or GPX.
-            <a href="/support/#saving">See availability.</a>
-          </p>
+          <figure class="split-visual" data-reveal>
+            <img
+              class="plate"
+              src="/assets/screens/race-result.webp"
+              width="720"
+              height="1167"
+              loading="lazy"
+              decoding="async"
+              alt="Final result for a fictional runner: 2nd of 6 in 25:42, 0:09 behind River, with Propose a rematch and Share result."
+            />
+            <figcaption class="label caption">
+              Illustrative screens · Fictional runners
+            </figcaption>
+          </figure>
         </div>
       </section>
-      <section class="band beta" id="beta">
-        <div class="wrap">
-          <span class="eyebrow">The next starting line is yours</span>
-          <h2>Come run with us.</h2>
-          <p>
+
+      <section class="section bone join" id="beta" aria-labelledby="beta-title">
+        <div class="wrap" data-reveal>
+          <p class="label eyebrow">Join the beta</p>
+          <h2 id="beta-title">Come run with us.</h2>
+          <p class="lead">
             Catchfire is in free beta on iPhone and Android. Request access for
             your device; we will send the testing instructions.
           </p>
@@ -322,25 +399,37 @@
       </section>
     </main>
     <footer class="footer">
-      <div class="wrap footer-main">
-        <a class="brand" href="/"
-          ><img
-            src="/assets/mark.png"
-            width="36"
-            height="36"
-            alt=""
-          />CATCHFIRE</a
-        >
-        <p>Race others. Chase your best.</p>
-        <nav aria-label="Footer">
-          <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a
-          ><a href="/support/">Support</a><a href="/privacy/">Privacy</a
-          ><a href="/terms/">Terms</a>
-        </nav>
-      </div>
-      <div class="wrap footer-note">
-        <span>&copy; 2026 Catchfire</span
-        ><span>Free running beta. Unofficial community challenges.</span>
+      <div class="wrap">
+        <div class="footer-top">
+          <p class="footer-line">
+            Run solo. Race together.<br />A free running beta for iPhone and
+            Android.
+          </p>
+          <div class="footer-cols">
+            <nav aria-label="Product">
+              <p class="label">Product</p>
+              <a href="/demo/">How it works</a
+              ><a href="/pilot-routes/">Routes</a
+              ><a href="/#beta">Join the beta</a>
+            </nav>
+            <nav aria-label="Support">
+              <p class="label">Support</p>
+              <a href="/support/">Help and answers</a
+              ><a href="/support/#saving">Saving and compatibility</a
+              ><a href="mailto:support@catchfire.run">support@catchfire.run</a>
+            </nav>
+            <nav aria-label="Legal">
+              <p class="label">Legal</p>
+              <a href="/privacy/">Privacy</a><a href="/terms/">Terms</a
+              ><a href="mailto:legal@catchfire.run">legal@catchfire.run</a>
+            </nav>
+          </div>
+        </div>
+        <p class="footer-mark" aria-hidden="true">CATCHFIRE</p>
+        <div class="footer-note">
+          <span>&copy; 2026 ElseBranch Inc. All rights reserved.</span
+          ><span>Free running beta. Unofficial community challenges.</span>
+        </div>
       </div>
     </footer>
   </body>

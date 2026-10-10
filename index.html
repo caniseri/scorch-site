@@ -23,37 +23,55 @@
     <link rel="apple-touch-icon" href="/assets/icon.png" />
     <link
       rel="preload"
+      href="/assets/fonts/space-grotesk-latin-700-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/space-grotesk-latin-500-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/space-grotesk-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
       href="/assets/fonts/urbanist-latin-900-normal.woff2"
       as="font"
       type="font/woff2"
       crossorigin
     />
-    <link rel="stylesheet" href="/styles.css?v=20260929" />
-    <script src="/site.mjs?v=20260928" type="module"></script>
-    <link rel="stylesheet" href="/race-demo.css?v=20260929" />
-    <script src="/race-demo.mjs?v=20260929" type="module"></script>
+    <link rel="stylesheet" href="/styles.css?v=20261009" />
+    <script src="/site.mjs?v=20261009" type="module"></script>
+    <link rel="stylesheet" href="/race-demo.css?v=20261009" />
+    <script src="/race-demo.mjs?v=20261009" type="module"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="header">
+    <header class="header" data-header>
       <nav class="nav wrap" aria-label="Main">
         <a class="brand" href="/" aria-label="Catchfire home"
           ><img
             src="/assets/mark.png"
-            width="40"
-            height="40"
+            width="30"
+            height="30"
             alt=""
           />CATCHFIRE</a
         >
         <div class="links" id="site-links">
           <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a
-          ><a href="/support/">Support</a>
+          ><a href="/support/">Support</a
+          ><a class="links-cta" href="/#beta">Join the beta</a>
         </div>
-        <a class="nav-cta" href="/#beta"
-          >Join the beta
-          <svg class="icon" aria-hidden="true">
-            <use href="/assets/icons.svg#arrow-up-right" /></svg
-        ></a>
+        <a class="button primary nav-cta" href="/#beta">Join the beta</a>
         <button
           class="icon-button menu-toggle"
           aria-label="Open navigation"
@@ -68,213 +86,583 @@
       </nav>
     </header>
     <main id="main">
-      <section class="hero wrap">
-        <div class="hero-top">
-          <span class="eyebrow">Free running beta / iPhone + Android</span
-          ><a class="text-link" href="/demo/"
-            >Find your first run
-            <svg class="icon" aria-hidden="true">
-              <use href="/assets/icons.svg#arrow-right" /></svg
-          ></a>
-        </div>
-        <h1>Run solo.<br />Race together.</h1>
-        <div class="hero-purpose">
-          <p>
-            Chase your best, or bring your people. Start together, or let your
-            pace set the chase.
-          </p>
-          <a class="button primary" href="#beta"
-            >Join the beta
-            <svg class="icon" aria-hidden="true">
-              <use href="/assets/icons.svg#arrow-up-right" /></svg
-          ></a>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="wrap">
+          <p class="label">Free running beta · iPhone and Android</p>
+          <h1 class="display" id="hero-title">Run solo.<br />Race together.</h1>
+          <div class="hero-foot">
+            <p class="lead">
+              Chase your best, or bring your people. Start together, or let your
+              pace set the chase.
+            </p>
+            <div class="actions">
+              <a class="button primary" href="#beta"
+                >Join the beta
+                <svg class="icon" aria-hidden="true">
+                  <use href="/assets/icons.svg#arrow-up-right" /></svg></a
+              ><a class="button secondary" href="/demo/"
+                >See how it works
+                <svg class="icon" aria-hidden="true">
+                  <use href="/assets/icons.svg#arrow-right" /></svg
+              ></a>
+            </div>
+          </div>
+          <ol
+            class="filmstrip"
+            tabindex="0"
+            aria-label="One race day in five screens"
+          >
+            <li>
+              <figure>
+                <figcaption class="label">
+                  <span class="num">01</span><b>Find a race</b>
+                </figcaption>
+                <img
+                  class="plate"
+                  src="/assets/screens/strip-find.webp"
+                  width="540"
+                  height="751"
+                  decoding="async"
+                  alt="Find screen with three fictional races nearby, each with date, distance, start style and runner count."
+                />
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <figcaption class="label">
+                  <span class="num">02</span><b>Your start</b>
+                </figcaption>
+                <img
+                  class="plate"
+                  src="/assets/screens/strip-start.webp"
+                  width="540"
+                  height="751"
+                  decoding="async"
+                  alt="Race day card for a fictional 5 km race: 20 minutes until your start at 8:01 AM, readiness checks and the start order."
+                />
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <figcaption class="label">
+                  <span class="num">03</span><b>Start line</b>
+                </figcaption>
+                <img
+                  class="plate"
+                  src="/assets/screens/strip-line.webp"
+                  width="540"
+                  height="751"
+                  decoding="async"
+                  alt="Start line screen: 0:20 until your start at 6:00 PM, readiness checks, other runners&rsquo; start times and Waiting for your start."
+                />
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <figcaption class="label">
+                  <span class="num">04</span><b>The chase</b>
+                </figcaption>
+                <img
+                  class="plate"
+                  src="/assets/screens/strip-chase.webp"
+                  width="540"
+                  height="751"
+                  decoding="async"
+                  alt="Recording screen: race time 5:42, 1 km covered, live position 12th of 120, and the projected order with estimated gaps."
+                />
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <figcaption class="label">
+                  <span class="num">05</span><b>The result</b>
+                </figcaption>
+                <img
+                  class="plate"
+                  src="/assets/screens/strip-result.webp"
+                  width="540"
+                  height="751"
+                  decoding="async"
+                  alt="Final result for a fictional runner: 2nd of 6 in 25:42, 0:09 behind River, with distance, gap, head start and finishers."
+                />
+              </figure>
+            </li>
+          </ol>
+          <div class="ruler" aria-hidden="true">
+            <svg viewBox="0 0 500 8" preserveAspectRatio="none">
+              <path
+                d="M0 0V8M20 0V4M40 0V4M60 0V4M80 0V4M100 0V8M120 0V4M140 0V4M160 0V4M180 0V4M200 0V8M220 0V4M240 0V4M260 0V4M280 0V4M300 0V8M320 0V4M340 0V4M360 0V4M380 0V4M400 0V8M420 0V4M440 0V4M460 0V4M480 0V4M500 0V8"
+              /></svg
+            ><span style="left: 0%">0K</span><span style="left: 20%">1K</span
+            ><span style="left: 40%">2K</span><span style="left: 60%">3K</span
+            ><span style="left: 80%">4K</span><span style="left: 100%">5K</span>
+          </div>
+          <p class="label caption">Illustrative screens · Fictional runners</p>
         </div>
       </section>
+
       <section
-        class="race-demo wrap"
+        class="section chase-section race-demo"
         aria-labelledby="demo-title"
         data-race-demo="compact"
       >
-        <div class="demo-toolbar">
-          <div>
-            <span class="eyebrow">One course. Two ways to race.</span>
-            <h2 id="demo-title">Take the lead. Take it back.</h2>
-          </div>
-          <div class="segmented" role="group" aria-label="Race start style">
-            <button data-mode="fair" aria-pressed="true">Fair start</button
-            ><button data-mode="same" aria-pressed="false">Same start</button>
-          </div>
-        </div>
-        <p class="demo-explanation" data-explanation>
-          Your pace sets your start. Same route. First across wins.
-        </p>
-        <div class="chase-scene" data-chase-scene></div>
-        <noscript
-          ><p>
-            Fair start gives the steadier runner a head start. Same start starts
-            everyone together. The flame marks the leader, and moves only when
-            someone takes the lead. First across wins; everyone keeps racing to
-            their own finish. This is a fictional illustration.
-          </p></noscript
-        >
-      </section>
-      <section class="band pathways">
         <div class="wrap">
-          <div class="section-heading">
-            <span class="eyebrow">Make your first move</span>
-            <h2>Your run. Your kind of competition.</h2>
+          <div class="section-head demo-toolbar" data-reveal>
+            <p class="label eyebrow">One course. Two ways to race.</p>
+            <h2 id="demo-title">Take the lead. Take it back.</h2>
+            <p class="demo-explanation" data-explanation>
+              Your pace sets your start. Same route. First across wins.
+            </p>
+            <div class="segmented" role="group" aria-label="Race start style">
+              <button data-mode="fair" aria-pressed="true">Fair start</button
+              ><button data-mode="same" aria-pressed="false">Same start</button>
+            </div>
           </div>
-          <div class="path-grid">
-            <a class="path-item" href="/demo/#solo"
-              ><span class="path-icon ember"
-                ><svg class="icon" aria-hidden="true">
-                  <use href="/assets/icons.svg#footprints" /></svg
-              ></span>
+          <div class="chase-scene" data-chase-scene></div>
+          <noscript
+            ><p class="chase-fallback">
+              In Fair start, slower entry paces start first and faster ones
+              start later. Same start starts everyone together. The flame marks
+              the leader, and moves only when someone takes the lead. First
+              across wins; everyone keeps racing to their own finish. This is a
+              fictional illustration.
+            </p></noscript
+          >
+        </div>
+      </section>
+
+      <div class="wrap divider">
+        <div class="ruler" aria-hidden="true">
+          <svg viewBox="0 0 500 8" preserveAspectRatio="none">
+            <path
+              d="M0 0V8M20 0V4M40 0V4M60 0V4M80 0V4M100 0V8M120 0V4M140 0V4M160 0V4M180 0V4M200 0V8M220 0V4M240 0V4M260 0V4M280 0V4M300 0V8M320 0V4M340 0V4M360 0V4M380 0V4M400 0V8M420 0V4M440 0V4M460 0V4M480 0V4M500 0V8"
+            /></svg
+          ><span style="left: 0%">0K</span><span style="left: 20%">1K</span
+          ><span style="left: 40%">2K</span><span style="left: 60%">3K</span
+          ><span style="left: 80%">4K</span><span style="left: 100%">5K</span>
+        </div>
+      </div>
+      <section class="section ways" aria-labelledby="ways-title">
+        <div class="wrap">
+          <div class="section-head" data-reveal>
+            <p class="label">Three ways in</p>
+            <h2 id="ways-title">Your run. Your kind of competition.</h2>
+          </div>
+          <div class="columns section-body" data-reveal-group>
+            <article class="column" data-reveal>
+              <p class="label num">01</p>
               <h3>
-                Run solo
-                <svg class="icon" aria-hidden="true">
-                  <use href="/assets/icons.svg#arrow-up-right" />
-                </svg>
+                <a href="/demo/#solo"
+                  >Run solo
+                  <svg class="icon" aria-hidden="true">
+                    <use href="/assets/icons.svg#arrow-up-right" /></svg
+                ></a>
               </h3>
               <p>
                 Just run. Set a time goal. Or race a previous effort on the same
                 route.
               </p>
-              <span class="fine">No pace needed to Just run.</span></a
-            >
-            <a class="path-item" href="/demo/#race"
-              ><span class="path-icon cyan"
-                ><svg class="icon" aria-hidden="true">
-                  <use href="/assets/icons.svg#users-round" /></svg
-              ></span>
+              <p class="fine">No pace needed to Just run.</p>
+              <img
+                class="plate"
+                src="/assets/screens/way-solo.webp"
+                width="720"
+                height="790"
+                loading="lazy"
+                decoding="async"
+                alt="Run saved screen for a fictional Just run: 5.40 km in 28:20, saved locally on the device."
+              />
+            </article>
+            <article class="column" data-reveal>
+              <p class="label num">02</p>
               <h3>
-                Race others
-                <svg class="icon" aria-hidden="true">
-                  <use href="/assets/icons.svg#arrow-up-right" />
-                </svg>
+                <a href="/demo/#race"
+                  >Race others
+                  <svg class="icon" aria-hidden="true">
+                    <use href="/assets/icons.svg#arrow-up-right" /></svg
+                ></a>
               </h3>
               <p>
                 Find a race or open a friend's invitation. Same route. One
                 finish.
               </p>
-              <span class="fine">Fair start or Same start.</span></a
-            >
-            <a class="path-item" href="/demo/#host"
-              ><span class="path-icon amber"
-                ><svg class="icon" aria-hidden="true">
-                  <use href="/assets/icons.svg#flag" /></svg
-              ></span>
+              <p class="fine">Fair start or Same start.</p>
+              <img
+                class="plate"
+                src="/assets/screens/way-race.webp"
+                width="720"
+                height="501"
+                loading="lazy"
+                decoding="async"
+                alt="Live runner list for a fictional race: River leading, you second at 0:09 to the leader, Alex waiting for GPS."
+              />
+            </article>
+            <article class="column" data-reveal>
+              <p class="label num">03</p>
               <h3>
-                Organize a race
-                <svg class="icon" aria-hidden="true">
-                  <use href="/assets/icons.svg#arrow-up-right" />
-                </svg>
+                <a href="/demo/#host"
+                  >Organize a race
+                  <svg class="icon" aria-hidden="true">
+                    <use href="/assets/icons.svg#arrow-up-right" /></svg
+                ></a>
               </h3>
               <p>
                 Pick a route, set a time, invite your runners. Race too, or just
                 host.
               </p>
-              <span class="fine">One friend is a starting field.</span></a
-            >
+              <p class="fine">One friend is a starting field.</p>
+              <img
+                class="plate"
+                src="/assets/screens/way-host.webp"
+                width="720"
+                height="496"
+                loading="lazy"
+                decoding="async"
+                alt="Race rules summary: Fair start, all paces welcome, rules fixed for this race."
+              />
+            </article>
           </div>
+          <p class="label caption">Illustrative screens · Fictional runners</p>
         </div>
       </section>
-      <section class="band product-proof" id="in-the-app">
-        <div class="wrap">
-          <div class="section-heading">
-            <span class="eyebrow">From the start to the story</span>
-            <h2>
-              A chase you can follow.<br />A finish worth coming back for.
-            </h2>
-            <p>
-              Know your start. See course progress. When your result is final,
-              share it or propose a rematch.
-            </p>
+
+      <div class="wrap divider">
+        <div class="ruler" aria-hidden="true">
+          <svg viewBox="0 0 500 8" preserveAspectRatio="none">
+            <path
+              d="M0 0V8M20 0V4M40 0V4M60 0V4M80 0V4M100 0V8M120 0V4M140 0V4M160 0V4M180 0V4M200 0V8M220 0V4M240 0V4M260 0V4M280 0V4M300 0V8M320 0V4M340 0V4M360 0V4M380 0V4M400 0V8M420 0V4M440 0V4M460 0V4M480 0V4M500 0V8"
+            /></svg
+          ><span style="left: 0%">0K</span><span style="left: 20%">1K</span
+          ><span style="left: 40%">2K</span><span style="left: 60%">3K</span
+          ><span style="left: 80%">4K</span><span style="left: 100%">5K</span>
+        </div>
+      </div>
+      <section
+        class="section sequence"
+        aria-labelledby="sequence-title"
+        data-sequence
+      >
+        <div class="wrap grid">
+          <div class="section-head" data-reveal>
+            <p class="label">Race day, step by step</p>
+            <h2 id="sequence-title">From your start to the result.</h2>
           </div>
-          <div class="proof-grid">
-            <figure>
-              <div class="component-capture" style="--capture-ratio: 440 / 526">
-                <img
-                  src="/assets/product/start-line.png"
-                  width="440"
-                  height="526"
-                  loading="lazy"
-                  alt="Catchfire Start readiness with personal start time, location permissions and runner start times."
-                />
+          <ol class="sequence-steps">
+            <li class="sequence-step" data-reveal>
+              <div>
+                <p class="label num">Step 01</p>
+                <h3>Get your start</h3>
+                <p>
+                  Fair starts use your recent 5K pace to set your own start
+                  time. In Same start, everyone starts together.
+                </p>
               </div>
-              <figcaption>
-                <b>Know when you go.</b>Your own start time and recording
-                readiness in one place.
-              </figcaption>
-            </figure>
-            <figure>
-              <div class="component-capture" style="--capture-ratio: 440 / 371">
+              <figure>
                 <img
-                  src="/assets/product/field-progress.png"
-                  width="440"
-                  height="371"
+                  class="plate"
+                  src="/assets/screens/step-start.webp"
+                  width="720"
+                  height="502"
                   loading="lazy"
-                  alt="Catchfire Course progress distinguishes on-course runners, last known positions and missing locations."
+                  decoding="async"
+                  alt="Race card showing a fictional 5 km race, your start time and a Get ready button."
                 />
+              </figure>
+            </li>
+            <li class="sequence-step" data-reveal>
+              <div>
+                <p class="label num">Step 02</p>
+                <h3>Countdown</h3>
+                <p>
+                  At the route start, check location and recording readiness.
+                  The countdown runs to your start, not the first runner's.
+                </p>
               </div>
-              <figcaption>
-                <b>Follow the field.</b>Estimated course positions, with stale
-                or missing data called out.
-              </figcaption>
-            </figure>
-            <figure>
-              <div
-                class="component-capture"
-                style="--capture-ratio: 440 / 1003"
-              >
+              <figure>
                 <img
-                  src="/assets/product/finish.png"
-                  width="440"
-                  height="1003"
+                  class="plate"
+                  src="/assets/screens/step-countdown.webp"
+                  width="720"
+                  height="712"
                   loading="lazy"
-                  alt="Catchfire Final result with second place, race time, gap, rematch action and sharing."
+                  decoding="async"
+                  alt="Countdown ring showing 0:55 until your start, with location and screen-lock recording allowed."
                 />
+              </figure>
+            </li>
+            <li class="sequence-step" data-reveal>
+              <div>
+                <p class="label num">Step 03</p>
+                <h3>Start line</h3>
+                <p>
+                  Follow your personal start time. When your start opens, start
+                  recording at the line and run.
+                </p>
               </div>
-              <figcaption>
-                <b>Leave with a next run.</b>A final result, a shareable moment,
-                a reason for a rematch.
-              </figcaption>
-            </figure>
-          </div>
-          <p class="fine">
-            Current app components with illustrative data. These are not live
-            races or full-device screenshots. Race results may remain under
-            review before becoming final.
+              <figure>
+                <img
+                  class="plate"
+                  src="/assets/screens/step-line.webp"
+                  width="720"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Start line screen: 0:20 until your start at 6:00 PM, other runners' start times, and Waiting for your start."
+                />
+              </figure>
+            </li>
+            <li class="sequence-step" data-reveal>
+              <div>
+                <p class="label num">Step 04</p>
+                <h3>The chase</h3>
+                <p>
+                  Race the shared course. Course positions and gaps are
+                  estimates, with stale or missing data called out.
+                </p>
+              </div>
+              <figure>
+                <img
+                  class="plate"
+                  src="/assets/screens/step-chase.webp"
+                  width="720"
+                  height="612"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Field progress for four fictional runners: on course, last known position and no position yet."
+                />
+              </figure>
+            </li>
+            <li class="sequence-step" data-reveal>
+              <div>
+                <p class="label num">Step 05</p>
+                <h3>Review and result</h3>
+                <p>
+                  Recorded is not always final. Catchfire shows review status
+                  before a result is finalized. Then share it or propose a
+                  rematch.
+                </p>
+              </div>
+              <figure>
+                <img
+                  class="plate"
+                  src="/assets/screens/step-result.webp"
+                  width="720"
+                  height="1021"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Finish recorded and under review: race time 25:42, place confirmed when results are final."
+                />
+              </figure>
+            </li>
+          </ol>
+          <p class="label caption sequence-caption">
+            Illustrative screens · Fictional runners
           </p>
         </div>
       </section>
-      <section class="band">
-        <div class="wrap compact-band">
-          <div>
-            <span class="eyebrow">Your effort goes with you</span>
-            <h2>Save the run. Keep the story.</h2>
-            <p>
-              Save workout sends an eligible finish to Apple Health on iPhone in
-              enabled builds. Export a finished race as FIT or GPX for manual
-              upload to Strava or Garmin Connect.
+
+      <section
+        class="section bone"
+        id="fair-start"
+        aria-labelledby="fair-title"
+      >
+        <div class="wrap grid">
+          <div class="fair-text" data-reveal>
+            <p class="label eyebrow">Fair start, explained</p>
+            <h2 id="fair-title">Your pace sets your start.</h2>
+            <p class="lead section-body">
+              A fair start is a pace-adjusted personal start. It needs a recent
+              5K pace.
             </p>
-            <p class="fine">
-              Health Connect is under Android testing and is not enabled in the
-              production profile. No automatic third-party sync.
+            <p>
+              Same start needs no pace when it is unrestricted. Neither is a
+              prediction, and neither promises equal finishes. First across the
+              line wins.
             </p>
           </div>
-          <a class="text-link" href="/support/#saving"
-            >Saving &amp; compatibility
-            <svg class="icon" aria-hidden="true">
-              <use href="/assets/icons.svg#arrow-right" /></svg
-          ></a>
+          <figure class="fair-diagram" data-reveal>
+            <svg role="img" aria-labelledby="fair-svg-title fair-svg-desc">
+              <title id="fair-svg-title">
+                Fair start timeline for three fictional runners
+              </title>
+              <desc id="fair-svg-desc">
+                Ava, 6:00 per km, starts at 0:00. Ben, 5:30 per km, starts at
+                2:30. Cleo, 5:00 per km, starts at 5:00. All three run the same
+                5K route.
+              </desc>
+              <text x="0" y="16">
+                <tspan class="d-name">Ava</tspan>
+                <tspan class="d-meta" dx="10">6:00 /km · head start 5:00</tspan>
+              </text>
+              <rect class="d-lead" x="0" y="28" width="100%" height="24" />
+              <text x="0" y="100">
+                <tspan class="d-name">Ben</tspan>
+                <tspan class="d-meta" dx="10">5:30 /km · head start 2:30</tspan>
+              </text>
+              <line class="d-wait" x1="0" x2="33.33%" y1="124" y2="124" />
+              <rect
+                class="d-run"
+                x="33.33%"
+                y="112"
+                width="66.67%"
+                height="24"
+              />
+              <text x="0" y="184">
+                <tspan class="d-name">Cleo</tspan>
+                <tspan class="d-meta" dx="10">5:00 /km · starts last</tspan>
+              </text>
+              <line class="d-wait" x1="0" x2="66.67%" y1="208" y2="208" />
+              <rect
+                class="d-run"
+                x="66.67%"
+                y="196"
+                width="33.33%"
+                height="24"
+              />
+              <line class="d-axis" x1="0" x2="100%" y1="252" y2="252" />
+              <line class="d-axis" x1="0.5" x2="0.5" y1="252" y2="260" />
+              <line class="d-axis" x1="33.33%" x2="33.33%" y1="252" y2="260" />
+              <line class="d-axis" x1="66.67%" x2="66.67%" y1="252" y2="260" />
+              <line class="d-axis" x1="99.9%" x2="99.9%" y1="252" y2="260" />
+              <text class="d-tick" x="0" y="280">0:00</text>
+              <text class="d-tick" x="33.33%" y="280" text-anchor="middle">
+                2:30
+              </text>
+              <text class="d-tick" x="66.67%" y="280" text-anchor="middle">
+                5:00
+              </text>
+              <text class="d-tick" x="100%" y="280" text-anchor="end">
+                7:30
+              </text>
+            </svg>
+            <figcaption class="label caption">
+              Minutes after the first start · Fictional runners
+            </figcaption>
+          </figure>
         </div>
       </section>
-      <section class="band beta" id="beta">
+
+      <section class="section save" aria-labelledby="save-title">
         <div class="wrap">
-          <span class="eyebrow">The next starting line is yours</span>
-          <h2>Come run with us.</h2>
-          <p>
+          <div class="section-head" data-reveal>
+            <p class="label">Your effort goes with you</p>
+            <h2 id="save-title">Save the run. Keep the story.</h2>
+            <p>
+              Just runs stay on your phone. Finished races go where you choose,
+              when you ask.
+            </p>
+          </div>
+          <div class="cells section-body" data-reveal-group>
+            <article class="cell" data-reveal>
+              <h3>Apple Health</h3>
+              <p>
+                Save workout sends an eligible finish to Apple Health on iPhone
+                in enabled builds.
+              </p>
+            </article>
+            <article class="cell" data-reveal>
+              <h3>FIT and GPX files</h3>
+              <p>
+                Export a finished race as FIT or GPX for manual upload to Strava
+                or Garmin Connect.
+              </p>
+            </article>
+            <article class="cell" data-reveal>
+              <h3>Calendar draft</h3>
+              <p>
+                Add a race with a Google Calendar draft or a standard calendar
+                file. Add an updated copy after a schedule change.
+              </p>
+            </article>
+          </div>
+          <p class="fine section-body">
+            Health Connect is under Android testing and is not enabled in the
+            production profile. No automatic third-party sync.
+            <a href="/support/#saving">Saving and compatibility</a>
+          </p>
+        </div>
+      </section>
+
+      <div class="wrap divider">
+        <div class="ruler" aria-hidden="true">
+          <svg viewBox="0 0 500 8" preserveAspectRatio="none">
+            <path
+              d="M0 0V8M20 0V4M40 0V4M60 0V4M80 0V4M100 0V8M120 0V4M140 0V4M160 0V4M180 0V4M200 0V8M220 0V4M240 0V4M260 0V4M280 0V4M300 0V8M320 0V4M340 0V4M360 0V4M380 0V4M400 0V8M420 0V4M440 0V4M460 0V4M480 0V4M500 0V8"
+            /></svg
+          ><span style="left: 0%">0K</span><span style="left: 20%">1K</span
+          ><span style="left: 40%">2K</span><span style="left: 60%">3K</span
+          ><span style="left: 80%">4K</span><span style="left: 100%">5K</span>
+        </div>
+      </div>
+      <section class="section" aria-labelledby="answers-title">
+        <div class="wrap grid answers-layout">
+          <div class="section-head" data-reveal>
+            <p class="label">Straight answers</p>
+            <h2 id="answers-title">Before your first run.</h2>
+            <p>
+              More on recording, results and accounts in
+              <a class="link" href="/support/">Support</a>.
+            </p>
+          </div>
+          <div class="answers" data-reveal>
+            <details>
+              <summary>Who can join?</summary>
+              <p>
+                Catchfire is in free beta on iPhone and Android, by invitation.
+                <a href="#beta">Request access</a> for your device and we will
+                send the testing instructions.
+              </p>
+            </details>
+            <details>
+              <summary>Do I need a pace?</summary>
+              <p>
+                No pace is needed for Just run or an unrestricted Same start
+                race. Fair start and pace-limited races require a recent 5K
+                pace.
+              </p>
+            </details>
+            <details>
+              <summary>What is a fair start?</summary>
+              <p>
+                A pace-adjusted personal start, set from your recent 5K pace. It
+                is not a prediction and does not promise equal finishes. First
+                across the line wins.
+              </p>
+            </details>
+            <details>
+              <summary>What kind of race is this?</summary>
+              <p>
+                Free, unofficial running races. Catchfire races are not official
+                events and are not sanctioned by any city, park authority, road
+                authority, federation, or governing body unless expressly stated
+                in writing.
+              </p>
+            </details>
+            <details>
+              <summary>Does it sync with Strava or Garmin?</summary>
+              <p>
+                No. There is no automatic sync. Export a finished race as a FIT
+                or GPX file and upload it yourself, for example to Strava or
+                Garmin Connect.
+              </p>
+            </details>
+            <details>
+              <summary>Where does my data go?</summary>
+              <p>
+                Just runs stay on your phone. During a race, Catchfire uses
+                location for route progress and finish detection. The
+                <a href="/privacy/">privacy policy</a> has the detail.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section bone join" id="beta" aria-labelledby="beta-title">
+        <div class="wrap" data-reveal>
+          <p class="label eyebrow">Join the beta</p>
+          <h2 id="beta-title">Come run with us.</h2>
+          <p class="lead">
             Catchfire is in free beta on iPhone and Android. Request access for
             your device; we will send the testing instructions.
           </p>
@@ -302,25 +690,37 @@
       </section>
     </main>
     <footer class="footer">
-      <div class="wrap footer-main">
-        <a class="brand" href="/"
-          ><img
-            src="/assets/mark.png"
-            width="36"
-            height="36"
-            alt=""
-          />CATCHFIRE</a
-        >
-        <p>Race others. Chase your best.</p>
-        <nav aria-label="Footer">
-          <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a
-          ><a href="/support/">Support</a><a href="/privacy/">Privacy</a
-          ><a href="/terms/">Terms</a>
-        </nav>
-      </div>
-      <div class="wrap footer-note">
-        <span>&copy; 2026 Catchfire</span
-        ><span>Free running beta. Unofficial community challenges.</span>
+      <div class="wrap">
+        <div class="footer-top">
+          <p class="footer-line">
+            Run solo. Race together.<br />A free running beta for iPhone and
+            Android.
+          </p>
+          <div class="footer-cols">
+            <nav aria-label="Product">
+              <p class="label">Product</p>
+              <a href="/demo/">How it works</a
+              ><a href="/pilot-routes/">Routes</a
+              ><a href="/#beta">Join the beta</a>
+            </nav>
+            <nav aria-label="Support">
+              <p class="label">Support</p>
+              <a href="/support/">Help and answers</a
+              ><a href="/support/#saving">Saving and compatibility</a
+              ><a href="mailto:support@catchfire.run">support@catchfire.run</a>
+            </nav>
+            <nav aria-label="Legal">
+              <p class="label">Legal</p>
+              <a href="/privacy/">Privacy</a><a href="/terms/">Terms</a
+              ><a href="mailto:legal@catchfire.run">legal@catchfire.run</a>
+            </nav>
+          </div>
+        </div>
+        <p class="footer-mark" aria-hidden="true">CATCHFIRE</p>
+        <div class="footer-note">
+          <span>&copy; 2026 ElseBranch Inc. All rights reserved.</span
+          ><span>Free running beta. Unofficial community challenges.</span>
+        </div>
       </div>
     </footer>
   </body>

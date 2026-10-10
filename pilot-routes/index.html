@@ -26,30 +26,53 @@
     <link rel="apple-touch-icon" href="/assets/icon.png" />
     <link
       rel="preload"
+      href="/assets/fonts/space-grotesk-latin-700-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/space-grotesk-latin-500-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/space-grotesk-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
       href="/assets/fonts/urbanist-latin-900-normal.woff2"
       as="font"
       type="font/woff2"
       crossorigin
     />
-    <link rel="stylesheet" href="/styles.css?v=20260928" />
-    <script src="/site.mjs?v=20260928" type="module"></script>
+    <link rel="stylesheet" href="/styles.css?v=20261009" />
+    <script src="/site.mjs?v=20261009" type="module"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="header">
+    <header class="header" data-header>
       <nav class="nav wrap" aria-label="Main">
         <a class="brand" href="/" aria-label="Catchfire home"
-          ><img src="/assets/mark.png" width="40" height="40" alt="" />CATCHFIRE</a
+          ><img
+            src="/assets/mark.png"
+            width="30"
+            height="30"
+            alt=""
+          />CATCHFIRE</a
         >
         <div class="links" id="site-links">
           <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a
-          ><a href="/support/">Support</a>
+          ><a href="/support/">Support</a
+          ><a class="links-cta" href="/#beta">Join the beta</a>
         </div>
-        <a class="nav-cta" href="/#beta"
-          >Join the beta
-          <svg class="icon" aria-hidden="true">
-            <use href="/assets/icons.svg#arrow-up-right" /></svg
-        ></a>
+        <a class="button primary nav-cta" href="/#beta">Join the beta</a>
         <button
           class="icon-button menu-toggle"
           aria-label="Open navigation"
@@ -65,140 +88,158 @@
     </header>
     <main id="main">
       <header class="page-head wrap">
-        <span class="eyebrow">Routes</span>
-        <h1>Your course.<br />Not your constraint.</h1>
-        <p>
+        <p class="label">Routes</p>
+        <h1 class="display">Your course.<br />Not your constraint.</h1>
+        <p class="lead">
           A shared route makes a race comparable. A solo run doesn't need one.
         </p>
       </header>
-      <section class="band">
-        <div class="wrap path-grid">
-          <article>
-            <svg class="icon" aria-hidden="true">
-              <use href="/assets/icons.svg#footprints" />
-            </svg>
-            <h2>Just run</h2>
-            <p>
-              No course to draw. Start with time and distance, even when you
-              don't know your pace.
-            </p>
-          </article>
-          <article>
-            <svg class="icon" aria-hidden="true">
-              <use href="/assets/icons.svg#route" />
-            </svg>
-            <h2>Choose a route</h2>
-            <p>
-              Inspect the mapped course and its start and finish before
-              committing to a race or solo target.
-            </p>
-          </article>
-          <article>
-            <svg class="icon" aria-hidden="true">
-              <use href="/assets/icons.svg#flag" />
-            </svg>
-            <h2>Draw your route</h2>
-            <p>
-              Create a private course for your run or organize a shared route
-              for your runners.
-            </p>
-          </article>
+
+      <div class="wrap divider">
+        <div class="ruler" aria-hidden="true">
+          <svg viewBox="0 0 500 8" preserveAspectRatio="none">
+            <path
+              d="M0 0V8M20 0V4M40 0V4M60 0V4M80 0V4M100 0V8M120 0V4M140 0V4M160 0V4M180 0V4M200 0V8M220 0V4M240 0V4M260 0V4M280 0V4M300 0V8M320 0V4M340 0V4M360 0V4M380 0V4M400 0V8M420 0V4M440 0V4M460 0V4M480 0V4M500 0V8"
+            /></svg
+          ><span style="left: 0%">0K</span><span style="left: 20%">1K</span
+          ><span style="left: 40%">2K</span><span style="left: 60%">3K</span
+          ><span style="left: 80%">4K</span><span style="left: 100%">5K</span>
         </div>
-      </section>
-      <section class="band">
+      </div>
+      <section class="section" aria-labelledby="modes-title">
         <div class="wrap">
-          <span class="eyebrow">NYC route ideas</span>
-          <h2>A few places to begin.</h2>
-          <p>
-            These are reference examples, not available races or inspected
-            courses. Check the actual route, access and conditions in the app
-            and on the ground.
-          </p>
-          <div class="route-list">
-            <article>
-              <span class="route-index">01</span>
-              <div>
-                <h3>Central Park Full Loop</h3>
-                <span class="fine">Loop / reference distance</span>
-              </div>
-              <strong>9.66 km</strong
-              ><svg class="icon" aria-hidden="true">
-                <use href="/assets/icons.svg#route" />
-              </svg>
+          <div class="section-head" data-reveal>
+            <p class="label">Three route modes</p>
+            <h2 id="modes-title">Pick the course, or skip it.</h2>
+          </div>
+          <div class="columns section-body" data-reveal-group>
+            <article class="column" data-reveal>
+              <p class="label num">01</p>
+              <h3>Just run</h3>
+              <p>
+                No course to draw. Start with time and distance, even when you
+                don't know your pace.
+              </p>
             </article>
-            <article>
-              <span class="route-index">02</span>
-              <div>
-                <h3>Central Park Mid Loop</h3>
-                <span class="fine">Loop / reference distance</span>
-              </div>
-              <strong>6.47 km</strong
-              ><svg class="icon" aria-hidden="true">
-                <use href="/assets/icons.svg#route" />
-              </svg>
+            <article class="column" data-reveal>
+              <p class="label num">02</p>
+              <h3>Choose a route</h3>
+              <p>
+                Inspect the mapped course and its start and finish before
+                committing to a race or solo target.
+              </p>
             </article>
-            <article>
-              <span class="route-index">03</span>
-              <div>
-                <h3>Hudson Greenway 8K</h3>
-                <span class="fine">Point to point / reference distance</span>
-              </div>
-              <strong>8.29 km</strong
-              ><svg class="icon" aria-hidden="true">
-                <use href="/assets/icons.svg#route" />
-              </svg>
-            </article>
-            <article>
-              <span class="route-index">04</span>
-              <div>
-                <h3>Prospect Park Loop</h3>
-                <span class="fine">Loop / reference distance</span>
-              </div>
-              <strong>5.38 km</strong
-              ><svg class="icon" aria-hidden="true">
-                <use href="/assets/icons.svg#route" />
-              </svg>
-            </article>
-            <article>
-              <span class="route-index">05</span>
-              <div>
-                <h3>Roosevelt Island Loop</h3>
-                <span class="fine">Loop / reference distance</span>
-              </div>
-              <strong>7.24 km</strong
-              ><svg class="icon" aria-hidden="true">
-                <use href="/assets/icons.svg#route" />
-              </svg>
-            </article>
-            <article>
-              <span class="route-index">06</span>
-              <div>
-                <h3>Randall's Island Loop</h3>
-                <span class="fine">Loop / reference distance</span>
-              </div>
-              <strong>8.39 km</strong
-              ><svg class="icon" aria-hidden="true">
-                <use href="/assets/icons.svg#route" />
-              </svg>
+            <article class="column" data-reveal>
+              <p class="label num">03</p>
+              <h3>Draw your route</h3>
+              <p>
+                Create a private course for your run or organize a shared route
+                for your runners.
+              </p>
             </article>
           </div>
-          <p class="fine">
-            Catchfire does not inspect or close public routes. Distances are
-            approximate; runners remain responsible for conditions, access and
-            other road or path users.
-          </p>
-          <a class="text-link" href="/demo/#solo"
-            >Choose your first run
-            <svg class="icon" aria-hidden="true">
-              <use href="/assets/icons.svg#arrow-right" /></svg
-          ></a>
         </div>
       </section>
-      <section class="band beta" id="beta">
+
+      <div class="wrap divider">
+        <div class="ruler" aria-hidden="true">
+          <svg viewBox="0 0 500 8" preserveAspectRatio="none">
+            <path
+              d="M0 0V8M20 0V4M40 0V4M60 0V4M80 0V4M100 0V8M120 0V4M140 0V4M160 0V4M180 0V4M200 0V8M220 0V4M240 0V4M260 0V4M280 0V4M300 0V8M320 0V4M340 0V4M360 0V4M380 0V4M400 0V8M420 0V4M440 0V4M460 0V4M480 0V4M500 0V8"
+            /></svg
+          ><span style="left: 0%">0K</span><span style="left: 20%">1K</span
+          ><span style="left: 40%">2K</span><span style="left: 60%">3K</span
+          ><span style="left: 80%">4K</span><span style="left: 100%">5K</span>
+        </div>
+      </div>
+      <section class="section" aria-labelledby="ideas-title">
         <div class="wrap">
-          <span class="eyebrow">The next starting line is yours</span>
-          <h2>Come run with us.</h2>
+          <div class="section-head" data-reveal>
+            <p class="label">NYC route ideas</p>
+            <h2 id="ideas-title">A few places to begin.</h2>
+            <p>
+              These are reference examples, not available races or inspected
+              courses. Check the actual route, access and conditions in the app
+              and on the ground.
+            </p>
+          </div>
+          <div class="section-body" data-reveal>
+            <table class="route-table" aria-labelledby="ideas-title">
+              <thead>
+                <tr>
+                  <th scope="col" class="r-num">No.</th>
+                  <th scope="col">Route</th>
+                  <th scope="col" class="r-val">Distance</th>
+                  <th scope="col" class="r-val">Elevation</th>
+                  <th scope="col" class="r-val">Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="r-num">01</td>
+                  <th scope="row">Central Park Full Loop</th>
+                  <td class="r-val">9.66 km</td>
+                  <td class="r-val">82 m</td>
+                  <td class="r-val">Loop</td>
+                </tr>
+                <tr>
+                  <td class="r-num">02</td>
+                  <th scope="row">Central Park Mid Loop</th>
+                  <td class="r-val">6.47 km</td>
+                  <td class="r-val">54 m</td>
+                  <td class="r-val">Loop</td>
+                </tr>
+                <tr>
+                  <td class="r-num">03</td>
+                  <th scope="row">Hudson Greenway 8K</th>
+                  <td class="r-val">8.29 km</td>
+                  <td class="r-val">18 m</td>
+                  <td class="r-val">Point to point</td>
+                </tr>
+                <tr>
+                  <td class="r-num">04</td>
+                  <th scope="row">Prospect Park Loop</th>
+                  <td class="r-val">5.38 km</td>
+                  <td class="r-val">38 m</td>
+                  <td class="r-val">Loop</td>
+                </tr>
+                <tr>
+                  <td class="r-num">05</td>
+                  <th scope="row">Roosevelt Island Loop</th>
+                  <td class="r-val">7.24 km</td>
+                  <td class="r-val">22 m</td>
+                  <td class="r-val">Loop</td>
+                </tr>
+                <tr>
+                  <td class="r-num">06</td>
+                  <th scope="row">Randall&rsquo;s Island Loop</th>
+                  <td class="r-val">8.39 km</td>
+                  <td class="r-val">36 m</td>
+                  <td class="r-val">Loop</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="fine section-body">
+            Catchfire does not inspect or close public routes. Distances and
+            elevation are approximate reference values; runners remain
+            responsible for conditions, access and other road or path users.
+          </p>
           <p>
+            <a class="text-link" href="/demo/#solo"
+              >Choose your first run
+              <svg class="icon" aria-hidden="true">
+                <use href="/assets/icons.svg#arrow-right" /></svg
+            ></a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section bone join" id="beta" aria-labelledby="beta-title">
+        <div class="wrap" data-reveal>
+          <p class="label eyebrow">Join the beta</p>
+          <h2 id="beta-title">Come run with us.</h2>
+          <p class="lead">
             Catchfire is in free beta on iPhone and Android. Request access for
             your device; we will send the testing instructions.
           </p>
@@ -226,20 +267,37 @@
       </section>
     </main>
     <footer class="footer">
-      <div class="wrap footer-main">
-        <a class="brand" href="/"
-          ><img src="/assets/mark.png" width="36" height="36" alt="" />CATCHFIRE</a
-        >
-        <p>Race others. Chase your best.</p>
-        <nav aria-label="Footer">
-          <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a
-          ><a href="/support/">Support</a><a href="/privacy/">Privacy</a
-          ><a href="/terms/">Terms</a>
-        </nav>
-      </div>
-      <div class="wrap footer-note">
-        <span>&copy; 2026 Catchfire</span
-        ><span>Free running beta. Unofficial community challenges.</span>
+      <div class="wrap">
+        <div class="footer-top">
+          <p class="footer-line">
+            Run solo. Race together.<br />A free running beta for iPhone and
+            Android.
+          </p>
+          <div class="footer-cols">
+            <nav aria-label="Product">
+              <p class="label">Product</p>
+              <a href="/demo/">How it works</a
+              ><a href="/pilot-routes/">Routes</a
+              ><a href="/#beta">Join the beta</a>
+            </nav>
+            <nav aria-label="Support">
+              <p class="label">Support</p>
+              <a href="/support/">Help and answers</a
+              ><a href="/support/#saving">Saving and compatibility</a
+              ><a href="mailto:support@catchfire.run">support@catchfire.run</a>
+            </nav>
+            <nav aria-label="Legal">
+              <p class="label">Legal</p>
+              <a href="/privacy/">Privacy</a><a href="/terms/">Terms</a
+              ><a href="mailto:legal@catchfire.run">legal@catchfire.run</a>
+            </nav>
+          </div>
+        </div>
+        <p class="footer-mark" aria-hidden="true">CATCHFIRE</p>
+        <div class="footer-note">
+          <span>&copy; 2026 ElseBranch Inc. All rights reserved.</span
+          ><span>Free running beta. Unofficial community challenges.</span>
+        </div>
       </div>
     </footer>
   </body>

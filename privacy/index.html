@@ -10,22 +10,29 @@
   <link rel="icon" href="/assets/icon.png">
   <link rel="apple-touch-icon" href="/assets/icon.png">
   <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/urbanist-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/space-grotesk-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/space-grotesk-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20260928">
-  <script src="/site.mjs?v=20260928" type="module"></script>
+  <link rel="preload" href="/assets/fonts/urbanist-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261009">
+  <script src="/site.mjs?v=20261009" type="module"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-<header class="header"><nav class="nav wrap" aria-label="Main">
-<a class="brand" href="/" aria-label="Catchfire home"><img src="/assets/mark.png" width="40" height="40" alt="">CATCHFIRE</a>
-<div class="links" id="site-links"><a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a><a href="/support/">Support</a></div>
-<a class="nav-cta" href="/#beta">Join the beta <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#arrow-up-right"/></svg></a>
-<button class="icon-button menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-links" title="Open navigation"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#menu"/></svg></button>
-</nav></header>
+  <header class="header" data-header>
+    <nav class="nav wrap" aria-label="Main">
+      <a class="brand" href="/" aria-label="Catchfire home"><img src="/assets/mark.png" width="30" height="30" alt="" />CATCHFIRE</a>
+      <div class="links" id="site-links">
+        <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a><a href="/support/">Support</a><a class="links-cta" href="/#beta">Join the beta</a>
+      </div>
+      <a class="button primary nav-cta" href="/#beta">Join the beta</a>
+      <button class="icon-button menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-links" title="Open navigation">
+        <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#menu" /></svg>
+      </button>
+    </nav>
+  </header>
 
   <main id="main">
-    <div class="wrap">
+    <div class="wrap legal-layout">
       <header class="page-head">
         <div class="kicker">Privacy Policy</div>
         <h1>Catchfire Privacy Policy</h1>
@@ -33,12 +40,26 @@
         <p class="lede">Last updated: September 28, 2026. This policy explains how Catchfire collects, uses, and protects information when you use the app and website.</p>
       </header>
 
+      <nav class="legal-toc" aria-label="Contents">
+        <p class="label">Contents</p>
+        <ol>
+          <li><a href="#data">Data we collect</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#use">How we use data</a></li>
+          <li><a href="#apple-health">Apple Health</a></li>
+          <li><a href="#health-connect">Health Connect</a></li>
+          <li><a href="#workout-files">Workout files</a></li>
+          <li><a href="#paid-features">Paid features</a></li>
+          <li><a href="#requests">Requests</a></li>
+        </ol>
+      </nav>
+
       <div class="notice">
         <h3>Contact</h3>
         <p>Privacy and legal requests: <a href="mailto:legal@catchfire.run">legal@catchfire.run</a>.</p>
       </div>
 
-      <section class="legal-section prose">
+      <section class="legal-section prose" id="data">
         <h2>Data we collect</h2>
         <div class="legal-grid">
           <article><h3>Account</h3><p>Email, optional display or race name, preferences, and authentication identifiers.</p></article>
@@ -47,12 +68,12 @@
         </div>
       </section>
 
-      <section class="legal-section prose">
+      <section class="legal-section prose" id="location">
         <h2>Location</h2>
         <p>Catchfire uses location for nearby race discovery, live route progress, finish detection, integrity review, and measuring the distance of a Just run. During an active race or Just run, Catchfire may continue collecting location while the app is in the background or the screen is locked if you grant permission. Just runs stay on your phone: Catchfire doesn't upload their location, time or distance.</p>
       </section>
 
-      <section class="legal-section prose">
+      <section class="legal-section prose" id="use">
         <h2>How we use data</h2>
         <p>We use data to operate races, discover nearby public races, calculate staggered starts, upload telemetry, detect finishes, verify integrity, notify users, save workouts and create workout files when you ask, provide support, and improve reliability.</p>
       </section>
@@ -75,18 +96,42 @@
         <p>When you ask for one, Catchfire creates a FIT or GPX file of a finished race from its recording: time, GPS route, distance and any heart rate recorded. The file comes to your phone, and you choose where to save or share it, for example to upload it to Strava or Garmin Connect. Catchfire doesn't send the file to those services, and their privacy policies apply to what you upload.</p>
       </section>
 
-      <section class="legal-section prose">
+      <section class="legal-section prose" id="paid-features">
         <h2>Paid features</h2>
         <p>Paid races, prizes, and payouts are disabled for the current free launch. Payment and payout data would only apply if those features are separately approved and enabled later.</p>
       </section>
 
-      <section class="legal-section prose">
+      <section class="legal-section prose" id="requests">
         <h2>Requests</h2>
         <p>To request access, correction, or deletion, email <a href="mailto:legal@catchfire.run">legal@catchfire.run</a>.</p>
       </section>
     </div>
   </main>
 
-  <footer class="footer"><div class="wrap footer-main"><a class="brand" href="/"><img src="/assets/mark.png" width="36" height="36" alt="">CATCHFIRE</a><p>Race others. Chase your best.</p><nav aria-label="Footer"><a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav></div><div class="wrap footer-note"><span>&copy; 2026 Catchfire</span><span>Free running beta. Unofficial community challenges.</span></div></footer>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <p class="footer-line">Run solo. Race together.<br />A free running beta for iPhone and Android.</p>
+        <div class="footer-cols">
+          <nav aria-label="Product">
+            <p class="label">Product</p>
+            <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a><a href="/#beta">Join the beta</a>
+          </nav>
+          <nav aria-label="Support">
+            <p class="label">Support</p>
+            <a href="/support/">Help and answers</a><a href="/support/#saving">Saving and compatibility</a><a href="mailto:support@catchfire.run">support@catchfire.run</a>
+          </nav>
+          <nav aria-label="Legal">
+            <p class="label">Legal</p>
+            <a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="mailto:legal@catchfire.run">legal@catchfire.run</a>
+          </nav>
+        </div>
+      </div>
+      <p class="footer-mark" aria-hidden="true">CATCHFIRE</p>
+      <div class="footer-note">
+        <span>&copy; 2026 ElseBranch Inc. All rights reserved.</span><span>Free running beta. Unofficial community challenges.</span>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
