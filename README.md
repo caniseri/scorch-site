@@ -25,6 +25,6 @@ npm ci installs development-only validation and formatting tools.
 See [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) for publication, synthetic
 artwork provenance and checks that require the actual installed app.
 
-Copyright 2026 Katsuko, Inc. All rights reserved. Public access to this
+Copyright 2026 ElseBranch Inc. All rights reserved. Public access to this
 repository does not grant permission to reuse its code, copy, artwork, or brand
 assets.
