@@ -1,3 +1,6 @@
+import "/reveal.mjs?v=20261009";
+
+const header = document.querySelector("[data-header]");
 const menu = document.querySelector(".menu-toggle");
 const links = document.getElementById("site-links");
 function closeMenu() {
@@ -28,3 +31,35 @@ document.querySelectorAll(".links a").forEach((link) => {
   if (link.getAttribute("href") === location.pathname)
     link.setAttribute("aria-current", "page");
 });
+
+// The header gains its hairline once the page scrolls.
+function markScrolled() {
+  header?.classList.toggle("is-scrolled", scrollY > 8);
+}
+addEventListener("scroll", markScrolled, { passive: true });
+markScrolled();
+
+// In-page indexes mark the section that holds the middle of the viewport.
+for (const index of document.querySelectorAll("[data-index]")) {
+  const anchors = [...index.querySelectorAll('a[href^="#"]')];
+  const targets = anchors
+    .map((anchor) => document.getElementById(anchor.hash.slice(1)))
+    .filter(Boolean);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        for (const anchor of anchors)
+          anchor.setAttribute(
+            "aria-current",
+            String(anchor.hash === "#" + entry.target.id),
+          );
+      }
+    },
+    { rootMargin: "-45% 0px -54% 0px" },
+  );
+  targets.forEach((target) => observer.observe(target));
+}
+
+if (document.querySelector("[data-sequence]"))
+  import("/sequence.mjs?v=20261009");
