@@ -64,3 +64,5 @@ for (const index of document.querySelectorAll("[data-index]")) {
 if (document.querySelector("[data-chapter]"))
   import("/progress.mjs?v=20261010");
 if (document.querySelector("[data-stepper]")) import("/stepper.mjs?v=20261010");
+if (document.querySelector("[data-beta-form]"))
+  import("/beta-form.mjs?v=20261010");
