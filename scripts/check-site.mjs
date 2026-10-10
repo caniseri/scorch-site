@@ -100,7 +100,7 @@ assert.match(invite.html, /name="referrer" content="no-referrer"/);
 assert.match(invite.html, /noindex,nofollow/);
 const privacy = documents.get("privacy/index.html").html;
 for (const phrase of [
-  "September 29, 2026",
+  "October 10, 2026",
   "ElseBranch Inc.",
   "Health Connect",
   "Apple Health",
@@ -108,6 +108,10 @@ for (const phrase of [
   "Just runs stay on your phone",
 ])
   assert.ok(privacy.includes(phrase), "Privacy disclosure missing " + phrase);
+assert.ok(
+  documents.get("terms/index.html").html.includes("Last updated: October 10, 2026"),
+  "Terms publication date must match privacy",
+);
 const scope = JSON.parse(
   await readFile(path.join(root, "product-scope.json"), "utf8"),
 );
