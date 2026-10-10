@@ -41,14 +41,58 @@ Use a real approved QA invitation separately for native app/auth handoff.
 
 ## Artwork Provenance
 
-The four images in assets/product/ are captures of current Catchfire
-presentation components rendered by the local preview harness, with synthetic
-runner and result data. They are not live customer data, full native screens,
-or claims that a specific TestFlight / Play build is available.
+The screen plates in assets/screens/ are illustrative component previews with
+synthetic data, not live races, real runners or device screenshots. They do
+not claim that a specific TestFlight or Play build is available.
 
-The four captures were refreshed together using the app preview's capture=1
-mode at 440 CSS pixels, without editing component content. Image dimensions
-and frame ratios match the actual bitmap; no 200% image scaling is needed.
+Source: caniseri/scorch at commit 75e0cda2fd96cd42cd5ab1d09df4bb7136c486d8
+(branch codex/option-6-visual-refresh), rendered by the dev-only preview
+harness in tools/preview (Vite, http://127.0.0.1:5173). Component content was
+not edited.
+
+Capture settings: headless Chromium, deviceScaleFactor 3, dark colour scheme,
+locale en-US, time zone America/New_York, clock fixed at
+2026-10-10T07:41:00-04:00 so relative start times read as one morning.
+
+- Full screen: /option6.html?screen=find at a 402 x 874 viewport, element
+  .option6-device with .option6-status and the review toolbar hidden.
+  Cropped to the content between the app header and the tab bar.
+- Components: /?scenario=NAME&capture=1 at 440 CSS px wide, with 24px / 20px
+  padding added around main.capture so content does not touch the plate edge.
+  Scenarios: race-day, start-open, recording, final, upcoming, countdown,
+  start-line, field-progress, under-review, just-run-finished, all-runners,
+  manage-rules-fair.
+
+Each capture is cropped at a clean boundary between elements, padded with its
+own background to a fixed frame, resized with Lanczos and saved as WebP at
+quality 82:
+
+| File | Source | Frame (CSS px) | Size |
+| --- | --- | --- | --- |
+| strip-find | screen=find | 402 x 720 | 540 x 967 |
+| strip-start, race-start | race-day | 440 x 788 | 540 x 967, 720 x 1289 |
+| strip-line | start-open | 440 x 788 | 540 x 967 |
+| strip-chase | recording (to 712px) | 440 x 788 | 540 x 967 |
+| strip-result, race-result | final (to 720px) | 440 x 788 | 540 x 967, 720 x 1289 |
+| step-start | upcoming | 440 x 657 | 720 x 1075 |
+| step-countdown | countdown | 440 x 657 | 720 x 1075 |
+| step-line | start-line | 440 x 657 | 720 x 1075 |
+| step-chase | field-progress | 440 x 657 | 720 x 1075 |
+| step-result | under-review (to 620px) | 440 x 657 | 720 x 1075 |
+| way-solo | just-run-finished (to 470px) | 440 x 525 | 720 x 859 |
+| way-race | all-runners | 440 x 525 | 720 x 859 |
+| way-host | manage-rules-fair | 440 x 525 | 720 x 859 |
+
+Every file is under 25 KB. Images are served at or above twice their displayed
+CSS size. The previous assets/product/ PNGs were removed once nothing used them.
+
+Known harness defects, avoided rather than shown: the full Race detail screen
+hides "2 min after the first runner" and "Check recording before you run"
+under its fixed action panel; the just-run-finished fixture clips "You showed
+up. This effort is now in your solo history" under its fixed buttons; the
+solo fixture shows race-only stats (Gap to winner, Head start, Finishers) on a
+solo result; the full Profile screen uses "verified" wording; the find-*
+component scenarios render a placeholder header.
 
 Icons are a vendored subset of Lucide, with its license in assets. Fonts are
 self-hosted. No third-party analytics or scripts were added.
