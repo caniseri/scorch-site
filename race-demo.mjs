@@ -72,7 +72,7 @@ function mount(root) {
         "text",
         {
           x,
-          y: 17,
+          y: narrow && km > 0 && km < COURSE_KM ? 32 : 17,
           "text-anchor":
             km === 0 ? "start" : km === COURSE_KM ? "end" : "middle",
           class: "chase-axis",
