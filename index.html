@@ -49,10 +49,10 @@
       type="font/woff2"
       crossorigin
     />
-    <link rel="stylesheet" href="/styles.css?v=20261009" />
-    <script src="/site.mjs?v=20261009" type="module"></script>
-    <link rel="stylesheet" href="/race-demo.css?v=20261009" />
-    <script src="/race-demo.mjs?v=20261009" type="module"></script>
+    <link rel="stylesheet" href="/styles.css?v=20261010" />
+    <script src="/site.mjs?v=20261010" type="module"></script>
+    <link rel="stylesheet" href="/race-demo.css?v=20261010" />
+    <script src="/race-demo.mjs?v=20261010" type="module"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -86,29 +86,84 @@
       </nav>
     </header>
     <main id="main">
-      <section class="hero" aria-labelledby="hero-title">
+      <section
+        class="hero race-demo"
+        id="start"
+        aria-labelledby="hero-title"
+        data-race-demo="compact"
+        data-chapter="Start"
+      >
         <div class="wrap">
-          <p class="label">Free running beta · iPhone and Android</p>
-          <h1 class="display" id="hero-title">Run solo.<br />Race together.</h1>
-          <div class="hero-foot">
-            <p class="lead">
-              Chase your best, or bring your people. Start together, or let your
-              pace set the chase.
-            </p>
-            <div class="actions">
-              <a class="button primary" href="#beta"
-                >Join the beta
-                <svg class="icon" aria-hidden="true">
-                  <use href="/assets/icons.svg#arrow-up-right" /></svg></a
-              ><a class="button secondary" href="/demo/"
-                >See how it works
-                <svg class="icon" aria-hidden="true">
-                  <use href="/assets/icons.svg#arrow-right" /></svg
-              ></a>
+          <div class="hero-top">
+            <div class="hero-title">
+              <p class="label">Free running beta · iPhone and Android</p>
+              <h1 class="display" id="hero-title">
+                Run solo.<br />Race together.
+              </h1>
+            </div>
+            <div class="hero-side">
+              <p class="lead">
+                Chase your best, or bring your people. Start together, or let
+                your pace set the chase.
+              </p>
+              <div class="actions">
+                <a class="button primary" href="#beta"
+                  >Join the beta
+                  <svg class="icon" aria-hidden="true">
+                    <use href="/assets/icons.svg#arrow-up-right" /></svg></a
+                ><a class="button secondary" href="/demo/"
+                  >See how it works
+                  <svg class="icon" aria-hidden="true">
+                    <use href="/assets/icons.svg#arrow-right" /></svg
+                ></a>
+              </div>
             </div>
           </div>
+          <div class="hero-chase">
+            <div class="chase-head demo-toolbar">
+              <div>
+                <p class="label">One course. Two ways to race.</p>
+                <h2 class="title-sm" id="demo-title">
+                  Take the lead. Take it back.
+                </h2>
+                <p class="demo-explanation" data-explanation>
+                  Your pace sets your start. Same route. First across wins.
+                </p>
+              </div>
+              <div class="segmented" role="group" aria-label="Race start style">
+                <button data-mode="fair" aria-pressed="true">Fair start</button
+                ><button data-mode="same" aria-pressed="false">
+                  Same start
+                </button>
+              </div>
+            </div>
+            <div class="chase-scene" data-chase-scene></div>
+            <noscript
+              ><p class="chase-fallback">
+                In Fair start, slower entry paces start first and faster ones
+                start later. Same start starts everyone together. The flame
+                marks the leader, and moves only when someone takes the lead.
+                First across wins; everyone keeps racing to their own finish.
+                This is a fictional illustration.
+              </p></noscript
+            >
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section screens"
+        id="screens"
+        aria-labelledby="screens-title"
+        data-chapter="Race day in screens"
+      >
+        <div class="wrap">
+          <div class="section-head" data-reveal>
+            <p class="label">One race day</p>
+            <h2 id="screens-title">A chase you can follow.</h2>
+          </div>
           <ol
-            class="filmstrip"
+            class="filmstrip section-body"
             tabindex="0"
             aria-label="One race day in five screens"
           >
@@ -122,6 +177,7 @@
                   src="/assets/screens/strip-find.webp"
                   width="540"
                   height="751"
+                  loading="lazy"
                   decoding="async"
                   alt="Find screen with three fictional races nearby, each with date, distance, start style and runner count."
                 />
@@ -137,6 +193,7 @@
                   src="/assets/screens/strip-start.webp"
                   width="540"
                   height="751"
+                  loading="lazy"
                   decoding="async"
                   alt="Race day card for a fictional 5 km race: 20 minutes until your start at 8:01 AM, readiness checks and the start order."
                 />
@@ -152,6 +209,7 @@
                   src="/assets/screens/strip-line.webp"
                   width="540"
                   height="751"
+                  loading="lazy"
                   decoding="async"
                   alt="Start line screen: 0:20 until your start at 6:00 PM, readiness checks, other runners&rsquo; start times and Waiting for your start."
                 />
@@ -167,6 +225,7 @@
                   src="/assets/screens/strip-chase.webp"
                   width="540"
                   height="751"
+                  loading="lazy"
                   decoding="async"
                   alt="Recording screen: race time 5:42, 1 km covered, live position 12th of 120, and the projected order with estimated gaps."
                 />
@@ -182,6 +241,7 @@
                   src="/assets/screens/strip-result.webp"
                   width="540"
                   height="751"
+                  loading="lazy"
                   decoding="async"
                   alt="Final result for a fictional runner: 2nd of 6 in 25:42, 0:09 behind River, with distance, gap, head start and finishers."
                 />
@@ -201,36 +261,6 @@
         </div>
       </section>
 
-      <section
-        class="section chase-section race-demo"
-        aria-labelledby="demo-title"
-        data-race-demo="compact"
-      >
-        <div class="wrap">
-          <div class="section-head demo-toolbar" data-reveal>
-            <p class="label eyebrow">One course. Two ways to race.</p>
-            <h2 id="demo-title">Take the lead. Take it back.</h2>
-            <p class="demo-explanation" data-explanation>
-              Your pace sets your start. Same route. First across wins.
-            </p>
-            <div class="segmented" role="group" aria-label="Race start style">
-              <button data-mode="fair" aria-pressed="true">Fair start</button
-              ><button data-mode="same" aria-pressed="false">Same start</button>
-            </div>
-          </div>
-          <div class="chase-scene" data-chase-scene></div>
-          <noscript
-            ><p class="chase-fallback">
-              In Fair start, slower entry paces start first and faster ones
-              start later. Same start starts everyone together. The flame marks
-              the leader, and moves only when someone takes the lead. First
-              across wins; everyone keeps racing to their own finish. This is a
-              fictional illustration.
-            </p></noscript
-          >
-        </div>
-      </section>
-
       <div class="wrap divider">
         <div class="ruler" aria-hidden="true">
           <svg viewBox="0 0 500 8" preserveAspectRatio="none">
@@ -242,14 +272,19 @@
           ><span style="left: 80%">4K</span><span style="left: 100%">5K</span>
         </div>
       </div>
-      <section class="section ways" aria-labelledby="ways-title">
+      <section
+        class="section ways"
+        id="ways"
+        aria-labelledby="ways-title"
+        data-chapter="Three ways in"
+      >
         <div class="wrap">
           <div class="section-head" data-reveal>
             <p class="label">Three ways in</p>
             <h2 id="ways-title">Your run. Your kind of competition.</h2>
           </div>
-          <div class="columns section-body" data-reveal-group>
-            <article class="column" data-reveal>
+          <div class="tiles section-body" data-reveal-group>
+            <article class="tile surface-night" data-reveal>
               <p class="label num">01</p>
               <h3>
                 <a href="/demo/#solo"
@@ -273,7 +308,7 @@
                 alt="Run saved screen for a fictional Just run: 5.40 km in 28:20, saved locally on the device."
               />
             </article>
-            <article class="column" data-reveal>
+            <article class="tile surface-ember" data-reveal>
               <p class="label num">02</p>
               <h3>
                 <a href="/demo/#race"
@@ -297,7 +332,7 @@
                 alt="Live runner list for a fictional race: River leading, you second at 0:09 to the leader, Alex waiting for GPS."
               />
             </article>
-            <article class="column" data-reveal>
+            <article class="tile surface-bone" data-reveal>
               <p class="label num">03</p>
               <h3>
                 <a href="/demo/#host"
@@ -339,8 +374,10 @@
       </div>
       <section
         class="section sequence"
+        id="race-day"
         aria-labelledby="sequence-title"
         data-sequence
+        data-chapter="Race day, step by step"
       >
         <div class="wrap grid">
           <div class="section-head" data-reveal>
@@ -465,6 +502,7 @@
         class="section bone"
         id="fair-start"
         aria-labelledby="fair-title"
+        data-chapter="Fair start"
       >
         <div class="wrap grid">
           <div class="fair-text" data-reveal>
@@ -542,42 +580,118 @@
         </div>
       </section>
 
-      <section class="section save" aria-labelledby="save-title">
+      <section
+        class="section status"
+        id="status"
+        aria-labelledby="status-title"
+        data-chapter="In the beta"
+      >
         <div class="wrap">
           <div class="section-head" data-reveal>
-            <p class="label">Your effort goes with you</p>
-            <h2 id="save-title">Save the run. Keep the story.</h2>
+            <p class="label">Honest status</p>
+            <h2 id="status-title">What&rsquo;s in the beta.</h2>
             <p>
               Just runs stay on your phone. Finished races go where you choose,
               when you ask.
             </p>
           </div>
-          <div class="cells section-body" data-reveal-group>
-            <article class="cell" data-reveal>
-              <h3>Apple Health</h3>
-              <p>
-                Save workout sends an eligible finish to Apple Health on iPhone
-                in enabled builds.
-              </p>
-            </article>
-            <article class="cell" data-reveal>
-              <h3>FIT and GPX files</h3>
-              <p>
-                Export a finished race as FIT or GPX for manual upload to Strava
-                or Garmin Connect.
-              </p>
-            </article>
-            <article class="cell" data-reveal>
-              <h3>Calendar draft</h3>
-              <p>
-                Add a race with a Google Calendar draft or a standard calendar
-                file. Add an updated copy after a schedule change.
-              </p>
-            </article>
+          <div class="section-body" data-reveal>
+            <table class="status-table" aria-labelledby="status-title">
+              <thead>
+                <tr>
+                  <th scope="col">Feature</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Detail</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="is-in-the-beta">
+                  <th scope="row">Just run</th>
+                  <td class="status-state">In the beta</td>
+                  <td>
+                    Time and distance without a preset route or pace. Stays on
+                    your phone.
+                  </td>
+                </tr>
+                <tr class="is-in-the-beta">
+                  <th scope="row">Solo targets</th>
+                  <td class="status-state">In the beta</td>
+                  <td>
+                    A finish-time goal on a mapped route, or an eligible
+                    previous effort on the same course and direction.
+                  </td>
+                </tr>
+                <tr class="is-in-the-beta">
+                  <th scope="row">Fair start</th>
+                  <td class="status-state">In the beta</td>
+                  <td>
+                    A pace-adjusted personal start. Needs a recent 5K pace.
+                  </td>
+                </tr>
+                <tr class="is-in-the-beta">
+                  <th scope="row">Same start</th>
+                  <td class="status-state">In the beta</td>
+                  <td>
+                    No pace needed when unrestricted. Pace-limited races still
+                    need one.
+                  </td>
+                </tr>
+                <tr class="is-in-the-beta">
+                  <th scope="row">Hosting</th>
+                  <td class="status-state">In the beta</td>
+                  <td>
+                    Host only, or host and race. A 48-hour late-start grace
+                    period for races that have not begun.
+                  </td>
+                </tr>
+                <tr class="is-in-the-beta">
+                  <th scope="row">Calendar</th>
+                  <td class="status-state">In the beta</td>
+                  <td>
+                    A Google Calendar draft or a calendar file. Add an updated
+                    copy after a schedule change.
+                  </td>
+                </tr>
+                <tr class="is-in-the-beta">
+                  <th scope="row">FIT and GPX files</th>
+                  <td class="status-state">In the beta</td>
+                  <td>
+                    Export a finished race for manual upload, for example to
+                    Strava or Garmin Connect.
+                  </td>
+                </tr>
+                <tr class="is-in-the-beta">
+                  <th scope="row">Milestones</th>
+                  <td class="status-state">In the beta</td>
+                  <td>Private progress milestones in Profile.</td>
+                </tr>
+                <tr class="is-in-enabled-builds">
+                  <th scope="row">Apple Health</th>
+                  <td class="status-state">In enabled builds</td>
+                  <td>
+                    Save finished races and Just runs on iPhone. Depends on your
+                    installed beta.
+                  </td>
+                </tr>
+                <tr class="is-in-testing">
+                  <th scope="row">Health Connect</th>
+                  <td class="status-state">In testing</td>
+                  <td>
+                    Health Connect is under Android testing and is not enabled
+                    in the production profile.
+                  </td>
+                </tr>
+                <tr class="is-not-in-the-beta">
+                  <th scope="row">Automatic sync to Strava or Garmin</th>
+                  <td class="status-state">Not in the beta</td>
+                  <td>Export a file and upload it yourself.</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <p class="fine section-body">
-            Health Connect is under Android testing and is not enabled in the
-            production profile. No automatic third-party sync.
+            Configuration is not a guarantee that your installed beta already
+            includes a feature. Check your build or ask support.
             <a href="/support/#saving">Saving and compatibility</a>
           </p>
         </div>
@@ -594,7 +708,12 @@
           ><span style="left: 80%">4K</span><span style="left: 100%">5K</span>
         </div>
       </div>
-      <section class="section" aria-labelledby="answers-title">
+      <section
+        class="section"
+        id="answers"
+        aria-labelledby="answers-title"
+        data-chapter="Straight answers"
+      >
         <div class="wrap grid answers-layout">
           <div class="section-head" data-reveal>
             <p class="label">Straight answers</p>
@@ -658,7 +777,12 @@
         </div>
       </section>
 
-      <section class="section bone join" id="beta" aria-labelledby="beta-title">
+      <section
+        class="section bone join"
+        id="beta"
+        aria-labelledby="beta-title"
+        data-chapter="Join"
+      >
         <div class="wrap" data-reveal>
           <p class="label eyebrow">Join the beta</p>
           <h2 id="beta-title">Come run with us.</h2>
