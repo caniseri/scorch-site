@@ -979,6 +979,173 @@ details > p + p {
   margin-top: 20px;
 }
 
+/* Beta intake reuses the bone section, button and focus tokens. */
+.beta-form {
+  max-width: 680px;
+  margin-top: 40px;
+  color-scheme: light;
+}
+.beta-form[hidden] {
+  display: none;
+}
+.beta-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.beta-form fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+.beta-wide {
+  grid-column: 1 / -1;
+}
+.beta-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.beta-form label,
+.beta-form legend {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.beta-field label > span {
+  color: var(--soft);
+  font-weight: 400;
+}
+.beta-form input:not([type="radio"]),
+.beta-form select {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--muted);
+  background: #fff;
+  color: var(--ink);
+  font-size: 16px;
+}
+.beta-device legend {
+  margin-bottom: 8px;
+}
+.beta-device .segmented {
+  display: grid;
+  margin-top: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--muted);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+.beta-device .segmented label {
+  position: relative;
+  min-width: 0;
+}
+.beta-device input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.beta-device .segmented span {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.beta-device input:checked + span {
+  background: var(--ink);
+  color: var(--bone);
+  border-color: var(--ink);
+}
+.beta-device input:focus-visible + span {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+.beta-fields:disabled {
+  opacity: 0.7;
+}
+.beta-fields:disabled label,
+.beta-fields:disabled span {
+  cursor: default;
+}
+.beta-form .beta-field-error {
+  font-size: 14px;
+  color: #8f2512;
+}
+.beta-field-error:empty {
+  display: none;
+}
+.beta-form [aria-invalid="true"] {
+  border-color: #8f2512;
+}
+.beta-form .beta-privacy {
+  font-size: 14px;
+  color: var(--soft);
+  margin-top: 16px;
+}
+.beta-form .beta-status {
+  min-height: 52px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 16px;
+  overflow-wrap: anywhere;
+}
+.beta-form a,
+.beta-fallback a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.beta-form[data-state="sent"] .beta-status {
+  border-left: 3px solid var(--ink);
+  padding-left: 16px;
+}
+.beta-form[data-state="error"] .beta-status {
+  color: #8f2512;
+}
+.beta-fallback {
+  max-width: 680px;
+}
+.beta-fallback .actions {
+  margin-top: 8px;
+  gap: 8px 24px;
+}
+.beta-fallback a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 15px;
+}
+.visually-hidden,
+.beta-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@media (max-width: 540px) {
+  .beta-fields {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  .beta-form .button {
+    width: 100%;
+  }
+}
+
 /* In-page index (How it works) */
 .page-index {
   position: sticky;

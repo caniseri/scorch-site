@@ -666,22 +666,130 @@
             Catchfire is in free beta on iPhone and Android. Request access for
             your device; we will send the testing instructions.
           </p>
-          <div class="actions">
-            <a
-              class="button primary"
-              href="mailto:support@catchfire.run?subject=Catchfire%20iPhone%20beta%20access"
-              >Request iPhone access
-              <svg class="icon" aria-hidden="true">
-                <use href="/assets/icons.svg#arrow-up-right" /></svg></a
-            ><a
-              class="button secondary"
-              href="mailto:support@catchfire.run?subject=Catchfire%20Android%20beta%20access"
-              >Request Android access
-              <svg class="icon" aria-hidden="true">
-                <use href="/assets/icons.svg#arrow-up-right" /></svg
-            ></a>
+          <form
+            class="beta-form"
+            data-beta-form
+            hidden
+            method="post"
+            action="/#beta"
+            aria-labelledby="beta-title"
+            aria-describedby="beta-access-note"
+          >
+            <fieldset class="beta-fields">
+              <legend class="visually-hidden">Request beta access</legend>
+              <div class="beta-field beta-wide">
+                <label for="beta-email">Email</label>
+                <input
+                  id="beta-email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  inputmode="email"
+                  maxlength="254"
+                  required
+                  aria-describedby="beta-email-error"
+                />
+                <span class="beta-field-error" id="beta-email-error"></span>
+              </div>
+              <fieldset
+                class="beta-device beta-wide"
+                aria-describedby="beta-platform-error"
+              >
+                <legend>Device</legend>
+                <div class="segmented">
+                  <label
+                    ><input
+                      name="platform"
+                      type="radio"
+                      value="ios"
+                      required
+                      aria-describedby="beta-platform-error"
+                    /><span>iPhone</span></label
+                  >
+                  <label
+                    ><input
+                      name="platform"
+                      type="radio"
+                      value="android"
+                      required
+                      aria-describedby="beta-platform-error"
+                    /><span>Android</span></label
+                  >
+                </div>
+                <span class="beta-field-error" id="beta-platform-error"></span>
+              </fieldset>
+              <div class="beta-field">
+                <label for="beta-city">City <span>(optional)</span></label>
+                <input
+                  id="beta-city"
+                  name="city"
+                  type="text"
+                  autocomplete="address-level2"
+                  maxlength="80"
+                  aria-describedby="beta-city-error"
+                />
+                <span class="beta-field-error" id="beta-city-error"></span>
+              </div>
+              <div class="beta-field">
+                <label for="beta-intent"
+                  >I mostly… <span>(optional)</span></label
+                >
+                <select
+                  id="beta-intent"
+                  name="intent"
+                  aria-describedby="beta-intent-error"
+                >
+                  <option value="">Choose one</option>
+                  <option value="solo">Run solo</option>
+                  <option value="race">Race others</option>
+                  <option value="host">Organize races</option>
+                </select>
+                <span class="beta-field-error" id="beta-intent-error"></span>
+              </div>
+              <div class="beta-honeypot" aria-hidden="true">
+                <label for="beta-website">Website</label>
+                <input
+                  id="beta-website"
+                  name="website"
+                  type="text"
+                  tabindex="-1"
+                  autocomplete="off"
+                  maxlength="200"
+                />
+              </div>
+              <button class="button primary beta-wide" type="submit">
+                Request access<svg class="icon" aria-hidden="true">
+                  <use href="/assets/icons.svg#arrow-up-right" />
+                </svg>
+              </button>
+            </fieldset>
+            <p class="beta-privacy">
+              We use your email only to send beta access.
+              <a href="/privacy/">Privacy policy</a>.
+            </p>
+            <p
+              class="beta-status"
+              data-beta-status
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+              tabindex="-1"
+            ></p>
+          </form>
+          <div class="beta-fallback">
+            <p class="fine">Prefer email?</p>
+            <div class="actions">
+              <a
+                href="mailto:support@catchfire.run?subject=Catchfire%20iPhone%20beta%20access"
+                >Request iPhone access</a
+              >
+              <a
+                href="mailto:support@catchfire.run?subject=Catchfire%20Android%20beta%20access"
+                >Request Android access</a
+              >
+            </div>
           </div>
-          <p class="fine">
+          <p class="fine" id="beta-access-note">
             iPhone testing uses TestFlight. Android testing uses Google Play
             internal testing. Access is by invitation, not a public store
             launch.

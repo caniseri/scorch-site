@@ -63,3 +63,12 @@ for (const index of document.querySelectorAll("[data-index]")) {
 
 if (document.querySelector("[data-sequence]"))
   import("/sequence.mjs?v=20261009");
+
+if (document.querySelector("[data-beta-form]"))
+  import("/beta-form.mjs?v=20261010")
+    .then(({ initBetaForm }) =>
+      initBetaForm(document.querySelector("[data-beta-form]")),
+    )
+    .catch(() => {
+      /* Email fallback remains available if the module fails. */
+    });
