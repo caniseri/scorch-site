@@ -41,18 +41,15 @@ test("requires a plausible email and a device", () => {
   );
 });
 
-test("builds only the fields the function accepts", () => {
+test("builds only the fields the function accepts, with source_path always /", () => {
   assert.deepEqual(
-    buildBetaPayload(
-      {
-        email: " Runner@Example.com ",
-        platform: "ios",
-        city: "  New   York ",
-        intent: "race",
-        website: "",
-      },
-      "/",
-    ),
+    buildBetaPayload({
+      email: " Runner@Example.com ",
+      platform: "ios",
+      city: "  New   York ",
+      intent: "race",
+      website: "",
+    }),
     {
       email: "Runner@Example.com",
       platform: "ios",
@@ -63,10 +60,12 @@ test("builds only the fields the function accepts", () => {
     },
   );
   assert.deepEqual(
-    buildBetaPayload(
-      { email: "a@b.co", platform: "android", city: "", intent: "paid" },
-      "https://x/",
-    ),
+    buildBetaPayload({
+      email: "a@b.co",
+      platform: "android",
+      city: "",
+      intent: "paid",
+    }),
     {
       email: "a@b.co",
       platform: "android",

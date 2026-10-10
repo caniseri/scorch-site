@@ -26,8 +26,9 @@ export function validateBetaFields(values) {
   return errors;
 }
 
-/** The JSON body for the function. Email is trimmed here; the function also lowercases it. */
-export function buildBetaPayload(values, sourcePath = "/") {
+/** The JSON body for the function. Email is trimmed here; the function also lowercases it.
+ * source_path is always "/": the form lives only on Home, and the function accepts nothing else. */
+export function buildBetaPayload(values) {
   const city = text(values.city).replace(/\s+/g, " ").slice(0, 80);
   const intent = INTENTS.includes(values.intent) ? values.intent : null;
   return {
@@ -35,10 +36,7 @@ export function buildBetaPayload(values, sourcePath = "/") {
     platform: values.platform,
     city: city || null,
     intent,
-    source_path:
-      typeof sourcePath === "string" && sourcePath.startsWith("/")
-        ? sourcePath.slice(0, 200)
-        : "/",
+    source_path: "/",
     website: text(values.website),
   };
 }
@@ -149,9 +147,7 @@ function mount(form) {
     // aria-disabled rather than disabled, so keyboard focus stays on the button.
     submit.setAttribute("aria-disabled", "true");
     submit.textContent = "Sending…";
-    const ok = await sendBetaRequest(
-      buildBetaPayload(values, location.pathname),
-    );
+    const ok = await sendBetaRequest(buildBetaPayload(values));
     submit.removeAttribute("aria-disabled");
     submit.textContent = "Request access";
     if (ok) {
