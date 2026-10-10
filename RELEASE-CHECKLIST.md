@@ -59,9 +59,8 @@ locale en-US, time zone America/New_York, clock fixed at
   Cropped to the content between the app header and the tab bar.
 - Components: /?scenario=NAME&capture=1 at 440 CSS px wide, with 24px / 20px
   padding added around main.capture so content does not touch the plate edge.
-  Scenarios: race-day, recording, final, upcoming, countdown,
-  start-line, field-progress, under-review, just-run-finished, all-runners,
-  manage-rules-fair.
+  Scenarios: race-day, recording, final, start-line, under-review,
+  just-run-finished, all-runners, manage-rules-fair.
 
 Each capture is cropped to its content box (measured from the pixels), then
 given 20 CSS px of even padding top and bottom in its own background, so no
@@ -80,10 +79,6 @@ WebP at quality 82:
 | strip-result | final | 24-561 | 440 x 612 | 540 x 751 |
 | race-start | race-day | 24-576 | 440 x 592 | 720 x 969 |
 | race-result | final | 24-697 | 440 x 713 | 720 x 1167 |
-| step-start | upcoming | 24-291 | 440 x 307 | 720 x 502 |
-| step-countdown | countdown | 43-438 | 440 x 435 | 720 x 712 |
-| step-line | start-line | 43-553 | 440 x 550 | 720 x 900 |
-| step-chase | field-progress | 45-379 | 440 x 374 | 720 x 612 |
 | step-result | under-review | 24-608 | 440 x 624 | 720 x 1021 |
 | way-solo | just-run-finished | 11-454 | 440 x 483 | 720 x 790 |
 | way-race | all-runners | 67-333 | 440 x 306 | 720 x 501 |
