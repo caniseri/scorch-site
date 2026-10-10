@@ -10,34 +10,54 @@
   <link rel="icon" href="/assets/icon.png">
   <link rel="apple-touch-icon" href="/assets/icon.png">
   <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/urbanist-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/space-grotesk-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/space-grotesk-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20260928">
-  <script src="/site.mjs?v=20260928" type="module"></script>
+  <link rel="preload" href="/assets/fonts/urbanist-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261009">
+  <script src="/site.mjs?v=20261009" type="module"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-<header class="header"><nav class="nav wrap" aria-label="Main">
-<a class="brand" href="/" aria-label="Catchfire home"><img src="/assets/mark.png" width="40" height="40" alt="">CATCHFIRE</a>
-<div class="links" id="site-links"><a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a><a href="/support/">Support</a></div>
-<a class="nav-cta" href="/#beta">Join the beta <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#arrow-up-right"/></svg></a>
-<button class="icon-button menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-links" title="Open navigation"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#menu"/></svg></button>
-</nav></header>
+  <header class="header" data-header>
+    <nav class="nav wrap" aria-label="Main">
+      <a class="brand" href="/" aria-label="Catchfire home"><img src="/assets/mark.png" width="30" height="30" alt="" />CATCHFIRE</a>
+      <div class="links" id="site-links">
+        <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a><a href="/support/">Support</a><a class="links-cta" href="/#beta">Join the beta</a>
+      </div>
+      <a class="button primary nav-cta" href="/#beta">Join the beta</a>
+      <button class="icon-button menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-links" title="Open navigation">
+        <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#menu" /></svg>
+      </button>
+    </nav>
+  </header>
 
   <main id="main">
-    <div class="wrap">
+    <div class="wrap legal-layout">
       <header class="page-head">
         <div class="kicker">Terms</div>
         <h1>Race hard. <span class="hot">Stay responsible.</span></h1>
         <p class="lede">Last updated: September 28, 2026. These Terms govern your access to and use of Catchfire, formerly named Scorch.</p>
       </header>
 
+      <nav class="legal-toc" aria-label="Contents">
+        <p class="label">Contents</p>
+        <ol>
+          <li><a href="#basics">The basics</a></li>
+          <li><a href="#risk">Athlete responsibility and assumption of risk</a></li>
+          <li><a href="#route-safety">No route safety guarantee</a></li>
+          <li><a href="#release">Release and limitation of liability</a></li>
+          <li><a href="#indemnity">Indemnity</a></li>
+          <li><a href="#integrity">Integrity and accountability</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+      </nav>
+
       <div class="notice">
         <h3>Core Rule</h3>
         <p>Catchfire is a software platform for solo running, unofficial fair-start and same-start running challenges, race organization, and public route discovery. Catchfire does not inspect, supervise, permit, marshal, close, or control public roads, sidewalks, trails, parks, or other race locations unless Catchfire expressly says otherwise in a written event-specific agreement.</p>
       </div>
 
-      <section class="legal-section prose">
+      <section class="legal-section prose" id="basics">
         <h2>The basics</h2>
         <div class="legal-grid">
           <article><h3>Unofficial races</h3><p>Catchfire races are not official events and are not sanctioned by any city, park authority, road authority, federation, or governing body unless expressly stated in writing.</p></article>
@@ -46,39 +66,63 @@
         </div>
       </section>
 
-      <section class="legal-section prose">
+      <section class="legal-section prose" id="risk">
         <h2>Athlete responsibility and assumption of risk</h2>
         <p>Running, racing, outdoor activity, road use, GPS navigation, and high-intensity exercise involve inherent and serious risks, including injury, illness, falls, collisions, cardiac events, property damage, and death. By creating, joining, starting, or participating in a Catchfire race, you knowingly and voluntarily assume those risks.</p>
         <p>You are solely responsible for your health, fitness, route choices, equipment, compliance with law, awareness of surroundings, and conduct toward other racers, pedestrians, cyclists, drivers, spectators, property owners, and the public.</p>
       </section>
 
-      <section class="legal-section prose">
+      <section class="legal-section prose" id="route-safety">
         <h2>No route safety guarantee</h2>
         <p>Catchfire maps, routes, route badges, start/finish points, distances, GPS traces, turn cues, proximity discovery, leaderboards, and finish confidence are informational tools only. They may be inaccurate, delayed, unavailable, incomplete, or unsafe for real-world conditions. You must use independent judgment and must not follow any route or prompt when doing so would be unsafe or unlawful.</p>
       </section>
 
-      <section class="legal-section prose">
+      <section class="legal-section prose" id="release">
         <h2>Release and limitation of liability</h2>
         <p>To the maximum extent permitted by law, you release Catchfire and its affiliates, officers, employees, contractors, agents, partners, licensors, service providers, and representatives from claims arising from your race creation, race participation, route choice, physical activity, interaction with participants or third parties, injury, death, property damage, or violation of law. Nothing here limits rights that cannot legally be waived.</p>
       </section>
 
-      <section class="legal-section prose">
+      <section class="legal-section prose" id="indemnity">
         <h2>Indemnity</h2>
         <p>You agree to defend, indemnify, and hold harmless Catchfire from claims, damages, losses, liabilities, costs, and expenses arising from your use of Catchfire, your route or event choices, your race creation or participation, any injury or property damage caused by you, your violation of law, your user content, any payment disputes if paid features are enabled later, or your breach of the Terms.</p>
       </section>
 
-      <section class="legal-section prose">
+      <section class="legal-section prose" id="integrity">
         <h2>Integrity and accountability</h2>
         <p>Catchfire may review GPS, route progress, finish confidence, optional sensor signals, imported files, reports, historical performance, and, in a separate permissioned build if enabled later, Apple Health evidence before finalizing results. Use a consistent race or display name and do not impersonate another runner. Do not falsify telemetry, use vehicles, manipulate GPS, or endanger others.</p>
       </section>
 
-      <section class="legal-section prose">
+      <section class="legal-section prose" id="contact">
         <h2>Contact</h2>
         <p>Legal notices: <a href="mailto:legal@catchfire.run">legal@catchfire.run</a>. Support: <a href="mailto:support@catchfire.run">support@catchfire.run</a>.</p>
       </section>
     </div>
   </main>
 
-  <footer class="footer"><div class="wrap footer-main"><a class="brand" href="/"><img src="/assets/mark.png" width="36" height="36" alt="">CATCHFIRE</a><p>Race others. Chase your best.</p><nav aria-label="Footer"><a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav></div><div class="wrap footer-note"><span>&copy; 2026 Catchfire</span><span>Free running beta. Unofficial community challenges.</span></div></footer>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <p class="footer-line">Run solo. Race together.<br />A free running beta for iPhone and Android.</p>
+        <div class="footer-cols">
+          <nav aria-label="Product">
+            <p class="label">Product</p>
+            <a href="/demo/">How it works</a><a href="/pilot-routes/">Routes</a><a href="/#beta">Join the beta</a>
+          </nav>
+          <nav aria-label="Support">
+            <p class="label">Support</p>
+            <a href="/support/">Help and answers</a><a href="/support/#saving">Saving and compatibility</a><a href="mailto:support@catchfire.run">support@catchfire.run</a>
+          </nav>
+          <nav aria-label="Legal">
+            <p class="label">Legal</p>
+            <a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="mailto:legal@catchfire.run">legal@catchfire.run</a>
+          </nav>
+        </div>
+      </div>
+      <p class="footer-mark" aria-hidden="true">CATCHFIRE</p>
+      <div class="footer-note">
+        <span>&copy; 2026 Katsuko, Inc. All rights reserved.</span><span>Free running beta. Unofficial community challenges.</span>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
