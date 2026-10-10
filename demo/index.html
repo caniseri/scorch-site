@@ -49,10 +49,10 @@
       type="font/woff2"
       crossorigin
     />
-    <link rel="stylesheet" href="/styles.css?v=20261009" />
-    <script src="/site.mjs?v=20261009" type="module"></script>
-    <link rel="stylesheet" href="/race-demo.css?v=20261009" />
-    <script src="/race-demo.mjs?v=20261009" type="module"></script>
+    <link rel="stylesheet" href="/styles.css?v=20261010" />
+    <script src="/site.mjs?v=20261010" type="module"></script>
+    <link rel="stylesheet" href="/race-demo.css?v=20261010" />
+    <script src="/race-demo.mjs?v=20261010" type="module"></script>
   </head>
   <body class="has-index">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -113,7 +113,12 @@
         </ol>
       </nav>
 
-      <section class="section" id="solo" aria-labelledby="solo-title">
+      <section
+        class="section"
+        id="solo"
+        aria-labelledby="solo-title"
+        data-chapter="Run solo"
+      >
         <div class="wrap grid split">
           <div class="split-text" data-reveal>
             <p class="label eyebrow">01 · Run solo</p>
@@ -169,19 +174,12 @@
           </figure>
         </div>
       </section>
-
-      <div class="wrap divider">
-        <div class="ruler" aria-hidden="true">
-          <svg viewBox="0 0 500 8" preserveAspectRatio="none">
-            <path
-              d="M0 0V8M20 0V4M40 0V4M60 0V4M80 0V4M100 0V8M120 0V4M140 0V4M160 0V4M180 0V4M200 0V8M220 0V4M240 0V4M260 0V4M280 0V4M300 0V8M320 0V4M340 0V4M360 0V4M380 0V4M400 0V8M420 0V4M440 0V4M460 0V4M480 0V4M500 0V8"
-            /></svg
-          ><span style="left: 0%">0K</span><span style="left: 20%">1K</span
-          ><span style="left: 40%">2K</span><span style="left: 60%">3K</span
-          ><span style="left: 80%">4K</span><span style="left: 100%">5K</span>
-        </div>
-      </div>
-      <section class="section" id="race" aria-labelledby="race-title">
+      <section
+        class="section surface-ember"
+        id="race"
+        aria-labelledby="race-title"
+        data-chapter="Race others"
+      >
         <div class="wrap grid split">
           <div class="split-text" data-reveal>
             <p class="label eyebrow">02 · Race others</p>
@@ -244,6 +242,7 @@
         id="flame-chase"
         data-race-demo="full"
         aria-labelledby="chase-title"
+        data-chapter="The flame chase"
       >
         <div class="wrap">
           <div class="section-head demo-toolbar" data-reveal>
@@ -270,7 +269,12 @@
         </div>
       </section>
 
-      <section class="section bone" id="host" aria-labelledby="host-title">
+      <section
+        class="section bone"
+        id="host"
+        aria-labelledby="host-title"
+        data-chapter="Organize"
+      >
         <div class="wrap">
           <div class="section-head" data-reveal>
             <p class="label eyebrow">04 · Organize a race</p>
@@ -310,7 +314,12 @@
         </div>
       </section>
 
-      <section class="section" id="after" aria-labelledby="after-title">
+      <section
+        class="section"
+        id="after"
+        aria-labelledby="after-title"
+        data-chapter="After the line"
+      >
         <div class="wrap grid split">
           <div class="split-text" data-reveal>
             <p class="label eyebrow">05 · After the line</p>
@@ -350,24 +359,48 @@
               <a href="/support/#saving">See availability.</a>
             </p>
           </div>
-          <figure class="split-visual" data-reveal>
-            <img
-              class="plate"
-              src="/assets/screens/race-result.webp"
-              width="720"
-              height="1167"
-              loading="lazy"
-              decoding="async"
-              alt="Final result for a fictional runner: 2nd of 6 in 25:42, 0:09 behind River, with Propose a rematch and Share result."
-            />
-            <figcaption class="label caption">
+          <div class="split-visual stepper" data-stepper data-reveal>
+            <figure class="stepper-frame">
+              <img
+                class="plate"
+                src="/assets/screens/step-result.webp"
+                width="720"
+                height="1021"
+                loading="lazy"
+                decoding="async"
+                alt="Finish recorded and under review: race time 25:42, place confirmed when results are final."
+              />
+              <figcaption class="label caption">
+                <span class="num">1 / 2</span> Recorded, under review
+              </figcaption>
+            </figure>
+            <figure class="stepper-frame">
+              <img
+                class="plate"
+                src="/assets/screens/race-result.webp"
+                width="720"
+                height="1167"
+                loading="lazy"
+                decoding="async"
+                alt="Final result for a fictional runner: 2nd of 6 in 25:42, 0:09 behind River, with Propose a rematch and Share result."
+              />
+              <figcaption class="label caption">
+                <span class="num">2 / 2</span> Final result
+              </figcaption>
+            </figure>
+            <p class="label caption stepper-note">
               Illustrative screens · Fictional runners
-            </figcaption>
-          </figure>
+            </p>
+          </div>
         </div>
       </section>
 
-      <section class="section bone join" id="beta" aria-labelledby="beta-title">
+      <section
+        class="section bone join"
+        id="beta"
+        aria-labelledby="beta-title"
+        data-chapter="Join"
+      >
         <div class="wrap" data-reveal>
           <p class="label eyebrow">Join the beta</p>
           <h2 id="beta-title">Come run with us.</h2>
