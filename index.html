@@ -49,10 +49,10 @@
       type="font/woff2"
       crossorigin
     />
-    <link rel="stylesheet" href="/styles.css?v=20261010" />
-    <script src="/site.mjs?v=20261010" type="module"></script>
-    <link rel="stylesheet" href="/race-demo.css?v=20261010" />
-    <script src="/race-demo.mjs?v=20261010" type="module"></script>
+    <link rel="stylesheet" href="/styles.css?v=20261011" />
+    <script src="/site.mjs?v=20261011" type="module"></script>
+    <link rel="stylesheet" href="/race-demo.css?v=20261011" />
+    <script src="/race-demo.mjs?v=20261011" type="module"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -368,16 +368,130 @@
               </figure>
             </li>
           </ol>
-          <div class="ruler" aria-hidden="true">
-            <svg viewBox="0 0 500 8" preserveAspectRatio="none">
-              <path
-                d="M0 0V8M20 0V4M40 0V4M60 0V4M80 0V4M100 0V8M120 0V4M140 0V4M160 0V4M180 0V4M200 0V8M220 0V4M240 0V4M260 0V4M280 0V4M300 0V8M320 0V4M340 0V4M360 0V4M380 0V4M400 0V8M420 0V4M440 0V4M460 0V4M480 0V4M500 0V8"
-              /></svg
-            ><span style="left: 0%">0K</span><span style="left: 20%">1K</span
-            ><span style="left: 40%">2K</span><span style="left: 60%">3K</span
-            ><span style="left: 80%">4K</span><span style="left: 100%">5K</span>
+
+          <div class="race-rulers section-body">
+            <figure
+              class="race-ruler has-reference"
+              aria-labelledby="start-ruler-title"
+              style="--ref: 0.75"
+              data-reveal
+            >
+              <p class="label">Your start</p>
+              <div class="ruler-head">
+                <h3 id="start-ruler-title">Staggered starts</h3>
+                <p class="ruler-unit">Clock time, from 8:01 AM</p>
+              </div>
+              <div class="ruler-reference" aria-hidden="true">
+                <span class="ruler-reference-label">Reference start</span>
+              </div>
+              <ol class="ruler-rows">
+                <li class="runner ava" style="--at: 0">
+                  <span class="runner-name">Ava</span
+                  ><span class="runner-track" aria-hidden="true"
+                    ><span class="runner-tail"></span
+                    ><span class="runner-dot"></span></span
+                  ><span class="runner-value num">8:01 AM</span>
+                </li>
+                <li class="runner you is-you" style="--at: 0.5">
+                  <span class="runner-name">You</span
+                  ><span class="runner-track" aria-hidden="true"
+                    ><span class="runner-tail"></span
+                    ><span class="runner-dot"></span></span
+                  ><span class="runner-value num">8:03 AM</span>
+                </li>
+                <li class="runner ben" style="--at: 0.75">
+                  <span class="runner-name">Ben</span
+                  ><span class="runner-track" aria-hidden="true"
+                    ><span class="runner-tail"></span
+                    ><span class="runner-dot"></span></span
+                  ><span class="runner-value num">8:04 AM</span>
+                </li>
+                <li class="runner cleo" style="--at: 1">
+                  <span class="runner-name">Cleo</span
+                  ><span class="runner-track" aria-hidden="true"
+                    ><span class="runner-tail"></span
+                    ><span class="runner-dot"></span></span
+                  ><span class="runner-value num">8:05 AM</span>
+                </li>
+              </ol>
+              <div class="ruler-axis" aria-hidden="true">
+                <span class="ruler-ticks"
+                  ><span style="--at: 0">8:01 AM</span
+                  ><span style="--at: 0.25">8:02</span
+                  ><span style="--at: 0.5">8:03</span
+                  ><span style="--at: 0.75">8:04</span
+                  ><span style="--at: 1">8:05 AM</span></span
+                >
+              </div>
+              <ul class="ruler-facts">
+                <li>Race reference start <b class="num">8:04 AM</b></li>
+                <li>Your <b class="num">1:00</b> head start</li>
+              </ul>
+              <p class="fine">
+                Your locked entry pace sets your start. Slower entry paces start
+                first.
+              </p>
+            </figure>
+            <figure
+              class="race-ruler"
+              aria-labelledby="result-ruler-title"
+              data-reveal
+            >
+              <p class="label">Final placing</p>
+              <p class="ruler-placing num">2nd of 4</p>
+              <p class="ruler-stats">
+                <span>Race time <b class="num">25:31</b></span
+                ><span><b class="num">0:06</b> behind Ava</span>
+              </p>
+              <div class="ruler-head">
+                <h3 id="result-ruler-title">Finish gaps</h3>
+                <p class="ruler-unit">Seconds after the first finish</p>
+              </div>
+              <ol class="ruler-rows">
+                <li class="runner ava" style="--at: 0">
+                  <span class="runner-name">Ava</span
+                  ><span class="runner-track" aria-hidden="true"
+                    ><span class="runner-tail"></span
+                    ><span class="runner-dot"></span></span
+                  ><span class="runner-value num">First</span>
+                </li>
+                <li class="runner you is-you" style="--at: 0.3">
+                  <span class="runner-name">You</span
+                  ><span class="runner-track" aria-hidden="true"
+                    ><span class="runner-tail"></span
+                    ><span class="runner-dot"></span></span
+                  ><span class="runner-value num">0:06</span>
+                </li>
+                <li class="runner ben" style="--at: 0.6">
+                  <span class="runner-name">Ben</span
+                  ><span class="runner-track" aria-hidden="true"
+                    ><span class="runner-tail"></span
+                    ><span class="runner-dot"></span></span
+                  ><span class="runner-value num">0:12</span>
+                </li>
+                <li class="runner cleo" style="--at: 0.95">
+                  <span class="runner-name">Cleo</span
+                  ><span class="runner-track" aria-hidden="true"
+                    ><span class="runner-tail"></span
+                    ><span class="runner-dot"></span></span
+                  ><span class="runner-value num">0:19</span>
+                </li>
+              </ol>
+              <div class="ruler-axis" aria-hidden="true">
+                <span class="ruler-ticks"
+                  ><span style="--at: 0">0 s</span
+                  ><span style="--at: 0.25">5 s</span
+                  ><span style="--at: 0.5">10 s</span
+                  ><span style="--at: 0.75">15 s</span
+                  ><span style="--at: 1">20 s</span></span
+                >
+              </div>
+              <p class="fine">Placing and gaps come from final results.</p>
+            </figure>
           </div>
-          <p class="label caption">Illustrative screens · Fictional runners</p>
+          <p class="label caption">
+            Illustrative screens and timings · Fictional runners
+          </p>
         </div>
       </section>
 
@@ -388,10 +502,12 @@
         data-chapter="Fair start"
       >
         <div class="wrap grid">
-          <div class="fair-text" data-reveal>
+          <div class="fair-head" data-reveal>
             <p class="label eyebrow">Fair start, explained</p>
             <h2 id="fair-title">Your pace sets your start.</h2>
-            <p class="lead section-body">
+          </div>
+          <div class="fair-text" data-reveal>
+            <p class="lead">
               A fair start is a pace-adjusted personal start. It needs a recent
               5K pace.
             </p>
@@ -401,65 +517,6 @@
               line wins.
             </p>
           </div>
-          <figure class="fair-diagram" data-reveal>
-            <svg role="img" aria-labelledby="fair-svg-title fair-svg-desc">
-              <title id="fair-svg-title">
-                Fair start timeline for three fictional runners
-              </title>
-              <desc id="fair-svg-desc">
-                Ava, 6:00 per km, starts at 0:00. Ben, 5:30 per km, starts at
-                2:30. Cleo, 5:00 per km, starts at 5:00. All three run the same
-                5K route.
-              </desc>
-              <text x="0" y="16">
-                <tspan class="d-name">Ava</tspan>
-                <tspan class="d-meta" dx="10">6:00 /km · head start 5:00</tspan>
-              </text>
-              <rect class="d-lead" x="0" y="28" width="100%" height="24" />
-              <text x="0" y="100">
-                <tspan class="d-name">Ben</tspan>
-                <tspan class="d-meta" dx="10">5:30 /km · head start 2:30</tspan>
-              </text>
-              <line class="d-wait" x1="0" x2="33.33%" y1="124" y2="124" />
-              <rect
-                class="d-run"
-                x="33.33%"
-                y="112"
-                width="66.67%"
-                height="24"
-              />
-              <text x="0" y="184">
-                <tspan class="d-name">Cleo</tspan>
-                <tspan class="d-meta" dx="10">5:00 /km · starts last</tspan>
-              </text>
-              <line class="d-wait" x1="0" x2="66.67%" y1="208" y2="208" />
-              <rect
-                class="d-run"
-                x="66.67%"
-                y="196"
-                width="33.33%"
-                height="24"
-              />
-              <line class="d-axis" x1="0" x2="100%" y1="252" y2="252" />
-              <line class="d-axis" x1="0.5" x2="0.5" y1="252" y2="260" />
-              <line class="d-axis" x1="33.33%" x2="33.33%" y1="252" y2="260" />
-              <line class="d-axis" x1="66.67%" x2="66.67%" y1="252" y2="260" />
-              <line class="d-axis" x1="99.9%" x2="99.9%" y1="252" y2="260" />
-              <text class="d-tick" x="0" y="280">0:00</text>
-              <text class="d-tick" x="33.33%" y="280" text-anchor="middle">
-                2:30
-              </text>
-              <text class="d-tick" x="66.67%" y="280" text-anchor="middle">
-                5:00
-              </text>
-              <text class="d-tick" x="100%" y="280" text-anchor="end">
-                7:30
-              </text>
-            </svg>
-            <figcaption class="label caption">
-              Minutes after the first start · Fictional runners
-            </figcaption>
-          </figure>
         </div>
       </section>
 
